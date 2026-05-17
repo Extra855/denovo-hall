@@ -1,0 +1,602 @@
+{
+	"Metadata": {
+		"title": "De novo | Luxury Wedding Venue - A Canvas for Your Love Story",
+		"description": "Begin your forever in a space uniquely yours. De novo is a luxury wedding venue that transforms entirely to reflect your distinct love story. Experience bespoke interiors, Michelin-caliber dining, and exclusive privacy.",
+		"ogTitle": "De novo | Luxury Wedding Venue",
+		"ogDescription": "A luxury canvas that transforms entirely to reflect your distinct love story."
+	},
+	"common": {
+		"bookATour": "Book a Tour",
+		"skipToContent": "Skip to main content",
+		"loading": "Loading",
+		"sending": "Sending..."
+	},
+	"Navigation": {
+		"spaces": "The Spaces",
+		"stories": "Stories",
+		"experience": "Experience",
+		"faq": "FAQ",
+		"gallery": "Gallery",
+		"closeMenu": "Close menu",
+		"openMenu": "Open menu",
+		"mainNav": "Main navigation"
+	},
+	"Hero": {
+		"tagline": "Luxury Wedding Venue",
+		"heading1": "Where Your Story",
+		"heading2": "Takes Shape",
+		"description": "An elegant canvas that transforms entirely to reflect your distinct love story",
+		"cta": "Book a Tour",
+		"scrollToExplore": "Scroll to Explore",
+		"scrollDown": "Scroll down to explore",
+		"altImage": "Luxury wedding venue"
+	},
+	"Statistics": {
+		"subtitle": "Our Legacy of Excellence",
+		"heading1": "Creating",
+		"heading2": "Unforgettable",
+		"heading3": "Moments",
+		"weddings": "Weddings Hosted",
+		"years": "Years of Excellence",
+		"guests": "Happy Guests",
+		"rating": "Google Rating",
+		"googleReviews": "108 GOOGLE REVIEWS",
+		"licensedInsured": "LICENSED & INSURED",
+		"support": "24/7 SUPPORT"
+	},
+	"SocialProof": {
+		"googleRating": "Google Rating",
+		"googleReviews": "108+ reviews",
+		"weddingVenue": "Wedding Venue",
+		"luxuryAwards": "Luxury Awards 2024",
+		"weddings": "Weddings",
+		"successfullyHosted": "Successfully hosted",
+		"satisfaction": "Satisfaction",
+		"clientApproval": "Client approval"
+	},
+	"Introduction": {
+		"heading": "Begin your forever in a space uniquely yours",
+		"description": "De novo is a luxury canvas, transforming entirely to reflect your distinct love story. Every detail, from the architectural elements to the smallest decorative accents, is thoughtfully curated to bring your vision to life.",
+		"cta": "Explore Our Spaces"
+	},
+	"InspirationGallery": {
+		"subtitle": "Wedding Inspiration",
+		"heading1": "Find Your",
+		"heading2": "Perfect Style",
+		"description": "Explore our curated collection of wedding styles and let your vision come to life",
+		"cta": "Explore All Styles",
+		"items": [
+			{
+				"title": "Romantic",
+				"description": "Lush florals & candlelit romance"
+			},
+			{
+				"title": "Garden",
+				"description": "Lush florals & natural beauty"
+			},
+			{
+				"title": "Vintage",
+				"description": "Timeless sophistication & classic charm"
+			},
+			{
+				"title": "Glam",
+				"description": "Opulent elegance & sparkling luxury"
+			}
+		]
+	},
+	"Spaces": {
+		"subtitle": "The Spaces",
+		"heading": "A Canvas of Infinite Possibilities",
+		"description": "Every space within De novo is designed to be transformed. From minimalist modern to romantic vintage, our interiors become whatever you envision.",
+		"items": [
+			{
+				"title": "The Grand Ballroom",
+				"description": "Soaring ceilings and crystalline chandeliers create an atmosphere of timeless elegance",
+				"capacity": "Up to 300 guests"
+			},
+			{
+				"title": "The Garden Terrace",
+				"description": "Where nature meets sophistication in perfect harmony",
+				"capacity": "Up to 150 guests"
+			},
+			{
+				"title": "The Intimate Lounge",
+				"description": "A cozy retreat for your most cherished moments",
+				"capacity": "Up to 50 guests"
+			},
+			{
+				"title": "The Exchange Hall",
+				"description": "A stunning ceremony space that adapts to your unique aesthetic",
+				"capacity": "Up to 200 guests"
+			}
+		]
+	},
+	"FeaturedWeddings": {
+		"subtitle": "Real Celebrations",
+		"heading": "Featured Weddings",
+		"description": "Each celebration at De novo is a unique masterpiece. Explore our curated collection of real weddings.",
+		"colorPalette": "Color Palette",
+		"viewGallery": "View Gallery",
+		"cta": "Create Your Story",
+		"items": [
+			{
+				"couple": "Sarah & Michael",
+				"theme": "Garden Romance",
+				"color": "Blush & Sage",
+				"season": "Spring 2024"
+			},
+			{
+				"couple": "Emma & James",
+				"theme": "Classic Elegance",
+				"color": "Gold & Ivory",
+				"season": "Summer 2024"
+			},
+			{
+				"couple": "Olivia & Thomas",
+				"theme": "Modern Minimalist",
+				"color": "White & Green",
+				"season": "Fall 2024"
+			},
+			{
+				"couple": "Grace & William",
+				"theme": "Rustic Charm",
+				"color": "Burgundy & Gold",
+				"season": "Winter 2024"
+			}
+		]
+	},
+	"Testimonials": {
+		"subtitle": "Love Stories",
+		"heading": "Words from Our Couples",
+		"prevTestimonial": "Previous testimonial",
+		"nextTestimonial": "Next testimonial",
+		"goToTestimonial": "Go to testimonial {index}",
+		"items": [
+			{
+				"quote": "De novo transformed beyond our wildest dreams. Walking into our reception felt like entering a world created solely for us. Every corner whispered our story.",
+				"couple": "Sarah & Michael",
+				"date": "Married June 2024"
+			},
+			{
+				"quote": "The attention to detail was extraordinary. From the first consultation to the last dance, every moment felt curated just for us. Our guests are still talking about it.",
+				"couple": "Emma & James",
+				"date": "Married September 2024"
+			},
+			{
+				"quote": "We wanted something unique, and De novo delivered beyond imagination. The space literally transformed into our vision. It was like magic.",
+				"couple": "Olivia & Thomas",
+				"date": "Married May 2024"
+			}
+		]
+	},
+	"VideoTestimonials": {
+		"subtitle": "Watch Our Stories",
+		"heading": "Love Stories in Motion",
+		"description": "Hear directly from our couples about their unforgettable experiences at De novo.",
+		"items": [
+			{
+				"couple": "Sarah & Michael",
+				"quote": "Every moment felt like magic. The team transformed the space into exactly what we had dreamed of."
+			},
+			{
+				"couple": "Emma & James",
+				"quote": "From the first meeting to the last dance, everything was perfect beyond imagination."
+			},
+			{
+				"couple": "Olivia & Thomas",
+				"quote": "The attention to detail was extraordinary. Our guests are still talking about it."
+			}
+		]
+	},
+	"Experience": {
+		"subtitle": "The Experience",
+		"heading": "What Sets Us Apart",
+		"cta": "Schedule a Visit",
+		"items": [
+			{
+				"title": "Bespoke Interiors",
+				"description": "Every element is customizable. From wall treatments to lighting design, we create the environment you envision down to the finest detail."
+			},
+			{
+				"title": "Guest Capacity",
+				"description": "Our venue accommodates up to 500 guests indoors and 500 guests in our external garden spaces, providing ample room for celebrations of any scale."
+			},
+			{
+				"title": "Professional Lighting & Sound",
+				"description": "We provide professional-grade lighting and sound systems to ensure your celebration looks and sounds extraordinary."
+			},
+			{
+				"title": "Everything the Bride Needs",
+				"description": "From preparation suites to final send-off, everything the bride needs is available in one place — no need to travel between locations."
+			}
+		]
+	},
+	"Promise": {
+		"subtitle": "Our Commitment",
+		"heading": "The De novo Promise",
+		"description": "When you choose De novo, you're choosing a partner dedicated to making your celebration extraordinary.",
+		"items": [
+			{
+				"title": "Uncompromising Quality",
+				"description": "Every detail, from linens to lighting, is curated with meticulous attention to ensure perfection."
+			},
+			{
+				"title": "Dedicated Team",
+				"description": "Your personal event coordinator guides you through every step, from first visit to final dance."
+			},
+			{
+				"title": "Complete Customization",
+				"description": "No two celebrations are alike. We transform our spaces to reflect your unique vision."
+			},
+			{
+				"title": "Exclusive Privacy",
+				"description": "Your celebration is yours alone. Our estate offers complete seclusion for your special day."
+			},
+			{
+				"title": "Timeless Memories",
+				"description": "We create moments that become cherished memories, captured in photographs and hearts forever."
+			}
+		]
+	},
+	"Journey": {
+		"subtitle": "Your Journey",
+		"heading": "The Path to Your Perfect Day",
+		"description": "From your first visit to your final dance, we guide you through every moment with care and expertise.",
+		"cta": "Start Your Journey",
+		"items": [
+			{
+				"title": "Initial Consultation",
+				"description": "Begin your journey with a personal tour and design consultation. We'll explore your vision and discuss how our spaces can transform to tell your story.",
+				"duration": "1-2 hours"
+			},
+			{
+				"title": "Design Discovery",
+				"description": "Our design team creates custom renderings and material boards tailored to your aesthetic. Every detail is considered, from color palettes to furniture selection.",
+				"duration": "2-4 weeks"
+			},
+			{
+				"title": "Menu Curation",
+				"description": "Meet with our executive chef to craft a culinary experience that reflects your tastes. From canapés to the wedding cake, every bite is bespoke.",
+				"duration": "2-3 weeks"
+			},
+			{
+				"title": "Final Details",
+				"description": "In the weeks leading to your celebration, we finalize every element. Vendor coordination, timeline refinement, and a final walk-through ensure perfection.",
+				"duration": "4-6 weeks"
+			}
+		]
+	},
+	"PlanningTips": {
+		"subtitle": "Expert Guidance",
+		"heading": "Planning Your Perfect Day",
+		"cta": "Schedule a Consultation",
+		"items": [
+			{
+				"title": "Start Early",
+				"description": "Begin planning 12-18 months ahead for prime dates. This allows time for venue visits, vendor selection, and design development."
+			},
+			{
+				"title": "Define Your Vision",
+				"description": "Create a mood board with colors, textures, and styles that resonate with you. This guides all design decisions."
+			},
+			{
+				"title": "Prioritize Guest Experience",
+				"description": "Consider the flow of your celebration. Comfortable seating, ambient lighting, and thoughtful details create lasting memories."
+			},
+			{
+				"title": "Trust Your Team",
+				"description": "Lean on your venue and vendors. Their expertise transforms challenges into seamless moments you'll cherish forever."
+			}
+		]
+	},
+	"Countdown": {
+		"subtitle": "Planning Your Special Day?",
+		"heading1": "Average Wedding Timeline:",
+		"heading2": "6 Months",
+		"days": "Days",
+		"hours": "Hours",
+		"minutes": "Minutes",
+		"seconds": "Seconds",
+		"footer": "Start planning today to secure your perfect date"
+	},
+	"Availability": {
+		"subtitle": "Check Availability",
+		"heading": "Find Your Perfect Date",
+		"selectMonth": "Select a month to view available dates for {year}",
+		"available": "Available",
+		"limited": "Limited",
+		"datesAvailable": "{count} dates available in {month}",
+		"cta": "Inquire About a Date",
+		"months": {
+			"january": "Jan",
+			"february": "Feb",
+			"march": "Mar",
+			"april": "Apr",
+			"may": "May",
+			"june": "Jun",
+			"july": "Jul",
+			"august": "Aug",
+			"september": "Sep",
+			"october": "Oct",
+			"november": "Nov",
+			"december": "Dec"
+		},
+		"days": {
+			"sun": "Sun",
+			"mon": "Mon",
+			"tue": "Tue",
+			"wed": "Wed",
+			"thu": "Thu",
+			"fri": "Fri",
+			"sat": "Sat"
+		},
+		"fullMonths": {
+			"january": "January",
+			"february": "February",
+			"march": "March",
+			"april": "April",
+			"may": "May",
+			"june": "June",
+			"july": "July",
+			"august": "August",
+			"september": "September",
+			"october": "October",
+			"november": "November",
+			"december": "December"
+		}
+	},
+	"Vendors": {
+		"subtitle": "Our Network",
+		"heading": "Preferred Partners",
+		"description": "We collaborate with the finest professionals in the industry to ensure every detail exceeds expectations.",
+		"items": [
+			{
+				"category": "Photography",
+				"names": "Eternal Moments Studio, Lumiere Photography"
+			},
+			{
+				"category": "Floral Design",
+				"names": "Bloom & Branch, The Gilded Stem"
+			},
+			{
+				"category": "Entertainment",
+				"names": "Virtuoso Strings, Ensemble Elite"
+			},
+			{
+				"category": "Wedding Planning",
+				"names": "Grace & Gold Events, Love Story Designs"
+			},
+			{
+				"category": "Beauty",
+				"names": "Blush Artistry, The Bridal Glam"
+			},
+			{
+				"category": "Invitations",
+				"names": "Paper & Silk, The Lettered Bride"
+			}
+		]
+	},
+	"Instagram": {
+		"subtitle": "Follow Our Journey",
+		"handle": "@DenovoHall",
+		"followLink": "Follow us on Instagram",
+		"posts": [
+			{
+				"alt": "Wedding ceremony"
+			},
+			{
+				"alt": "Reception decor"
+			},
+			{
+				"alt": "Garden wedding"
+			},
+			{
+				"alt": "Ceremony space"
+			},
+			{
+				"alt": "Wedding couple"
+			},
+			{
+				"alt": "Intimate venue"
+			}
+		]
+	},
+	"FAQ": {
+		"subtitle": "FAQ",
+		"heading": "Common Questions",
+		"items": [
+			{
+				"question": "How far in advance should we book De novo?",
+				"answer": "We recommend booking 12-18 months in advance for prime dates, especially during our peak season (May-October). However, we occasionally have last-minute availability, so don't hesitate to inquire regardless of your timeline."
+			},
+			{
+				"question": "What is included in the venue rental?",
+				"answer": "Our comprehensive package includes exclusive use of all venue spaces, bespoke interior customization, on-site event coordination, catering by our Michelin-caliber culinary team, and premium bar service. Every detail is tailored to your vision."
+			},
+			{
+				"question": "Can we bring our own vendors?",
+				"answer": "While we have a curated network of preferred vendors who understand our space and standards, we welcome your preferred vendors. We'll work closely with them to ensure seamless integration with our venue and services."
+			},
+			{
+				"question": "What is the capacity for ceremonies and receptions?",
+				"answer": "Our spaces accommodate intimate gatherings of 50 guests to grand celebrations of up to 300. The Grand Ballroom seats 300 for dinner, while The Exchange Hall hosts ceremonies up to 200. Our Garden Terrace is perfect for 150 guests."
+			},
+			{
+				"question": "Do you offer accommodation for wedding guests?",
+				"answer": "While we don't have on-site accommodation, we've partnered with several luxury hotels within a 10-minute radius. We can arrange special rates and shuttle services for your guests."
+			},
+			{
+				"question": "How does the customization process work?",
+				"answer": "Your journey begins with a design consultation where we explore your vision. Our team then creates detailed renderings and material samples. We handle everything from floral design to custom furniture, ensuring every element reflects your unique love story."
+			}
+		]
+	},
+	"Location": {
+		"subtitle": "Find Us",
+		"heading": "Visit Our Estate",
+		"description": "Schedule a private tour to experience the magic of De novo in person.",
+		"mapTitle": "De Novo Location",
+		"items": [
+			{
+				"title": "Visit Us",
+				"details": [
+					"712 Gracie Square",
+					"New York, NY 10028"
+				],
+				"action": "Get Directions"
+			},
+			{
+				"title": "Call Us",
+				"details": [
+					"(212) 486-7200",
+					"Mon–Sun: 10 AM – 6 PM"
+				],
+				"action": "Schedule a Call"
+			},
+			{
+				"title": "Email Us",
+				"details": [
+					"events@denovohall.com",
+					"Response within 24 hours"
+				],
+				"action": "Send Message"
+			}
+		]
+	},
+	"FloatingCTA": {
+		"label": "Book a tour",
+		"text": "Book a Tour"
+	},
+	"BackToTop": {
+		"label": "Back to top"
+	},
+	"Newsletter": {
+		"heading": "Stay Inspired",
+		"description": "Receive seasonal inspiration, planning tips, and exclusive offers for your celebration.",
+		"placeholder": "Enter your email",
+		"subscribe": "Subscribe",
+		"thankYou": "Thank you for subscribing!",
+		"subscribing": "Subscribing...",
+		"privacy": "We respect your privacy. Unsubscribe at any time.",
+		"errorRateLimit": "Too many requests. Please wait a moment and try again.",
+		"errorValidation": "Please check your input and try again.",
+		"errorGeneral": "Something went wrong. Please try again later.",
+		"errorNetwork": "Unable to connect. Please check your internet and try again."
+	},
+	"Inquiry": {
+		"subtitle": "Get Started",
+		"heading": "Begin Your Journey",
+		"description": "Let us create something extraordinary together. Share your vision, and we'll reach out to begin crafting your perfect day.",
+		"name": "Your Name",
+		"namePlaceholder": "Jane Smith",
+		"nameLabel": "Your full name",
+		"email": "Email Address",
+		"emailPlaceholder": "jane@example.com",
+		"emailLabel": "Your email address",
+		"phone": "Phone Number",
+		"phonePlaceholder": "+1 (555) 123-4567",
+		"phoneLabel": "Your phone number",
+		"date": "Wedding Date",
+		"dateLabel": "Your preferred wedding date",
+		"guests": "Guest Count",
+		"guestsPlaceholder": "150",
+		"guestsLabel": "Expected number of guests",
+		"message": "Tell Us About Your Vision",
+		"messagePlaceholder": "Share your dream wedding vision, theme preferences, or any special requests...",
+		"messageLabel": "Your wedding vision",
+		"submit": "Submit Inquiry",
+		"sending": "Sending...",
+		"thankYouTitle": "Thank You",
+		"thankYouMessage": "We'll be in touch within 24 hours to begin your journey.",
+		"errorRateLimit": "Too many requests. Please wait a moment and try again.",
+		"errorValidation": "Please check your input and try again.",
+		"errorGeneral": "Something went wrong. Please try again later.",
+		"errorNetwork": "Unable to connect. Please check your internet and try again.",
+		"footer": {
+			"brandDescription": "A luxury wedding venue that transforms entirely to reflect your distinct love story.",
+			"followInstagram": "Follow us on Instagram",
+			"followFacebook": "Follow us on Facebook",
+			"quickLinks": "Quick Links",
+			"legal": "Legal",
+			"privacyPolicy": "Privacy Policy",
+			"termsOfService": "Terms of Service",
+			"accessibilityStatement": "Accessibility Statement",
+			"links": [
+				{
+					"label": "Spaces",
+					"href": "#spaces"
+				},
+				{
+					"label": "Gallery",
+					"href": "/gallery"
+				},
+				{
+					"label": "Testimonials",
+					"href": "#testimonials"
+				},
+				{
+					"label": "The Journey",
+					"href": "#journey"
+				},
+				{
+					"label": "FAQ",
+					"href": "#faq"
+				},
+				{
+					"label": "Contact",
+					"href": "#location"
+				}
+			],
+			"copyright": "De novo Hall, LLC. All rights reserved. Registered in the State of New York.",
+			"businessId": "NY Business ID: 6801234",
+			"licensedInsured": "Licensed & Insured"
+		}
+	},
+	"NotFound": {
+		"title": "Page Not Found | De novo",
+		"brandAlt": "Return to homepage",
+		"srOnly": "Page not found, error 404",
+		"heading1": "A Path Yet to Be",
+		"heading2": "Discovered",
+		"description": "This page seems to have wandered off the guest list. Let us guide you back to where your story begins.",
+		"cta": "Return to De novo"
+	},
+	"Gallery": {
+		"metaTitle": "Gallery | De novo",
+		"metaDescription": "Explore our curated gallery of weddings, ceremonies, receptions, and venue spaces at De novo.",
+		"subtitle": "Our Portfolio",
+		"heading1": "A Visual",
+		"heading2": "Journey",
+		"description": "Explore our curated collection of real celebrations, breathtaking ceremonies, and the finest details that make each wedding at De novo truly unforgettable.",
+		"allCategories": "All",
+		"categories": {
+			"ceremonies": "Ceremonies",
+			"receptions": "Receptions",
+			"details": "Details",
+			"venues": "Venues"
+		},
+		"imageCounter": "{current} / {total}",
+		"closeLightbox": "Close lightbox",
+		"previousImage": "Previous image",
+		"nextImage": "Next image",
+		"cta": "Book Your Celebration",
+		"items": [
+			{ "alt": "Bride and groom exchanging vows under floral arch", "title": "Garden Vows" },
+			{ "alt": "Outdoor ceremony with white chairs lined on lawn", "title": "Lawn Ceremony" },
+			{ "alt": "Ring exchange during candlelit ceremony", "title": "Candlelit Exchange" },
+			{ "alt": "Couple walking down aisle hand in hand", "title": "The First Steps" },
+			{ "alt": "Grand reception hall with crystal chandeliers", "title": "Grand Ballroom" },
+			{ "alt": "Elegant table setting with gold accents", "title": "Golden Tablescape" },
+			{ "alt": "First dance under twinkling lights", "title": "First Dance" },
+			{ "alt": "Wedding cake with sugar flowers", "title": "Sweet Celebration" },
+			{ "alt": "Bridal bouquet with peonies and roses", "title": "Bridal Bouquet" },
+			{ "alt": "Wedding rings on velvet cushion", "title": "Perfect Rings" },
+			{ "alt": "Champagne toast with crystal flutes", "title": "Toast to Love" },
+			{ "alt": "Calligraphy place cards at reception", "title": "Place of Honor" },
+			{ "alt": "Venue exterior at golden hour", "title": "Golden Hour" },
+			{ "alt": "Garden terrace with string lights", "title": "Terrace Lights" },
+			{ "alt": "Lounge area with velvet seating", "title": "Velvet Lounge" },
+			{ "alt": "Ballroom entrance with grand doors", "title": "Grand Entrance" }
+		]
+	}
+}
