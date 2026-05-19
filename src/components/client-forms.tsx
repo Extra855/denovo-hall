@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { ScrollReveal } from "@/components/scroll-reveal";
+import { Footer } from "@/components/sections/footer";
 
 const NewsletterSection = dynamic(
   () =>
@@ -24,6 +25,7 @@ export function ClientForms() {
     <>
       {/* <ScrollReveal><NewsletterSection /></ScrollReveal> */}
       <ScrollReveal><InquirySection /></ScrollReveal>
+      <ScrollReveal><Footer /></ScrollReveal>
     </>
   );
 }

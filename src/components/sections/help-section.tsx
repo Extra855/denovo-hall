@@ -109,7 +109,7 @@ export function HelpSection() {
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"
                         title={loc("mapTitle")}
-                        className="w-full aspect-[21/9] rounded-sm"
+                        className="w-full aspect-[4/3] md:aspect-[21/9] rounded-sm"
                      />
                   </div>
 

@@ -49,7 +49,7 @@ export function GalleryPage() {
    return (
       <>
          {/* Page header */}
-         <section className="pt-32 pb-16 px-4 md:px-6">
+         <section className="pt-24 pb-10 md:pb-16 px-4 md:px-6">
             <div className="max-w-7xl mx-auto text-center">
                <span className="text-sage text-sm tracking-[0.3em] uppercase font-sans block mb-4 animate-fade-up">
                   {t("subtitle")}
@@ -68,16 +68,20 @@ export function GalleryPage() {
          </section>
 
          {/* Filter + Grid */}
-         <section className="pb-24 px-4 md:px-6">
+         <section className="pb-24 px-4 md:px-6 overflow-x-hidden">
             <div className="max-w-7xl mx-auto">
                <FeaturedWeddingsGallery
                   activeWedding={activeWedding}
                   onToggle={handleWeddingToggle}
                />
 
-               <div className="mb-10 flex justify-center">
+               <div className="mb-10">
                   <GalleryFilter active={activeCategory} onChange={setActiveCategory} />
                </div>
+
+               <p className="text-charcoal/40 text-xs tracking-widest uppercase text-center mb-6 font-sans">
+                  {t("resultCount", { count: filteredImages.length })}
+               </p>
 
                {filteredImages.length === 0 ? (
                   <div className="text-center py-16">

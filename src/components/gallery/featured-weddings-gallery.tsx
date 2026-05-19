@@ -25,14 +25,15 @@ export function FeaturedWeddingsGallery({
                {t("heading")}
             </h3>
          </div>
-         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+         {/* Mobile: horizontal snap scroll. Desktop: grid */}
+         <div className="-mx-4 px-4 flex md:grid md:grid-cols-4 gap-3 md:gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide md:overflow-visible">
             {weddingSlugs.map((slug) => {
                const isActive = activeWedding === slug;
                return (
                   <button
                      key={slug}
                      onClick={() => onToggle(slug)}
-                     className={`group relative overflow-hidden rounded-sm aspect-[4/3] transition-all duration-300 ${
+                     className={`group relative overflow-hidden rounded-sm aspect-[4/3] transition-all duration-300 snap-start active:scale-[0.97] w-[72vw] sm:w-[60vw] md:w-auto shrink-0 md:shrink ${
                         isActive
                            ? "ring-2 ring-sage ring-offset-2"
                            : "ring-1 ring-charcoal/10 hover:ring-charcoal/30"
@@ -42,7 +43,7 @@ export function FeaturedWeddingsGallery({
                      <BlurImage
                         src={featuredWeddingImages[slug]}
                         alt={t(`couples.${slug}`)}
-                        sizes="(max-width: 768px) 50vw, 25vw"
+                        sizes="(max-width: 768px) 72vw, 25vw"
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                      />
                      <div
@@ -54,9 +55,13 @@ export function FeaturedWeddingsGallery({
                         <span className="font-serif-display text-alabaster text-sm md:text-base">
                            {t(`couples.${slug}`)}
                         </span>
-                        {isActive && (
+                        {isActive ? (
                            <span className="block text-champagne text-xs mt-1 tracking-wider uppercase">
-                              ✓ Active
+                              {t("viewing")}
+                           </span>
+                        ) : (
+                           <span className="block text-alabaster/60 text-xs mt-1 tracking-wider uppercase md:hidden">
+                              {t("tapToView")}
                            </span>
                         )}
                      </div>

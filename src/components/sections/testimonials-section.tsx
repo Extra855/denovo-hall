@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { Icons } from "@/components/icons";
 import { BlurImage } from "@/components/blur-image";
@@ -91,8 +91,25 @@ export function TestimonialsSection() {
       { id: 3, couple: vt("items.2.couple"), quote: vt("items.2.quote"), src: "/videos/1.mp4" },
    ];
 
-   const nextTestimonial = () => setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-   const prevTestimonial = () => setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+   const nextTestimonial = useCallback(() => setCurrentIndex((prev) => (prev + 1) % testimonials.length), [testimonials.length]);
+   const prevTestimonial = useCallback(() => setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length), [testimonials.length]);
+
+   const AUTO_INTERVAL = 6000;
+   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+   const startTimer = useCallback(() => {
+      clearInterval(timerRef.current!);
+      timerRef.current = setInterval(nextTestimonial, AUTO_INTERVAL);
+   }, [nextTestimonial]);
+
+   const stopTimer = useCallback(() => {
+      clearInterval(timerRef.current!);
+   }, []);
+
+   useEffect(() => {
+      startTimer();
+      return () => clearInterval(timerRef.current!);
+   }, [startTimer]);
 
    return (
       <section id="testimonials" className="py-24 md:py-32 px-6 bg-charcoal relative overflow-hidden">
@@ -133,10 +150,14 @@ export function TestimonialsSection() {
             </div>
 
             {/* Written reviews carousel */}
-            <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-               <div className="animate-fade-up relative">
-                  <div className="relative group aspect-[4/5]">
-                     <div className="absolute -inset-4 border border-champagne/30 rounded-sm transition-transform duration-500 group-hover:-translate-x-2 group-hover:translate-y-2" />
+            <div
+               className="grid md:grid-cols-2 gap-12 md:gap-20 items-center"
+               onMouseEnter={stopTimer}
+               onMouseLeave={startTimer}
+            >
+               <div className="animate-fade-up relative order-2 md:order-none">
+                  <div className="relative group aspect-[4/3] md:aspect-[4/5]">
+                     <div className="absolute -inset-4 border border-champagne/30 rounded-sm transition-transform duration-500 group-hover:-translate-x-2 group-hover:translate-y-2 hidden md:block" />
                      <div className="w-full h-full rounded-sm relative z-10">
                         <BlurImage
                            key={testimonials[currentIndex].id}
@@ -148,7 +169,7 @@ export function TestimonialsSection() {
                      </div>
                   </div>
                </div>
-               <div className="animate-fade-up" style={{ transitionDelay: "0.2s" }}>
+               <div className="animate-fade-up order-1 md:order-none" style={{ transitionDelay: "0.2s" }}>
                   <div className="flex gap-1 mb-6">
                      {[...Array(5)].map((_, i) => (
                         <svg key={i} className="w-4 h-4 text-champagne" viewBox="0 0 20 20" fill="currentColor">
@@ -161,7 +182,7 @@ export function TestimonialsSection() {
                   </svg>
                   <blockquote
                      key={`quote-${testimonials[currentIndex].id}`}
-                     className="font-serif-display text-2xl md:text-3xl text-alabaster italic mb-8 leading-relaxed transition-opacity duration-500"
+                     className="font-serif-display text-xl md:text-3xl text-alabaster italic mb-8 leading-relaxed transition-opacity duration-500"
                   >
                      &ldquo;{testimonials[currentIndex].quote}&rdquo;
                   </blockquote>
@@ -171,7 +192,7 @@ export function TestimonialsSection() {
                   </div>
                   <div className="flex items-center gap-4">
                      <button
-                        onClick={prevTestimonial}
+                        onClick={() => { prevTestimonial(); stopTimer(); setTimeout(startTimer, AUTO_INTERVAL); }}
                         className="w-12 h-12 rounded-full border border-alabaster/20 text-alabaster hover:bg-champagne hover:text-charcoal transition-all duration-300 flex items-center justify-center"
                         aria-label={t("prevTestimonial")}
                      >
@@ -181,7 +202,7 @@ export function TestimonialsSection() {
                         {testimonials.map((_, index) => (
                            <button
                               key={index}
-                              onClick={() => setCurrentIndex(index)}
+                              onClick={() => { setCurrentIndex(index); stopTimer(); setTimeout(startTimer, AUTO_INTERVAL); }}
                               className={`w-2 h-2 rounded-full transition-all duration-300 ${
                                  index === currentIndex
                                     ? "bg-champagne w-6"
@@ -192,7 +213,7 @@ export function TestimonialsSection() {
                         ))}
                      </div>
                      <button
-                        onClick={nextTestimonial}
+                        onClick={() => { nextTestimonial(); stopTimer(); setTimeout(startTimer, AUTO_INTERVAL); }}
                         className="w-12 h-12 rounded-full border border-alabaster/20 text-alabaster hover:bg-champagne hover:text-charcoal transition-all duration-300 flex items-center justify-center"
                         aria-label={t("nextTestimonial")}
                      >

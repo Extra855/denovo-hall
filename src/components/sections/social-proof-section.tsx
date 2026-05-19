@@ -68,7 +68,7 @@ export function SocialProofSection() {
                            <stat.icon />
                         </div>
                      </div>
-                     <div className="font-serif-display text-4xl md:text-5xl lg:text-6xl text-alabaster mb-3 stat-value-glow">
+                     <div className="font-serif-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-alabaster mb-3 stat-value-glow">
                         {stat.value.toLocaleString()}
                         {stat.suffix}
                      </div>

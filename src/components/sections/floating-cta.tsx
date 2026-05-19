@@ -1,18 +1,26 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 
 export function FloatingCTA() {
    const [isVisible, setIsVisible] = useState(false);
    const t = useTranslations("FloatingCTA");
+   const tickingRef = useRef(0);
 
    useEffect(() => {
       const handleScroll = () => {
-         setIsVisible(window.scrollY > 600);
+         if (tickingRef.current) return;
+         tickingRef.current = requestAnimationFrame(() => {
+            setIsVisible(window.scrollY > 600);
+            tickingRef.current = 0;
+         });
       };
       window.addEventListener("scroll", handleScroll);
-      return () => window.removeEventListener("scroll", handleScroll);
+      return () => {
+         window.removeEventListener("scroll", handleScroll);
+         cancelAnimationFrame(tickingRef.current);
+      };
    }, []);
 
    const scrollToInquiry = () => {
@@ -30,6 +38,10 @@ export function FloatingCTA() {
       <button
          onClick={scrollToInquiry}
          className="fixed bottom-6 end-6 z-40 bg-charcoal text-alabaster px-6 py-3 rounded-full shadow-lg hover:bg-charcoal/90 transition-all duration-300 flex items-center gap-2 text-sm tracking-wider uppercase group"
+         style={{
+            bottom: "calc(1.5rem + env(safe-area-inset-bottom, 0px))",
+            insetInlineEnd: "calc(1.5rem + env(safe-area-inset-inline-end, 0px))",
+         }}
          aria-label={t("label")}
       >
          <span>{t("text")}</span>

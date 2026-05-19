@@ -1,8 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -10,19 +8,6 @@
   --font-serif: var(--font-serif);
   --font-mono: var(--font-geist-mono);
   --font-arabic: var(--font-arabic);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -53,7 +38,12 @@
 
 :root {
   --radius: 0.625rem;
-  
+
+  /* Safe-area padding for notched phones */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-inline-end: env(safe-area-inset-inline-end, 0px);
+
   /* De novo Color System */
   --background: #FAF9F6;
   --foreground: #2C2C2C;
@@ -73,40 +63,6 @@
   --border: #E8E6E1;
   --input: #E8E6E1;
   --ring: #A9B3A2;
-  --chart-1: #E8DCC4;
-  --chart-2: #A9B3A2;
-  --chart-3: #2C2C2C;
-  --chart-4: #D4C9B0;
-  --chart-5: #8A9689;
-  --sidebar: #FAF9F6;
-  --sidebar-foreground: #2C2C2C;
-  --sidebar-primary: #2C2C2C;
-  --sidebar-primary-foreground: #FAF9F6;
-  --sidebar-accent: #E8DCC4;
-  --sidebar-accent-foreground: #2C2C2C;
-  --sidebar-border: #E8E6E1;
-  --sidebar-ring: #A9B3A2;
-}
-
-.dark {
-  --background: #1A1A1A;
-  --foreground: #FAF9F6;
-  --card: #242424;
-  --card-foreground: #FAF9F6;
-  --popover: #242424;
-  --popover-foreground: #FAF9F6;
-  --primary: #FAF9F6;
-  --primary-foreground: #1A1A1A;
-  --secondary: #3A3632;
-  --secondary-foreground: #FAF9F6;
-  --muted: #2A2A2A;
-  --muted-foreground: #A0A0A0;
-  --accent: #4A5A48;
-  --accent-foreground: #FAF9F6;
-  --destructive: #D95555;
-  --border: #333333;
-  --input: #333333;
-  --ring: #6A7A68;
 }
 
 @layer base {
@@ -124,6 +80,8 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
   }
   
   ::selection {
@@ -162,21 +120,21 @@
     transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
   }
   
-  /* Cinematic fade-up animation */
-  .animate-fade-up {
+  /* Cinematic fade-up animation — scoped to js-loaded so no-JS fallback is visible */
+  .js-loaded .animate-fade-up {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
                 transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
   }
-  
+
   .animate-fade-up.visible {
     opacity: 1;
     transform: translateY(0);
   }
-  
+
   /* Scale up animation */
-  .animate-scale-up {
+  .js-loaded .animate-scale-up {
     opacity: 0;
     transform: scale(0.9);
     transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1),
@@ -229,7 +187,7 @@
   }
   
   /* Image reveal animation */
-  .reveal-image {
+  .js-loaded .reveal-image {
     clip-path: inset(0 100% 0 0);
     transition: clip-path 1s cubic-bezier(0.25, 1, 0.5, 1);
   }
@@ -380,7 +338,7 @@
 }
 
 .body-regular {
-  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
   line-height: 1.7;
   letter-spacing: 0.02em;
 }
@@ -1496,8 +1454,8 @@ input[type="range"].luxury-range::-webkit-slider-thumb:hover {
 /* Back to top button */
 .back-to-top {
   position: fixed;
-  bottom: 100px;
-  right: 24px;
+  bottom: calc(88px + env(safe-area-inset-bottom, 0px));
+  inset-inline-end: calc(24px + env(safe-area-inset-inline-end, 0px));
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -1616,7 +1574,8 @@ input[type="range"].luxury-range::-webkit-slider-thumb:hover {
 /* Promise card with check icon */
 .promise-card {
   position: relative;
-  padding: 2rem 2rem 2rem 4rem;
+  padding: 2rem;
+  padding-inline-start: 4rem;
   background: rgba(255, 255, 255, 0.9);
   border: 1px solid rgba(232, 220, 196, 0.2);
   transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
@@ -1625,7 +1584,7 @@ input[type="range"].luxury-range::-webkit-slider-thumb:hover {
 .promise-card::before {
   content: '✓';
   position: absolute;
-  left: 1.5rem;
+  inset-inline-start: 1.5rem;
   top: 2rem;
   width: 24px;
   height: 24px;
@@ -2160,6 +2119,12 @@ input[type="range"].luxury-range::-webkit-slider-thumb:hover {
   }
 }
 
+@media (max-width: 400px) {
+  .stat-card {
+    padding: 1rem 0.5rem;
+  }
+}
+
 /* Print styles */
 @media print {
   .no-print {
@@ -2325,6 +2290,24 @@ select:focus-visible {
 .inspiration-card:hover .inspiration-content {
   transform: translateY(0);
   opacity: 1;
+}
+
+/* Touch devices: always show inspiration card text */
+@media (hover: none) {
+  .inspiration-content {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .inspiration-card::before {
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      transparent 30%,
+      rgba(44, 44, 44, 0.4) 60%,
+      rgba(44, 44, 44, 0.7) 100%
+    );
+  }
 }
 
 /* Feature highlight section */
@@ -2570,13 +2553,15 @@ select:focus-visible {
 
 /* Masonry grid with CSS columns */
 .gallery-masonry {
-  columns: 1;
-  column-gap: 1rem;
+  columns: 2;
+  column-gap: 0.5rem;
+  column-fill: balance;
 }
 
 @media (min-width: 640px) {
   .gallery-masonry {
     columns: 2;
+    column-gap: 1rem;
   }
 }
 
@@ -2623,4 +2608,30 @@ select:focus-visible {
 
 .gallery-lightbox-nav:hover {
   transform: translateY(-50%) scale(1.1);
+}
+
+/* Reduced motion — disable all scroll-triggered animations */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-scale-up,
+  .reveal-image {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    transition: none !important;
+  }
+
+  .gallery-item-enter {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

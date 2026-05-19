@@ -52,9 +52,9 @@ export function SpacesSection() {
 
    const inspirations = [
       { id: 1, title: tg("items.0.title"), image: "/romantic.jpg", description: tg("items.0.description") },
-      { id: 2, title: tg("items.1.title"), image: "/garden.jpg", description: tg("items.1.description") },
+      { id: 2, title: tg("items.1.title"), image: "/Garden-Terrace.jpg", description: tg("items.1.description") },
       { id: 3, title: tg("items.2.title"), image: "/vintage.jpg", description: tg("items.2.description") },
-      { id: 4, title: tg("items.3.title"), image: "/glam.jpg", description: tg("items.3.description") },
+      { id: 4, title: tg("items.3.title"), image: "/hero.jpg", description: tg("items.3.description") },
    ];
 
    return (

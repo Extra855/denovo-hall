@@ -13,10 +13,28 @@ export function useAnimatedCounter(
    const ref = useRef<HTMLDivElement>(null);
    const hasStartedRef = useRef(false);
 
+   const prefersReducedMotion = useRef(false);
+
+   // Check reduced motion preference once at init
+   if (typeof window !== "undefined") {
+      prefersReducedMotion.current = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+   }
+
    const animateCount = useCallback(() => {
+      if (prefersReducedMotion.current) {
+         setCount(end);
+         return;
+      }
       const startTime = Date.now();
+      let lastFrame = 0;
       const animate = () => {
-         const elapsed = Date.now() - startTime;
+         const now = Date.now();
+         if (now - lastFrame < 33) {
+            requestAnimationFrame(animate);
+            return;
+         }
+         lastFrame = now;
+         const elapsed = now - startTime;
          const progress = Math.min(elapsed / duration, 1);
          const easeOut = 1 - Math.pow(1 - progress, 3);
          const raw = end * easeOut;

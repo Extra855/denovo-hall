@@ -111,7 +111,7 @@ export function FeaturedWeddingsSection() {
                         <p className="text-alabaster/80 text-sm">
                            {t("colorPalette")}: {wedding.color}
                         </p>
-                        <div className="mt-4 flex items-center gap-2 text-champagne text-sm tracking-wider uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <div className="mt-4 flex items-center gap-2 text-champagne text-sm tracking-wider uppercase opacity-60 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 md:group-hover:translate-y-0">
                            <span>{t("viewGallery")}</span>
                            <Icons.arrowRight />
                         </div>

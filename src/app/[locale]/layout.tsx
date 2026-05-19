@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Inter, Noto_Sans_Arabic } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
@@ -29,6 +29,10 @@ const notoSansArabic = Noto_Sans_Arabic({
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
+
+export const viewport: Viewport = {
+  viewportFit: "cover",
+};
 
 export async function generateMetadata({
   params,
@@ -90,6 +94,9 @@ export default async function LocaleLayout({
 
   const messages = await getMessages();
   const dir = locale === "ar" ? "rtl" : "ltr";
+  const fontVars = locale === "ar"
+    ? `${inter.variable} ${notoSansArabic.variable}`
+    : `${playfairDisplay.variable} ${inter.variable}`;
 
   return (
     <html
@@ -98,8 +105,15 @@ export default async function LocaleLayout({
       suppressHydrationWarning
       className="scroll-smooth"
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('js-loaded')",
+          }}
+        />
+      </head>
       <body
-        className={`${playfairDisplay.variable} ${inter.variable} ${notoSansArabic.variable} antialiased font-sans`}
+        className={`${fontVars} antialiased font-sans`}
       >
         <NextIntlClientProvider messages={messages}>
           <a

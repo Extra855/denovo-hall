@@ -1,18 +1,26 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 
 export function BackToTop() {
    const [isVisible, setIsVisible] = useState(false);
    const t = useTranslations("BackToTop");
+   const tickingRef = useRef(0);
 
    useEffect(() => {
       const handleScroll = () => {
-         setIsVisible(window.scrollY > 500);
+         if (tickingRef.current) return;
+         tickingRef.current = requestAnimationFrame(() => {
+            setIsVisible(window.scrollY > 500);
+            tickingRef.current = 0;
+         });
       };
       window.addEventListener("scroll", handleScroll);
-      return () => window.removeEventListener("scroll", handleScroll);
+      return () => {
+         window.removeEventListener("scroll", handleScroll);
+         cancelAnimationFrame(tickingRef.current);
+      };
    }, []);
 
    const scrollToTop = () => {

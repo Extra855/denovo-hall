@@ -146,21 +146,24 @@ export function CommunitySection() {
                   </div>
                </div>
 
-               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4">
-                  {instagramPosts.map((post, index) => (
-                     <div
-                        key={post.id}
-                        className="animate-fade-up aspect-square img-zoom cursor-pointer relative"
-                        style={{ transitionDelay: `${0.1 + index * 0.05}s` }}
-                     >
-                        <BlurImage
-                           src={post.image}
-                           alt={post.alt}
-                           sizes="(max-width: 768px) 50vw, 16vw"
-                           className="object-cover rounded-sm"
-                        />
-                     </div>
-                  ))}
+               <div className="relative">
+                  <div className="pointer-events-none absolute end-0 top-0 bottom-0 w-8 bg-gradient-to-l from-secondary/30 to-transparent z-10 md:hidden" />
+                  <div className="flex md:grid md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide px-6 md:px-0 -mx-6 md:mx-0">
+                     {instagramPosts.map((post, index) => (
+                        <div
+                           key={post.id}
+                           className="animate-fade-up aspect-square img-zoom cursor-pointer relative shrink-0 w-[70vw] md:w-auto snap-start"
+                           style={{ transitionDelay: `${0.1 + index * 0.05}s` }}
+                        >
+                           <BlurImage
+                              src={post.image}
+                              alt={post.alt}
+                              sizes="(max-width: 768px) 70vw, 16vw"
+                              className="object-cover rounded-sm"
+                           />
+                        </div>
+                     ))}
+                  </div>
                </div>
             </div>
          </div>

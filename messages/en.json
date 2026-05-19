@@ -513,10 +513,21 @@
 			"followInstagram": "Follow us on Instagram",
 			"followFacebook": "Follow us on Facebook",
 			"quickLinks": "Quick Links",
+			"contactTitle": "Get in Touch",
+			"addressLabel": "Address",
+			"address": "50th Street, Behind Atico Station, Sana'a",
+			"phoneLabel": "Phone",
+			"phone": "+967 775228246",
+			"emailLabel": "Email",
+			"email": "events@denovohall.com",
 			"legal": "Legal",
 			"privacyPolicy": "Privacy Policy",
 			"termsOfService": "Terms of Service",
 			"accessibilityStatement": "Accessibility Statement",
+			"whatsappLabel": "WhatsApp",
+			"followWhatsapp": "Chat on WhatsApp",
+			"instagramUrl": "https://www.instagram.com/denovohall",
+			"facebookUrl": "https://www.facebook.com/denovohall",
 			"links": [
 				{
 					"label": "Spaces",
@@ -531,16 +542,12 @@
 					"href": "#testimonials"
 				},
 				{
-					"label": "The Journey",
-					"href": "#journey"
-				},
-				{
 					"label": "FAQ",
 					"href": "#faq"
 				},
 				{
 					"label": "Contact",
-					"href": "#location"
+					"href": "#inquiry"
 				}
 			],
 			"copyright": "De novo Hall, LLC. All rights reserved. Registered in Yemen republic.",
@@ -577,9 +584,12 @@
 		"nextImage": "Next image",
 		"cta": "Book Your Celebration",
 		"noResults": "No images match the selected filters.",
+		"resultCount": "{count} photos",
 		"featuredWeddings": {
 			"subtitle": "Featured Celebrations",
 			"heading": "Real Weddings",
+			"viewing": "Viewing",
+			"tapToView": "Tap to view",
 			"couples": {
 				"sarah-michael": "Sarah & Michael",
 				"emma-james": "Emma & James",

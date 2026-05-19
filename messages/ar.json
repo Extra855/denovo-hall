@@ -513,10 +513,21 @@
 			"followInstagram": "تابعنا على إنستغرام",
 			"followFacebook": "تابعنا على فيسبوك",
 			"quickLinks": "روابط سريعة",
+			"contactTitle": "تواصل معنا",
+			"addressLabel": "العنوان",
+			"address": "شارع الخمسين، خلف محطة أتيكو، صنعاء",
+			"phoneLabel": "الهاتف",
+			"phone": "+967 775228246",
+			"emailLabel": "البريد الإلكتروني",
+			"email": "events@denovohall.com",
 			"legal": "قانوني",
 			"privacyPolicy": "سياسة الخصوصية",
 			"termsOfService": "شروط الخدمة",
 			"accessibilityStatement": "بيان إمكانية الوصول",
+			"whatsappLabel": "واتساب",
+			"followWhatsapp": "تواصل عبر واتساب",
+			"instagramUrl": "https://www.instagram.com/denovohall",
+			"facebookUrl": "https://www.facebook.com/denovohall",
 			"links": [
 				{
 					"label": "القاعات",
@@ -531,16 +542,12 @@
 					"href": "#testimonials"
 				},
 				{
-					"label": "الرحلة",
-					"href": "#journey"
-				},
-				{
 					"label": "الأسئلة الشائعة",
 					"href": "#faq"
 				},
 				{
 					"label": "اتصل بنا",
-					"href": "#location"
+					"href": "#inquiry"
 				}
 			],
 			"copyright": "دي نوفو هول ذ.م.م. جميع الحقوق محفوظة. مسجلة في الجمهورية اليمنية.",
@@ -577,9 +584,12 @@
 		"nextImage": "الصورة التالية",
 		"cta": "احجز احتفالك",
 		"noResults": "لا توجد صور تطابق الفلتر المحدد.",
+		"resultCount": "{count} صور",
 		"featuredWeddings": {
 			"subtitle": "احتفالات مميزة",
 			"heading": "حفلات زفاف حقيقية",
+			"viewing": "جاري العرض",
+			"tapToView": "اضغط للعرض",
 			"couples": {
 				"sarah-michael": "سارة ومايكل",
 				"emma-james": "إيما وجيمس",

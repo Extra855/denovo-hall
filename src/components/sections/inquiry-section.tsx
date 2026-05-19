@@ -7,7 +7,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Icons } from "@/components/icons";
 import { Ornament } from "@/components/ornament";
-import { ClientYear } from "@/components/client-year";
 
 export function InquirySection() {
    const [isSubmitting, setIsSubmitting] = useState(false);
@@ -67,20 +66,10 @@ export function InquirySection() {
    };
 
    return (
-      <footer
+      <section
          id="inquiry"
          className="py-24 md:py-32 lg:py-40 px-6 bg-secondary/50 relative"
       >
-         <div className="absolute bottom-0 start-0 w-64 h-64 opacity-5">
-            <svg viewBox="0 0 200 200" className="w-full h-full text-charcoal">
-               <path
-                  fill="currentColor"
-                  d="M44.7,-76.4C58.8,-69.2,71.8,-58.1,79.6,-44.1C87.4,-30.1,90,-13.2,88.3,3C86.6,19.2,80.6,34.7,71.1,47.9C61.6,61.1,48.6,72,34.1,78.4C19.6,84.8,3.6,86.7,-11.8,85.1C-27.2,83.5,-42,78.4,-54.5,69.5C-67,60.6,-77.2,47.9,-83.3,33.5C-89.4,19.1,-91.4,3,-88.8,-12C-86.2,-27,-79,-41.1,-68.5,-52.1C-58,-63.1,-44.2,-71,-29.8,-76.1C-15.4,-81.2,-0.4,-83.6,13.8,-82.3C28,-81,41.9,-76.1,44.7,-76.4Z"
-                  transform="translate(100 100)"
-               />
-            </svg>
-         </div>
-
          <div className="max-w-2xl mx-auto relative">
             <div className="text-center mb-12">
                <p className="text-sm tracking-widest uppercase text-sage mb-4 animate-fade-up">
@@ -240,96 +229,6 @@ export function InquirySection() {
                </form>
             )}
          </div>
-
-         {/* Footer Bottom */}
-         <div className="max-w-6xl mx-auto mt-20 md:mt-28 border-t border-champagne/30">
-            <div className="py-10 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
-               <div>
-                  <div className="flex items-center gap-3 mb-4">
-                     <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 100 100"
-                        className="h-5 w-5 text-charcoal"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                     >
-                        <path d="M 28 18 C 44 18, 46 40, 50 58 C 55 76, 84 72, 80 42 L 68 50" />
-                        <path d="M 72 18 C 56 18, 54 40, 50 58 C 45 76, 16 72, 20 42 L 32 50" />
-                        <line x1="12" y1="85" x2="88" y2="85" />
-                     </svg>
-                     <span className="font-serif-display text-lg text-charcoal">
-                        De novo
-                     </span>
-                  </div>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-5 max-w-xs">
-                     {t("footer.brandDescription")}
-                  </p>
-                  <div className="flex items-center gap-4">
-                     <a
-                        href="https://www.instagram.com/denovohall"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-charcoal transition-colors"
-                        aria-label={t("footer.followInstagram")}
-                     >
-                        <Icons.instagram />
-                     </a>
-                     <a
-                        href="https://www.facebook.com/denovohall"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-charcoal transition-colors"
-                        aria-label={t("footer.followFacebook")}
-                     >
-                        <Icons.facebook />
-                     </a>
-                  </div>
-               </div>
-
-               <div>
-                  <h4 className="text-xs tracking-widest uppercase text-charcoal mb-5 font-medium">
-                     {t("footer.quickLinks")}
-                  </h4>
-                  <nav className="grid grid-cols-2 gap-x-6 gap-y-2">
-                     {[
-                        { label: t("footer.links.0.label"), href: t("footer.links.0.href") },
-                        { label: t("footer.links.1.label"), href: t("footer.links.1.href") },
-                        { label: t("footer.links.2.label"), href: t("footer.links.2.href") },
-                        { label: t("footer.links.3.label"), href: t("footer.links.3.href") },
-                        { label: t("footer.links.4.label"), href: t("footer.links.4.href") },
-                        { label: t("footer.links.5.label"), href: t("footer.links.5.href") },
-                     ].map((link) => (
-                        <a
-                           key={link.href}
-                           href={link.href}
-                           className="text-muted-foreground hover:text-charcoal text-sm transition-colors py-1"
-                        >
-                           {link.label}
-                        </a>
-                     ))}
-                  </nav>
-               </div>
-
-            </div>
-
-            <div className="py-6 border-t border-champagne/20 flex flex-col md:flex-row justify-between items-center gap-4">
-               <p className="text-muted-foreground/70 text-xs text-center md:text-start leading-relaxed">
-                  &copy; <ClientYear /> {t("footer.copyright")}
-               </p>
-               <div className="flex items-center gap-4 text-muted-foreground/50 text-xs">
-                  <span>{t("footer.businessId")}</span>
-                  <span className="hidden sm:inline" aria-hidden="true">
-                     &middot;
-                  </span>
-                  <span className="hidden sm:inline">
-                     {t("footer.licensedInsured")}
-                  </span>
-               </div>
-            </div>
-         </div>
-      </footer>
+      </section>
    );
 }
