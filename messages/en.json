@@ -215,6 +215,8 @@
 		"subtitle": "Our Commitment",
 		"heading": "The De novo Promise",
 		"description": "When you choose De novo, you're choosing a partner dedicated to making your celebration extraordinary.",
+		"viewAll": "View All",
+		"showLess": "Show Less",
 		"items": [
 			{
 				"title": "Uncompromising Quality",
@@ -270,6 +272,8 @@
 		"subtitle": "Expert Guidance",
 		"heading": "Planning Your Perfect Day",
 		"cta": "Schedule a Consultation",
+		"readMore": "Read More",
+		"readLess": "Read Less",
 		"items": [
 			{
 				"title": "Start Early",

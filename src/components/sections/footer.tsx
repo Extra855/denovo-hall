@@ -155,6 +155,7 @@ export function Footer() {
                   <a
                     href={`tel:${t("footer.phone")}`}
                     className="text-sm text-muted-foreground transition-colors hover:text-charcoal md:mt-0.5"
+                    dir="ltr"
                   >
                     {t("footer.phone")}
                   </a>
@@ -203,6 +204,7 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-muted-foreground transition-colors hover:text-charcoal md:mt-0.5"
+                    dir="ltr"
                   >
                     +967 775228246
                   </a>

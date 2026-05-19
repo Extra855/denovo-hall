@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Icons } from "@/components/icons";
@@ -8,6 +9,7 @@ import { Icons } from "@/components/icons";
 export function WhyChooseUsSection() {
    const t = useTranslations("Experience");
    const p = useTranslations("Promise");
+   const [promisesExpanded, setPromisesExpanded] = useState(false);
 
    const experiences = [
       { icon: Icons.bespoke, title: t("items.0.title"), description: t("items.0.description") },
@@ -45,21 +47,21 @@ export function WhyChooseUsSection() {
                </p>
             </div>
 
-            {/* Features top row */}
-            <div className="grid md:grid-cols-4 gap-8 lg:gap-12 mb-20 md:mb-28">
+            {/* Features — 2x2 on mobile, 4-col on desktop */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 lg:gap-12 mb-20 md:mb-28">
                {experiences.map((experience, index) => (
                   <div
                      key={experience.title}
                      className="text-center animate-fade-up group"
                      style={{ transitionDelay: `${0.2 + index * 0.1}s` }}
                   >
-                     <div className="flex justify-center mb-6 text-charcoal group-hover:text-sage transition-colors duration-500">
+                     <div className="flex justify-center mb-4 md:mb-6 text-charcoal group-hover:text-sage transition-colors duration-500">
                         <experience.icon />
                      </div>
-                     <h3 className="font-serif-display text-xl text-charcoal mb-4">
+                     <h3 className="font-serif-display text-base md:text-xl text-charcoal mb-3 md:mb-4">
                         {experience.title}
                      </h3>
-                     <p className="text-muted-foreground text-sm">
+                     <p className="text-muted-foreground text-xs md:text-sm">
                         {experience.description}
                      </p>
                   </div>
@@ -82,12 +84,12 @@ export function WhyChooseUsSection() {
                </p>
             </div>
 
-            {/* Promises grid */}
+            {/* Promises grid — progressive disclosure on mobile */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                {promises.map((promise, index) => (
                   <div
                      key={promise.title}
-                     className="promise-card animate-fade-up"
+                     className={`promise-card animate-fade-up ${index >= 2 && !promisesExpanded ? "hidden md:block" : ""}`}
                      style={{ transitionDelay: `${0.3 + index * 0.08}s` }}
                   >
                      <h3 className="font-serif-display text-xl text-charcoal mb-2">
@@ -99,6 +101,16 @@ export function WhyChooseUsSection() {
                   </div>
                ))}
             </div>
+
+            {/* Mobile expand/collapse toggle */}
+            <button
+               type="button"
+               onClick={() => setPromisesExpanded(prev => !prev)}
+               className="md:hidden w-full mt-6 py-4 border border-champagne/30 text-sage text-sm tracking-widest uppercase hover:bg-champagne/5 transition-colors"
+               style={{ minHeight: "44px" }}
+            >
+               {promisesExpanded ? p("showLess") : p("viewAll")}
+            </button>
 
             <div className="text-center mt-16 md:mt-20 animate-fade-up" style={{ transitionDelay: "0.7s" }}>
                <Button

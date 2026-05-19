@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Icons } from "@/components/icons";
 import { BlurImage } from "@/components/blur-image";
@@ -7,6 +8,7 @@ import { BlurImage } from "@/components/blur-image";
 export function CommunitySection() {
    const t = useTranslations("Vendors");
    const ig = useTranslations("Instagram");
+   const [activeVendor, setActiveVendor] = useState(0);
 
    const vendors = [
       { category: t("items.0.category"), names: t("items.0.names") },
@@ -99,7 +101,37 @@ export function CommunitySection() {
                   </p>
                </div>
 
-               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+               {/* Mobile: pill bar + single card */}
+               <div className="md:hidden mb-8">
+                  <div className="flex gap-2 overflow-x-auto scrollbar-hide -mx-6 px-6 mb-6">
+                     {vendors.map((vendor, index) => (
+                        <button
+                           key={vendor.category}
+                           type="button"
+                           onClick={() => setActiveVendor(index)}
+                           className={`shrink-0 whitespace-nowrap px-4 py-2.5 rounded-full text-xs tracking-widest uppercase border transition-colors ${
+                              activeVendor === index
+                                 ? "bg-charcoal text-alabaster border-charcoal"
+                                 : "bg-transparent text-charcoal/70 border-champagne/50"
+                           }`}
+                           style={{ minHeight: "44px" }}
+                        >
+                           {vendor.category}
+                        </button>
+                     ))}
+                  </div>
+                  <div className="luxury-card p-6 animate-fade-up">
+                     <p className="text-xs tracking-widest uppercase text-sage mb-2">
+                        {vendors[activeVendor].category}
+                     </p>
+                     <p className="font-serif-display text-lg text-charcoal">
+                        {vendors[activeVendor].names}
+                     </p>
+                  </div>
+               </div>
+
+               {/* Desktop: original grid */}
+               <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {vendors.map((vendor, index) => (
                      <div
                         key={vendor.category}

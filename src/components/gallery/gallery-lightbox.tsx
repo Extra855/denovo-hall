@@ -79,7 +79,7 @@ export function GalleryLightbox({
                      onNavigate(currentIndex > 0 ? currentIndex - 1 : total - 1)
                   }
                   aria-label={t("Gallery.previousImage" as Parameters<typeof t>[0])}
-                  className="gallery-lightbox-nav hidden md:flex absolute start-4 top-1/2 -translate-y-1/2 z-50 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm text-alabaster hover:bg-white/20 transition-colors items-center justify-center"
+                  className="gallery-lightbox-nav hidden md:flex absolute start-4 top-1/2 -translate-y-1/2 z-50 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm text-alabaster hover:bg-white/20 transition-colors items-center justify-center rtl:scale-x-[-1]"
                >
                   <Icons.chevronLeft />
                </button>
@@ -90,7 +90,7 @@ export function GalleryLightbox({
                      onNavigate(currentIndex < total - 1 ? currentIndex + 1 : 0)
                   }
                   aria-label={t("Gallery.nextImage" as Parameters<typeof t>[0])}
-                  className="gallery-lightbox-nav hidden md:flex absolute end-4 top-1/2 -translate-y-1/2 z-50 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm text-alabaster hover:bg-white/20 transition-colors items-center justify-center"
+                  className="gallery-lightbox-nav hidden md:flex absolute end-4 top-1/2 -translate-y-1/2 z-50 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm text-alabaster hover:bg-white/20 transition-colors items-center justify-center rtl:scale-x-[-1]"
                >
                   <Icons.chevronRight />
                </button>
