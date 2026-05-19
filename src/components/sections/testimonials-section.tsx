@@ -74,6 +74,8 @@ function VideoCard({
 
 export function TestimonialsSection() {
    const [currentIndex, setCurrentIndex] = useState(0);
+   const [activeVideoIndex, setActiveVideoIndex] = useState(0);
+   const videoScrollRef = useRef<HTMLDivElement>(null);
    const t = useTranslations("Testimonials");
    const vt = useTranslations("VideoTestimonials");
    const locale = useLocale();
@@ -110,6 +112,33 @@ export function TestimonialsSection() {
       startTimer();
       return () => clearInterval(timerRef.current!);
    }, [startTimer]);
+
+   // Sync active dot with scroll position on mobile
+   useEffect(() => {
+      const container = videoScrollRef.current;
+      if (!container) return;
+      const handleScroll = () => {
+         const scrollPos = isRTL ? -container.scrollLeft : container.scrollLeft;
+         const cardWidth = container.scrollWidth / 3;
+         const newIndex = Math.round(scrollPos / cardWidth);
+         if (newIndex >= 0 && newIndex < 3) {
+            setActiveVideoIndex(newIndex);
+         }
+      };
+      container.addEventListener("scroll", handleScroll, { passive: true });
+      return () => container.removeEventListener("scroll", handleScroll);
+   }, [isRTL]);
+
+   const scrollToVideo = useCallback((index: number) => {
+      const container = videoScrollRef.current;
+      if (!container) return;
+      const cardWidth = container.scrollWidth / 3;
+      container.scrollTo({
+         left: isRTL ? -cardWidth * index : cardWidth * index,
+         behavior: "smooth",
+      });
+      setActiveVideoIndex(index);
+   }, [isRTL]);
 
    return (
       <section id="testimonials" className="py-24 md:py-32 px-6 bg-charcoal relative overflow-hidden">
@@ -238,11 +267,44 @@ export function TestimonialsSection() {
                <div className="h-px flex-1 bg-gradient-to-l from-transparent to-champagne/20" />
             </div>
 
-            {/* Video testimonials grid */}
-            <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-               {videoTestimonials.map((video, index) => (
-                  <VideoCard key={video.id} video={video} index={index} />
-               ))}
+            {/* Video testimonials — horizontal scroll on mobile, grid on desktop */}
+            <div className="relative">
+               <div
+                  ref={videoScrollRef}
+                  className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide md:grid md:grid-cols-3 md:gap-8 md:overflow-visible scroll-smooth"
+               >
+                  {videoTestimonials.map((video, index) => (
+                     <div
+                        key={video.id}
+                        className="w-[72vw] max-w-xs snap-center shrink-0 md:w-auto md:max-w-none md:shrink"
+                     >
+                        <VideoCard video={video} index={index} />
+                     </div>
+                  ))}
+               </div>
+
+               {/* Mobile swipe hint + dot indicators */}
+               <div className="flex items-center justify-center gap-3 mt-6 md:hidden">
+                  {videoTestimonials.map((_, index) => (
+                     <button
+                        key={index}
+                        onClick={() => scrollToVideo(index)}
+                        className={`h-1.5 rounded-full transition-all duration-300 ${
+                           index === activeVideoIndex
+                              ? "bg-champagne w-8"
+                              : "bg-alabaster/25 w-1.5 hover:bg-alabaster/40"
+                        }`}
+                        aria-label={`Go to video ${index + 1}`}
+                     />
+                  ))}
+                  {/* Swipe direction hint */}
+                  <div className="text-alabaster/30 flex items-center gap-1 ms-2">
+                     <span className="text-[10px] tracking-wider uppercase">{vt("swipe")}</span>
+                     <svg className="w-3.5 h-3.5 swipe-nudge" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                     </svg>
+                  </div>
+               </div>
             </div>
          </div>
       </section>

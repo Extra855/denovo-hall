@@ -89,27 +89,33 @@ export function Navigation() {
       href: string,
    ) => {
       e.preventDefault();
-      if (!isHomePage) {
-         router.push("/");
-         const scrollToHash = () => {
-            const el = document.querySelector(href);
-            if (el) {
-               const top = el.getBoundingClientRect().top + window.scrollY - 80;
-               window.scrollTo({ top, behavior: "smooth" });
-            } else {
-               setTimeout(scrollToHash, 100);
-            }
-         };
-         setTimeout(scrollToHash, 300);
-         setIsMobileMenuOpen(false);
-         return;
-      }
-      const el = document.querySelector(href);
-      if (!el) return;
-      const offset = 80;
-      const top = el.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({ top, behavior: "smooth" });
       setIsMobileMenuOpen(false);
+
+      // Wait for body-lock cleanup to restore scroll position before scrolling
+      requestAnimationFrame(() => {
+         requestAnimationFrame(() => {
+            if (!isHomePage) {
+               router.push("/");
+               const scrollToHash = () => {
+                  const el = document.querySelector(href);
+                  if (el) {
+                     const top =
+                        el.getBoundingClientRect().top + window.scrollY - 80;
+                     window.scrollTo({ top, behavior: "smooth" });
+                  } else {
+                     setTimeout(scrollToHash, 100);
+                  }
+               };
+               setTimeout(scrollToHash, 300);
+               return;
+            }
+            const el = document.querySelector(href);
+            if (!el) return;
+            const offset = 80;
+            const top = el.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({ top, behavior: "smooth" });
+         });
+      });
    };
 
    return (

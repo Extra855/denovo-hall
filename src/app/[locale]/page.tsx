@@ -1,11 +1,12 @@
 import dynamic from "next/dynamic";
-import { setRequestLocale } from "next-intl/server";
+import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Navigation } from "@/components/sections/navigation";
 import { HeroSection } from "@/components/sections/hero-section";
 import { FloatingCTA } from "@/components/sections/floating-cta";
 import { BackToTop } from "@/components/sections/back-to-top";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { ClientForms } from "@/components/client-forms";
+import { JsonLd } from "@/components/json-ld";
 
 const SocialProofSection = dynamic(
   () => import("@/components/sections/social-proof-section").then(m => m.SocialProofSection),
@@ -40,6 +41,8 @@ const HelpSection = dynamic(
   { loading: () => <div className="min-h-[400px]" /> }
 );
 
+const BASE_URL = "https://denovohall.com";
+
 export default async function Home({
   params,
 }: {
@@ -48,8 +51,70 @@ export default async function Home({
   const { locale } = await params;
   setRequestLocale(locale);
 
+  const tm = await getTranslations({ locale, namespace: "Metadata" });
+  const tf = await getTranslations({ locale, namespace: "FAQ" });
+
+  const faqItems: Array<{ question: string; answer: string }> = [];
+  for (let i = 0; i < 5; i++) {
+    try {
+      faqItems.push({
+        question: tf(`items.${i}.question`),
+        answer: tf(`items.${i}.answer`),
+      });
+    } catch { break; }
+  }
+
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "WeddingVenue"],
+    name: tm("schemaName"),
+    description: tm("schemaDescription"),
+    url: `${BASE_URL}/${locale}`,
+    telephone: "+967775228246",
+    email: "events@denovohall.com",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: tm("schemaAddress"),
+      addressLocality: locale === "ar" ? "صنعاء" : "Sana'a",
+      addressCountry: "YE",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 15.2935,
+      longitude: 44.1948,
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.3",
+      reviewCount: "108",
+      bestRating: "5",
+    },
+    priceRange: "$$$$",
+    openingHours: "Sa-Fr 09:00-18:00",
+    image: `${BASE_URL}/hero.jpg`,
+    sameAs: [
+      "https://www.instagram.com/denovohall",
+      "https://www.facebook.com/denovohall",
+    ],
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+
   return (
     <main id="main-content" className="min-h-screen bg-alabaster flex flex-col">
+      <JsonLd data={localBusinessSchema} />
+      <JsonLd data={faqSchema} />
       <Navigation />
       <HeroSection />
       <ScrollReveal><SocialProofSection /></ScrollReveal>

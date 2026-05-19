@@ -54,12 +54,9 @@ export function GalleryPage() {
                <span className="text-sage text-sm tracking-[0.3em] uppercase font-sans block mb-4 animate-fade-up">
                   {t("subtitle")}
                </span>
-               <h1 className="font-serif-display text-4xl md:text-5xl lg:text-6xl text-charcoal mb-4 animate-fade-up" style={{ animationDelay: "100ms" }}>
-                  {t("heading1")}
+               <h1 className="font-serif-display text-4xl md:text-5xl lg:text-6xl text-charcoal mb-6 animate-fade-up" style={{ animationDelay: "100ms" }}>
+                  {t("heading1")} <span className="italic">{t("heading2")}</span>
                </h1>
-               <h2 className="font-serif-display text-4xl md:text-5xl lg:text-6xl text-charcoal mb-6 animate-fade-up" style={{ animationDelay: "200ms" }}>
-                  {t("heading2")}
-               </h2>
                <Ornament className="mb-6 animate-fade-up" style={{ animationDelay: "300ms" }} />
                <p className="text-charcoal/60 font-sans text-lg max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "400ms" }}>
                   {t("description")}

@@ -83,9 +83,9 @@ export function SocialProofSection() {
                className="mt-14 flex flex-col items-center gap-6 md:gap-10 animate-fade-up"
                style={{ transitionDelay: "0.5s" }}
             >
-               <p className="text-champagne/60 text-xs tracking-[0.3em] uppercase">
+               <h2 className="text-champagne/60 text-xs tracking-[0.3em] uppercase font-light">
                   {t("heading1")} <span className="italic text-champagne/80">{t("heading2")}</span> {t("heading3")}
-               </p>
+               </h2>
                <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
                <div className="flex items-center gap-2 text-champagne/60">
                   <div className="flex gap-0.5">

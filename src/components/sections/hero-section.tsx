@@ -103,7 +103,7 @@ export function HeroSection() {
                   window.scrollTo({ top, behavior: "smooth" });
                }
             }}
-            className="absolute bottom-10 start-1/2 ltr:-translate-x-1/2 rtl:translate-x-1/2 flex flex-col items-center gap-3 cursor-pointer group px-6 py-3"
+            className="hidden md:flex absolute bottom-10 start-1/2 ltr:-translate-x-1/2 rtl:translate-x-1/2 flex-col items-center gap-3 cursor-pointer group px-6 py-3"
             aria-label={t("scrollDown")}
          >
             <span className="text-alabaster/80 text-sm tracking-[0.25em] uppercase group-hover:text-alabaster transition-colors hero-discover font-light">

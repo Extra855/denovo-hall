@@ -73,12 +73,12 @@ export function SpacesSection() {
                   <div className="mb-6">
                      <Icons.leaf />
                   </div>
-                  <p
+                  <h2
                      className="font-serif-display heading-large text-charcoal mb-6 animate-fade-up"
                      style={{ transitionDelay: "0.1s" }}
                   >
                      {ti("heading")}
-                  </p>
+                  </h2>
                   <Ornament className="mb-6 animate-fade-up" style={{ transitionDelay: "0.15s" }} />
                   <p
                      className="text-muted-foreground body-large max-w-2xl mx-auto animate-fade-up leading-relaxed"

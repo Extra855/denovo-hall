@@ -5,28 +5,63 @@ import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Icons } from "@/components/icons";
 
-
 export function PlanningGuideSection() {
    const t = useTranslations("Journey");
    const pt = useTranslations("PlanningTips");
    const [expandedTips, setExpandedTips] = useState<Set<number>>(new Set());
 
    const steps = [
-      { number: "01", title: t("items.0.title"), description: t("items.0.description"), duration: t("items.0.duration") },
-      { number: "02", title: t("items.1.title"), description: t("items.1.description"), duration: t("items.1.duration") },
-      { number: "03", title: t("items.2.title"), description: t("items.2.description"), duration: t("items.2.duration") },
-      { number: "04", title: t("items.3.title"), description: t("items.3.description"), duration: t("items.3.duration") },
+      {
+         number: "01",
+         title: t("items.0.title"),
+         description: t("items.0.description"),
+         duration: t("items.0.duration"),
+      },
+      {
+         number: "02",
+         title: t("items.1.title"),
+         description: t("items.1.description"),
+         duration: t("items.1.duration"),
+      },
+      {
+         number: "03",
+         title: t("items.2.title"),
+         description: t("items.2.description"),
+         duration: t("items.2.duration"),
+      },
+      {
+         number: "04",
+         title: t("items.3.title"),
+         description: t("items.3.description"),
+         duration: t("items.3.duration"),
+      },
    ];
 
    const tips = [
-      { number: "01", title: pt("items.0.title"), description: pt("items.0.description") },
-      { number: "02", title: pt("items.1.title"), description: pt("items.1.description") },
-      { number: "03", title: pt("items.2.title"), description: pt("items.2.description") },
-      { number: "04", title: pt("items.3.title"), description: pt("items.3.description") },
+      {
+         number: "01",
+         title: pt("items.0.title"),
+         description: pt("items.0.description"),
+      },
+      {
+         number: "02",
+         title: pt("items.1.title"),
+         description: pt("items.1.description"),
+      },
+      {
+         number: "03",
+         title: pt("items.2.title"),
+         description: pt("items.2.description"),
+      },
+      {
+         number: "04",
+         title: pt("items.3.title"),
+         description: pt("items.3.description"),
+      },
    ];
 
    const toggleTip = (index: number) => {
-      setExpandedTips(prev => {
+      setExpandedTips((prev) => {
          const next = new Set(prev);
          if (next.has(index)) next.delete(index);
          else next.add(index);
@@ -46,7 +81,10 @@ export function PlanningGuideSection() {
          <div className="absolute top-20 start-10 opacity-10 animate-float">
             <Icons.leaf />
          </div>
-         <div className="absolute bottom-20 end-10 opacity-10 animate-float" style={{ animationDelay: "3s" }}>
+         <div
+            className="absolute bottom-20 end-10 opacity-10 animate-float"
+            style={{ animationDelay: "3s" }}
+         >
             <Icons.leaf />
          </div>
 
@@ -59,7 +97,10 @@ export function PlanningGuideSection() {
                   </p>
                   <div className="flex-1 h-px bg-gradient-to-r from-champagne/20 to-transparent" />
                </div>
-               <h2 className="font-serif-display heading-large text-alabaster mb-12 animate-fade-up" style={{ transitionDelay: "0.1s" }}>
+               <h2
+                  className="font-serif-display heading-large text-alabaster mb-12 animate-fade-up"
+                  style={{ transitionDelay: "0.1s" }}
+               >
                   {t("heading")}
                </h2>
             </div>
@@ -131,14 +172,21 @@ export function PlanningGuideSection() {
                            <h3 className="font-serif-display text-xl text-alabaster mb-3">
                               {tip.title}
                            </h3>
-                           <p className={`text-alabaster/60 leading-relaxed ${!isExpanded ? "line-clamp-2" : ""}`}>
+                           <p
+                              className={`text-alabaster/60 leading-relaxed ${!isExpanded ? "line-clamp-2" : ""}`}
+                           >
                               {tip.description}
                            </p>
                            <button
                               type="button"
                               onClick={() => toggleTip(index)}
                               className="text-champagne/70 text-xs tracking-wider uppercase mt-2 hover:text-champagne transition-colors"
-                              style={{ minHeight: "44px", minWidth: "44px", display: "inline-flex", alignItems: "center" }}
+                              style={{
+                                 minHeight: "44px",
+                                 minWidth: "44px",
+                                 display: "inline-flex",
+                                 alignItems: "center",
+                              }}
                            >
                               {isExpanded ? pt("readLess") : pt("readMore")}
                            </button>
@@ -148,7 +196,10 @@ export function PlanningGuideSection() {
                })}
             </div>
 
-            <div className="text-center mt-16 animate-fade-up" style={{ transitionDelay: "0.7s" }}>
+            <div
+               className="text-center mt-16 animate-fade-up"
+               style={{ transitionDelay: "0.7s" }}
+            >
                <Button
                   asChild
                   className="bg-champagne hover:bg-champagne/90 text-charcoal rounded-none px-10 py-5 text-sm tracking-widest uppercase btn-luxury btn-raised group"

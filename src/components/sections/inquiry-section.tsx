@@ -27,7 +27,6 @@ export function InquirySection() {
       });
 
       try {
-         console.log("[inquiry] Submitting:", payload);
          const res = await fetch("/api/inquiry", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -35,7 +34,6 @@ export function InquirySection() {
          });
 
          const resBody = await res.json();
-         console.log("[inquiry] Response:", res.status, resBody);
 
          if (res.ok) {
             setIsSubmitted(true);

@@ -2,7 +2,8 @@
 
 import { useEffect, useCallback } from "react";
 import { useTranslations } from "next-intl";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { Icons } from "@/components/icons";
 import { BlurImage } from "@/components/blur-image";
 import { useSwipeGesture } from "@/hooks/use-swipe-gesture";
@@ -63,6 +64,11 @@ export function GalleryLightbox({
             className="fixed !inset-0 !top-0 !left-0 !translate-x-0 !translate-y-0 !max-w-none !w-full !h-full !rounded-none !shadow-none bg-charcoal/95 backdrop-blur-xl border-none p-0 overflow-hidden"
             showCloseButton={false}
          >
+            <VisuallyHidden>
+               <DialogTitle>
+                  {t(image.titleKey as Parameters<typeof t>[0])}
+               </DialogTitle>
+            </VisuallyHidden>
             <div className="relative w-full h-full flex flex-col">
                {/* Close button */}
                <button

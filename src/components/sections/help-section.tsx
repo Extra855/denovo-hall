@@ -177,7 +177,7 @@ export function HelpSection() {
                            <h3 className="font-serif-display text-base text-alabaster">
                               {info.title}
                            </h3>
-                           <p className="text-alabaster/60 text-sm truncate" dir={info.icon === "phone" ? "ltr" : undefined}>
+                           <p className="text-alabaster/60 text-sm break-words" dir={info.icon === "phone" ? "ltr" : undefined}>
                               {info.details[0]}
                            </p>
                         </div>

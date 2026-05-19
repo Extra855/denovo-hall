@@ -90,7 +90,18 @@ export function WhyChooseUsSection() {
                   <div
                      key={promise.title}
                      className={`promise-card animate-fade-up ${index >= 2 && !promisesExpanded ? "hidden md:block" : ""}`}
-                     style={{ transitionDelay: `${0.3 + index * 0.08}s` }}
+                     style={{
+                        ...(index >= 2 && promisesExpanded ? {
+                           opacity: 1,
+                           transform: "translateY(0)",
+                           transitionProperty: "none",
+                           transitionDuration: "0s",
+                           transitionTimingFunction: "ease",
+                           transitionDelay: "0s",
+                        } : {
+                           transitionDelay: `${0.3 + index * 0.08}s`,
+                        }),
+                     }}
                   >
                      <h3 className="font-serif-display text-xl text-charcoal mb-2">
                         {promise.title}

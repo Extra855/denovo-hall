@@ -1,16 +1,42 @@
+import { headers } from "next/headers";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "الصفحة غير موجودة | دي نوفو",
+  title: "404 | De novo",
 };
 
-export default function NotFound() {
+export default async function LocaleNotFound() {
+  const headersList = await headers();
+  const pathname =
+    headersList.get("x-next-url") || headersList.get("x-invoke-path") || "";
+  const locale = pathname.startsWith("/ar") ? "ar" : "en";
+
+  const isAr = locale === "ar";
+
+  const content = isAr
+    ? {
+        brand: "دي نوفو",
+        heading:
+          'مسار لم يُكتشف <span class="italic text-champagne/80">بعد</span>',
+        subtext:
+          "يبدو أن هذه الصفحة لم تُدعَ إلى الحفل. دعنا نعيدك إلى حيث تبدأ قصتك.",
+        cta: "العودة إلى دي نوفو",
+        sr: "الصفحة غير موجودة، خطأ 404",
+        homeLabel: "العودة إلى الصفحة الرئيسية",
+      }
+    : {
+        brand: "De novo",
+        heading:
+          'A Path Yet to Be <span class="italic text-champagne/80">Discovered</span>',
+        subtext:
+          "This page seems to have wandered off the guest list. Let us guide you back to where your story begins.",
+        cta: "Return to De novo",
+        sr: "Page not found, error 404",
+        homeLabel: "Return to homepage",
+      };
+
   return (
-    <main
-      dir="rtl"
-      lang="ar"
-      className="min-h-screen bg-alabaster flex items-center justify-center relative overflow-hidden"
-    >
+    <main className="min-h-screen bg-alabaster flex items-center justify-center relative overflow-hidden">
       {/* Decorative background circles */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[800px] md:h-[800px] rounded-full border border-champagne/15" />
@@ -55,8 +81,8 @@ export default function NotFound() {
         {/* Brand logo */}
         <div className="mb-8 inline-flex flex-col items-center gap-3">
           <a
-            href="/ar"
-            aria-label="العودة إلى الصفحة الرئيسية"
+            href={`/${locale}`}
+            aria-label={content.homeLabel}
             className="group"
           >
             <svg
@@ -75,7 +101,7 @@ export default function NotFound() {
             </svg>
           </a>
           <span className="font-serif-display text-sm tracking-[0.3em] uppercase text-charcoal/60">
-            دي نوفو
+            {content.brand}
           </span>
         </div>
 
@@ -87,7 +113,7 @@ export default function NotFound() {
           >
             404
           </h1>
-          <span className="sr-only">الصفحة غير موجودة، خطأ 404</span>
+          <span className="sr-only">{content.sr}</span>
         </div>
 
         {/* Ornamental divider */}
@@ -107,23 +133,22 @@ export default function NotFound() {
         </div>
 
         {/* Headline */}
-        <h2 className="font-serif-display heading-large text-charcoal mb-4">
-          مسار لم يُكتشف{" "}
-          <span className="italic text-champagne/80">بعد</span>
-        </h2>
+        <h2
+          className="font-serif-display heading-large text-charcoal mb-4"
+          dangerouslySetInnerHTML={{ __html: content.heading }}
+        />
 
         {/* Subtext */}
         <p className="body-regular text-muted-foreground max-w-md mx-auto mb-10">
-          يبدو أن هذه الصفحة لم تُدعَ إلى الحفل. دعنا نعيدك إلى حيث تبدأ
-          قصتك.
+          {content.subtext}
         </p>
 
         {/* CTA */}
         <a
-          href="/ar"
+          href={`/${locale}`}
           className="group inline-flex items-center gap-3 bg-charcoal text-alabaster px-10 py-4 text-sm tracking-[0.2em] uppercase btn-luxury pulse-subtle transition-all duration-400 hover:bg-charcoal/90"
         >
-          العودة إلى دي نوفو
+          {content.cta}
           <span className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
             <svg
               width="18"

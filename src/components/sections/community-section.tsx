@@ -24,31 +24,37 @@ export function CommunitySection() {
          id: 1,
          image: "/gallery/543461987_122196725672299891_2833086693858307664_n.jpg",
          alt: ig("posts.0.alt"),
+         url: "https://www.instagram.com/denovohall/p/DXm-7RrDRCC/",
       },
       {
          id: 2,
          image: "/gallery/670416047_17935120251213589_3656472072603517799_n.jpg",
          alt: ig("posts.1.alt"),
+         url: "https://www.instagram.com/denovohall/reel/DYXaVR7uhmy/",
       },
       {
          id: 3,
          image: "/gallery/555993848_122199386996299891_2529894381116447068_n.jpg",
          alt: ig("posts.2.alt"),
+         url: "https://www.instagram.com/denovohall/p/DX7U4hLDTnB/",
       },
       {
          id: 4,
          image: "/gallery/501281401_122181708704299891_2166528847618797340_n.jpg",
          alt: ig("posts.3.alt"),
+         url: "https://www.instagram.com/denovohall/reel/DYDU1AQtWs7/",
       },
       {
          id: 5,
          image: "/gallery/476611018_122162852420299891_8755466114327543274_n.jpg",
          alt: ig("posts.4.alt"),
+         url: "https://www.instagram.com/denovohall/p/DX7WLWXDT8r/",
       },
       {
          id: 6,
          image: "/gallery/472312220_122156924954299891_8540390733152468683_n.jpg",
          alt: ig("posts.5.alt"),
+         url: "https://www.instagram.com/denovohall/reel/DX4zK_ZNohn/",
       },
    ];
 
@@ -182,9 +188,12 @@ export function CommunitySection() {
                   <div className="pointer-events-none absolute end-0 top-0 bottom-0 w-8 bg-gradient-to-l from-secondary/30 to-transparent z-10 md:hidden" />
                   <div className="flex md:grid md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide px-6 md:px-0 -mx-6 md:mx-0">
                      {instagramPosts.map((post, index) => (
-                        <div
+                        <a
                            key={post.id}
-                           className="animate-fade-up aspect-square img-zoom cursor-pointer relative shrink-0 w-[70vw] md:w-auto snap-start"
+                           href={post.url}
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           className="animate-fade-up aspect-square img-zoom cursor-pointer relative shrink-0 w-[70vw] md:w-auto snap-start block"
                            style={{ transitionDelay: `${0.1 + index * 0.05}s` }}
                         >
                            <BlurImage
@@ -193,7 +202,7 @@ export function CommunitySection() {
                               sizes="(max-width: 768px) 70vw, 16vw"
                               className="object-cover rounded-sm"
                            />
-                        </div>
+                        </a>
                      ))}
                   </div>
                </div>

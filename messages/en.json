@@ -3,7 +3,11 @@
 		"title": "De novo | Luxury Wedding Venue - A Canvas for Your Love Story",
 		"description": "Begin your forever in a space uniquely yours. De novo is a luxury wedding venue that transforms entirely to reflect your distinct love story. Experience bespoke interiors, Michelin-caliber dining, and exclusive privacy.",
 		"ogTitle": "De novo | Luxury Wedding Venue",
-		"ogDescription": "A luxury canvas that transforms entirely to reflect your distinct love story."
+		"ogDescription": "A luxury canvas that transforms entirely to reflect your distinct love story.",
+		"keywords": "luxury wedding venue,customizable wedding,bespoke weddings,De novo,wedding venue,elegant weddings,wedding hall Sana'a,Yemen weddings",
+		"schemaName": "De novo",
+		"schemaDescription": "Luxury wedding venue in Sana'a, Yemen offering bespoke interiors, customizable spaces, and exclusive celebrations.",
+		"schemaAddress": "50th Street - Behind Atico Station, Sana'a, Yemen"
 	},
 	"common": {
 		"bookATour": "Book a Tour",
@@ -173,6 +177,7 @@
 		"subtitle": "Watch Our Stories",
 		"heading": "Love Stories in Motion",
 		"description": "Hear directly from our couples about their unforgettable experiences at De novo.",
+		"swipe": "Swipe",
 		"items": [
 			{
 				"couple": "Maram & Haitham",
@@ -257,9 +262,9 @@
 				"duration": "2-4 weeks"
 			},
 			{
-				"title": "Menu Curation",
-				"description": "Meet with our executive chef to craft a culinary experience that reflects your tastes. From canapés to the wedding cake, every bite is bespoke.",
-				"duration": "2-3 weeks"
+				"title": "Vendor Coordination",
+				"description": "Connect with trusted local vendors — from decorators and henna artists to sound and lighting teams. We coordinate schedules and ensure seamless collaboration.",
+				"duration": "3-4 weeks"
 			},
 			{
 				"title": "Final Details",
@@ -469,19 +474,6 @@
 	},
 	"BackToTop": {
 		"label": "Back to top"
-	},
-	"Newsletter": {
-		"heading": "Stay Inspired",
-		"description": "Receive seasonal inspiration, planning tips, and exclusive offers for your celebration.",
-		"placeholder": "Enter your email",
-		"subscribe": "Subscribe",
-		"thankYou": "Thank you for subscribing!",
-		"subscribing": "Subscribing...",
-		"privacy": "We respect your privacy. Unsubscribe at any time.",
-		"errorRateLimit": "Too many requests. Please wait a moment and try again.",
-		"errorValidation": "Please check your input and try again.",
-		"errorGeneral": "Something went wrong. Please try again later.",
-		"errorNetwork": "Unable to connect. Please check your internet and try again."
 	},
 	"Inquiry": {
 		"subtitle": "Get Started",

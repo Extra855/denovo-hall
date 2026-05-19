@@ -2597,6 +2597,25 @@ select:focus-visible {
   }
 }
 
+/* Swipe nudge hint for mobile carousels */
+@keyframes swipe-nudge {
+  0%, 100% { transform: translateX(0); opacity: 0.3; }
+  50% { transform: translateX(4px); opacity: 0.6; }
+}
+
+[dir="rtl"] .swipe-nudge {
+  animation: swipe-nudge-rtl 2s ease-in-out infinite;
+}
+
+@keyframes swipe-nudge-rtl {
+  0%, 100% { transform: scaleX(-1) translateX(0); opacity: 0.3; }
+  50% { transform: scaleX(-1) translateX(4px); opacity: 0.6; }
+}
+
+.swipe-nudge {
+  animation: swipe-nudge 2s ease-in-out infinite;
+}
+
 /* Gallery filter button */
 .gallery-filter-btn {
   transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
