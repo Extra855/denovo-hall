@@ -21,7 +21,7 @@ function getIO() {
    return io;
 }
 
-function observeElement(el: HTMLElement) {
+function observeElement(el: Element) {
    if (el.classList.contains("visible")) return;
    if (el.classList.contains("animate-fade-up") || el.classList.contains("reveal-image")) {
       getIO().observe(el);
