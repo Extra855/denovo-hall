@@ -220,8 +220,21 @@ bun run build does NOT auto-generate AVIF/WebP files for /public.
   CRF 28 on a 19s clip should land around 1.5-2MB. Want me to run it?
 
 ## 
+  One thing to verify — Vercel has image optimization limits on hobby
+  plans (1000 images/month free). Check your Vercel dashboard under
+  Settings > Usage to confirm you're within limits.
+
 
 ## 
+  Usage:
+  DRY_RUN=1 bun run scripts/crop-images.ts   # preview only
+  bun run scripts/crop-images.ts              # actually crop + compress
+
+  Note: hero.jpg shows [OK] because 2048x1152 ≈ 16:9 (within 5%
+  tolerance). garden.jpg, glam.jpg, minimalist.jpg, 472798896_*.jpg are
+  unused — no crop rule, only recompress. Add rules if they get used
+  later.
+
 
 ## 
 
