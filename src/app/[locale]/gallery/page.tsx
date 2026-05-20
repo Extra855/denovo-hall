@@ -22,6 +22,7 @@ export async function generateMetadata({
    return {
       title: t("metaTitle"),
       description: t("metaDescription"),
+      keywords: t("metaKeywords").split(","),
       openGraph: {
          title: t("metaTitle"),
          description: t("metaDescription"),
@@ -42,12 +43,17 @@ export async function generateMetadata({
          images: [`/og-gallery-${locale}.jpg`],
       },
       alternates: {
-         canonical: `${BASE_URL}/${locale}/gallery`,
+         canonical: `/${locale}/gallery`,
          languages: {
             en: `${BASE_URL}/en/gallery`,
             ar: `${BASE_URL}/ar/gallery`,
             "x-default": `${BASE_URL}/ar/gallery`,
          },
+      },
+      other: {
+         "geo.region": "YE-AD",
+         "geo.placename": locale === "ar" ? "صنعاء، اليمن" : "Sana'a, Yemen",
+         "ICBM": "15.2935, 44.1948",
       },
    };
 }

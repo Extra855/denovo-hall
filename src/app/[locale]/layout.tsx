@@ -1,10 +1,33 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
+import { Playfair_Display, Inter, Noto_Sans_Arabic } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { WebVitals } from "@/components/web-vitals";
 import { LocaleAttributes } from "@/components/locale-attributes";
+
+const playfairDisplay = Playfair_Display({
+  variable: "--font-serif",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+});
+
+const inter = Inter({
+  variable: "--font-sans",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["300", "400", "500", "600"],
+});
+
+const notoSansArabic = Noto_Sans_Arabic({
+  variable: "--font-arabic",
+  subsets: ["arabic"],
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
+});
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -60,7 +83,7 @@ export async function generateMetadata({
       images: [`/og-home-${locale}.jpg`],
     },
     alternates: {
-      canonical: `${BASE_URL}/${locale}`,
+      canonical: `/${locale}`,
       languages: {
         en: `${BASE_URL}/en`,
         ar: `${BASE_URL}/ar`,
@@ -91,18 +114,45 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
 
   const messages = await getMessages();
+  const dir = locale === "ar" ? "rtl" : "ltr";
+  const fontVars = `${playfairDisplay.variable} ${inter.variable} ${notoSansArabic.variable}`;
 
   return (
-    <NextIntlClientProvider messages={messages}>
-      <LocaleAttributes locale={locale} />
-      <WebVitals />
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:start-4 focus:z-[9999] focus:bg-primary focus:text-primary-foreground focus:px-4 focus:py-2 focus:rounded-md focus:text-sm focus:font-medium"
-      >
-        Skip to main content
-      </a>
-      {children}
-    </NextIntlClientProvider>
+    <html lang={locale} dir={dir} suppressHydrationWarning className="scroll-smooth">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('js-loaded')",
+          }}
+        />
+      </head>
+      <body className={`${fontVars} antialiased font-sans`}>
+        <NextIntlClientProvider messages={messages}>
+          <LocaleAttributes locale={locale} />
+          <WebVitals />
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:start-4 focus:z-[9999] focus:bg-primary focus:text-primary-foreground focus:px-4 focus:py-2 focus:rounded-md focus:text-sm focus:font-medium"
+          >
+            Skip to main content
+          </a>
+          {children}
+        </NextIntlClientProvider>
+        {/* Google Analytics — set NEXT_PUBLIC_GA_ID env var to enable */}
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <>
+            <Script src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`} strategy="afterInteractive" />
+            <Script id="gtag-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
+              `}
+            </Script>
+          </>
+        )}
+      </body>
+    </html>
   );
 }

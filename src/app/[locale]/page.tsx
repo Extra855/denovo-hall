@@ -90,7 +90,7 @@ export default async function Home({
       bestRating: "5",
     },
     priceRange: "$$$$",
-    openingHours: "Sa-Fr 09:00-18:00",
+    openingHours: "Mo-Su 09:00-18:00",
     image: `${BASE_URL}/hero.jpg`,
     sameAs: [
       "https://www.instagram.com/denovohall",

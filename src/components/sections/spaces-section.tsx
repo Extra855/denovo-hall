@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useCallback } from "react";
-import { useTranslations } from "next-intl";
+import { useState, useCallback, useRef, useEffect } from "react";
+import { useTranslations, useLocale } from "next-intl";
 import { Icons } from "@/components/icons";
 import { Ornament } from "@/components/ornament";
 import { ImageLightbox } from "@/components/image-lightbox";
@@ -10,14 +10,75 @@ import { BlurImage } from "@/components/blur-image";
 export function SpacesSection() {
    const [lightboxOpen, setLightboxOpen] = useState(false);
    const [selectedImage, setSelectedImage] = useState({ src: "", alt: "" });
+   const [activeSpaceIndex, setActiveSpaceIndex] = useState(0);
+   const carouselRef = useRef<HTMLDivElement>(null);
    const t = useTranslations("Spaces");
    const ti = useTranslations("Introduction");
    const tg = useTranslations("InspirationGallery");
+   const locale = useLocale();
+   const isRTL = locale === "ar";
 
    const openLightbox = useCallback((src: string, alt: string) => {
       setSelectedImage({ src, alt });
       setLightboxOpen(true);
    }, []);
+
+   const spaceCount = 4;
+
+   // Sync active dot with scroll position
+   useEffect(() => {
+      const container = carouselRef.current;
+      if (!container) return;
+      const handleScroll = () => {
+         const scrollPos = isRTL ? -container.scrollLeft : container.scrollLeft;
+         const cardWidth = container.scrollWidth / spaceCount;
+         const newIndex = Math.round(scrollPos / cardWidth);
+         if (newIndex >= 0 && newIndex < spaceCount) {
+            setActiveSpaceIndex(newIndex);
+         }
+      };
+      container.addEventListener("scroll", handleScroll, { passive: true });
+      return () => container.removeEventListener("scroll", handleScroll);
+   }, [isRTL]);
+
+   // Auto-peek hint on mount — reveals edge of next slide, then snaps back
+   useEffect(() => {
+      const container = carouselRef.current;
+      if (!container) return;
+
+      const peekDistance = container.offsetWidth * 0.15;
+      let timeout: ReturnType<typeof setTimeout>;
+
+      timeout = setTimeout(() => {
+         container.scrollTo({
+            left: isRTL ? -peekDistance : peekDistance,
+            behavior: "smooth",
+         });
+
+         setTimeout(() => {
+            container.scrollTo({
+               left: 0,
+               behavior: "smooth",
+            });
+         }, 1200);
+      }, 800);
+
+      return () => clearTimeout(timeout);
+   }, [isRTL]);
+
+   const scrollToSpace = useCallback(
+      (index: number) => {
+         const container = carouselRef.current;
+         if (!container) return;
+         const cardWidth = container.scrollWidth / spaceCount;
+         container.scrollTo({
+            left: isRTL ? -cardWidth * index : cardWidth * index,
+            behavior: "smooth",
+         });
+         setActiveSpaceIndex(index);
+      },
+      [isRTL],
+   );
 
    const spaces = [
       {
@@ -129,7 +190,73 @@ export function SpacesSection() {
                   </div>
                </div>
 
-               <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
+               {/* Mobile carousel */}
+               <div className="md:hidden -mx-6 relative" role="region" aria-label="Venue spaces">
+                  <div
+                     ref={carouselRef}
+                     className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide scroll-smooth"
+                  >
+                     {spaces.map((space, index) => (
+                        <div
+                           key={space.id}
+                           className="w-full shrink-0 snap-center"
+                           role="group"
+                           aria-roledescription="slide"
+                           aria-label={`Space ${index + 1} of ${spaceCount}`}
+                        >
+                           <div className="relative h-[70vh] max-h-[600px] min-h-[400px]">
+                              <BlurImage
+                                 src={space.image}
+                                 alt={space.title}
+                                 sizes="100vw"
+                                 className="object-cover"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/30 to-transparent" />
+                              <div className="absolute bottom-0 inset-x-0 p-6 pb-8">
+                                 <div className="flex items-center gap-3 mb-2">
+                                    <h3 className="font-serif-display text-2xl text-alabaster">
+                                       {space.title}
+                                    </h3>
+                                    <span className="text-xs tracking-wider text-alabaster/90 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
+                                       {space.capacity}
+                                    </span>
+                                 </div>
+                                 <p className="text-alabaster/80 text-sm leading-relaxed">
+                                    {space.description}
+                                 </p>
+                              </div>
+                           </div>
+                        </div>
+                     ))}
+                  </div>
+                  {/* Dot indicators + swipe nudge */}
+                  <div className="flex items-center justify-center gap-2 mt-8">
+                     {spaces.map((_, index) => (
+                        <button
+                           key={index}
+                           onClick={() => scrollToSpace(index)}
+                           className="p-2 -m-2"
+                           aria-label={`Go to space ${index + 1}`}
+                        >
+                           <span
+                              className={`block rounded-full transition-all duration-300 ${
+                                 index === activeSpaceIndex
+                                    ? "bg-charcoal w-8 h-2"
+                                    : "bg-charcoal/25 w-2 h-2 hover:bg-charcoal/40"
+                              }`}
+                           />
+                        </button>
+                     ))}
+                     <div className="text-charcoal/30 flex items-center gap-1 ms-3">
+                        <svg className="w-3.5 h-3.5 swipe-nudge" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                           <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                     </div>
+                  </div>
+               </div>
+
+               {/* Desktop grid */}
+               <div className="hidden md:grid md:grid-cols-12 gap-6 md:gap-8">
                   <div className="md:col-span-7 animate-fade-up group" style={{ transitionDelay: "0.3s" }}>
                      <div
                         className="img-zoom rounded-sm overflow-hidden relative cursor-pointer"

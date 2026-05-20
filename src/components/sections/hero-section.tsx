@@ -29,7 +29,7 @@ export function HeroSection() {
    }, []);
 
    return (
-      <section ref={sectionRef} className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+      <section ref={sectionRef} className="relative h-screen max-h-[85vh] md:max-h-none min-h-[500px] md:min-h-[600px] flex items-center justify-center overflow-hidden">
          <div className="absolute inset-0">
             <BlurImage
                src="/hero.jpg"

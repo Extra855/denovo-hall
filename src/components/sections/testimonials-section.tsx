@@ -82,9 +82,9 @@ export function TestimonialsSection() {
    const isRTL = locale === "ar";
 
    const testimonials = [
-      { id: 1, quote: t("items.0.quote"), couple: t("items.0.couple"), date: t("items.0.date"), image: "/Maram-Haitham.jpg" },
-      { id: 2, quote: t("items.1.quote"), couple: t("items.1.couple"), date: t("items.1.date"), image: "/Khawla-Mustafa.jpg" },
-      { id: 3, quote: t("items.2.quote"), couple: t("items.2.couple"), date: t("items.2.date"), image: "/Kholoud-Ahmed.jpg" },
+      { id: 1, quote: t("items.0.quote"), couple: t("items.0.couple"), date: t("items.0.date"), image: "/Maram-Haitham.jpg", imageAlt: t("items.0.imageAlt") },
+      { id: 2, quote: t("items.1.quote"), couple: t("items.1.couple"), date: t("items.1.date"), image: "/Khawla-Mustafa.jpg", imageAlt: t("items.1.imageAlt") },
+      { id: 3, quote: t("items.2.quote"), couple: t("items.2.couple"), date: t("items.2.date"), image: "/Kholoud-Ahmed.jpg", imageAlt: t("items.2.imageAlt") },
    ];
 
    const videoTestimonials = [
@@ -191,7 +191,7 @@ export function TestimonialsSection() {
                         <BlurImage
                            key={testimonials[currentIndex].id}
                            src={testimonials[currentIndex].image}
-                           alt={testimonials[currentIndex].couple}
+                           alt={testimonials[currentIndex].imageAlt}
                            sizes="(max-width: 768px) 100vw, 50vw"
                            className="object-cover rounded-sm"
                         />

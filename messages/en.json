@@ -1,9 +1,9 @@
 {
 	"Metadata": {
-		"title": "De novo | Luxury Wedding Venue - A Canvas for Your Love Story",
-		"description": "Begin your forever in a space uniquely yours. De novo is a luxury wedding venue that transforms entirely to reflect your distinct love story. Experience bespoke interiors, Michelin-caliber dining, and exclusive privacy.",
+		"title": "De novo | Luxury Wedding Venue — Sana'a, Yemen",
+		"description": "Luxury wedding venue in Sana'a, Yemen. Every celebration at De novo transforms entirely to reflect your unique love story. Bespoke interiors, exclusive privacy.",
 		"ogTitle": "De novo | Luxury Wedding Venue",
-		"ogDescription": "A luxury canvas that transforms entirely to reflect your distinct love story.",
+		"ogDescription": "A luxury wedding venue in Sana'a, Yemen that transforms entirely to reflect your unique love story.",
 		"keywords": "luxury wedding venue,customizable wedding,bespoke weddings,De novo,wedding venue,elegant weddings,wedding hall Sana'a,Yemen weddings",
 		"schemaName": "De novo",
 		"schemaDescription": "Luxury wedding venue in Sana'a, Yemen offering bespoke interiors, customizable spaces, and exclusive celebrations.",
@@ -159,17 +159,20 @@
 			{
 				"quote": "De novo transformed beyond our wildest dreams. Walking into our reception felt like entering a world created solely for us. Every corner whispered our story.",
 				"couple": "Maram & Haitham",
-				"date": "Married August 2025"
+				"date": "Married August 2025",
+				"imageAlt": "Maram and Haitham's wedding reception at De novo luxury venue"
 			},
 			{
 				"quote": "The attention to detail was extraordinary. From the first consultation to the last dance, every moment felt curated just for us. Our guests are still talking about it.",
 				"couple": "Khawla & Mustafa",
-				"date": "Married May 2026"
+				"date": "Married May 2026",
+				"imageAlt": "Khawla and Mustafa's wedding celebration at De novo luxury venue"
 			},
 			{
 				"quote": "We wanted something unique, and De novo delivered beyond imagination. The space literally transformed into our vision. It was like magic.",
 				"couple": "Kholoud & Ahmed",
-				"date": "Married June 2025"
+				"date": "Married June 2025",
+				"imageAlt": "Kholoud and Ahmed's wedding reception at De novo luxury venue"
 			}
 		]
 	},
@@ -480,13 +483,13 @@
 		"heading": "Begin Your Journey",
 		"description": "Let us create something extraordinary together. Share your vision, and we'll reach out to begin crafting your perfect day.",
 		"name": "Your Name",
-		"namePlaceholder": "Jane Smith",
+		"namePlaceholder": "Sarah",
 		"nameLabel": "Your full name",
 		"email": "Email Address",
-		"emailPlaceholder": "jane@example.com",
+		"emailPlaceholder": "sarah@example.com",
 		"emailLabel": "Your email address",
 		"phone": "Phone Number",
-		"phonePlaceholder": "+1 (555) 123-4567",
+		"phonePlaceholder": "+967-71583428",
 		"phoneLabel": "Your phone number",
 		"date": "Wedding Date",
 		"dateLabel": "Your preferred wedding date",
@@ -561,8 +564,9 @@
 		"cta": "Return to De novo"
 	},
 	"Gallery": {
-		"metaTitle": "Gallery | De novo",
-		"metaDescription": "Explore our curated gallery of weddings, ceremonies, receptions, and venue spaces at De novo.",
+		"metaTitle": "Wedding Gallery | De novo — Real Weddings & Venue Spaces",
+		"metaDescription": "Browse curated photos of real weddings, ceremonies, and luxury venue spaces at De novo in Sana'a, Yemen. Every celebration tells a unique love story.",
+		"metaKeywords": "wedding gallery,real weddings,wedding photos,venue spaces,De novo,Sana'a wedding photos,wedding ceremony photos",
 		"subtitle": "Our Portfolio",
 		"heading1": "A Visual",
 		"heading2": "Journey",
@@ -586,6 +590,7 @@
 			"heading": "Real Weddings",
 			"viewing": "Viewing",
 			"tapToView": "Tap to view",
+			"coupleAlt": "{couple}'s wedding celebration at De novo",
 			"couples": {
 				"sarah-michael": "Sarah & Michael",
 				"emma-james": "Emma & James",

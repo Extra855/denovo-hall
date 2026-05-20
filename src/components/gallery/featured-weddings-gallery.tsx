@@ -21,9 +21,9 @@ export function FeaturedWeddingsGallery({
             <p className="text-sm tracking-widest uppercase text-sage mb-2">
                {t("subtitle")}
             </p>
-            <h3 className="font-serif-display text-2xl md:text-3xl text-charcoal">
+            <h2 className="font-serif-display text-2xl md:text-3xl text-charcoal">
                {t("heading")}
-            </h3>
+            </h2>
          </div>
          {/* Mobile: horizontal snap scroll. Desktop: grid */}
          <div className="-mx-4 px-4 flex md:grid md:grid-cols-4 gap-3 md:gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide md:overflow-visible">
@@ -42,7 +42,7 @@ export function FeaturedWeddingsGallery({
                   >
                      <BlurImage
                         src={featuredWeddingImages[slug]}
-                        alt={t(`couples.${slug}`)}
+                        alt={t("coupleAlt", { couple: t(`couples.${slug}`) })}
                         sizes="(max-width: 768px) 72vw, 25vw"
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                      />
