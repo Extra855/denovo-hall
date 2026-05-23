@@ -9,10 +9,10 @@ import { BlurImage } from "@/components/blur-image";
 import { Link } from "@/i18n/navigation";
 
 const weddingSlugs = [
-   "sarah-michael",
-   "emma-james",
-   "olivia-thomas",
-   "grace-william",
+   "Sarah-Akram",
+   "Amal-Waleed",
+   "Abtisam-Adeeb",
+   "Wafa-Muhamad",
 ] as const;
 
 export function FeaturedWeddingsSection() {
@@ -28,7 +28,7 @@ export function FeaturedWeddingsSection() {
          slug: weddingSlugs[0],
          couple: t("items.0.couple"),
          theme: t("items.0.theme"),
-         image: "/Sarah-Michael.jpg",
+         image: "/sarah-akram.jpg",
          color: t("items.0.color"),
          season: t("items.0.season"),
       },
@@ -37,7 +37,7 @@ export function FeaturedWeddingsSection() {
          slug: weddingSlugs[1],
          couple: t("items.1.couple"),
          theme: t("items.1.theme"),
-         image: "/Emma-James.jpg",
+         image: "/amal-waleed.jpg",
          color: t("items.1.color"),
          season: t("items.1.season"),
       },
@@ -46,7 +46,7 @@ export function FeaturedWeddingsSection() {
          slug: weddingSlugs[2],
          couple: t("items.2.couple"),
          theme: t("items.2.theme"),
-         image: "/Olivia-Thomas.jpg",
+         image: "/abtisam-adeeb.jpg",
          color: t("items.2.color"),
          season: t("items.2.season"),
       },
@@ -55,7 +55,7 @@ export function FeaturedWeddingsSection() {
          slug: weddingSlugs[3],
          couple: t("items.3.couple"),
          theme: t("items.3.theme"),
-         image: "/Grace-William.jpg",
+         image: "/wafa-muhamad.jpg",
          color: t("items.3.color"),
          season: t("items.3.season"),
       },
@@ -125,7 +125,7 @@ export function FeaturedWeddingsSection() {
                   ref={scrollRef}
                   className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide md:grid md:grid-cols-2 md:gap-8 md:overflow-visible scroll-smooth"
                >
-               {featuredWeddings.map((wedding, index) => (
+                  {featuredWeddings.map((wedding, index) => (
                      <div
                         key={wedding.id}
                         className="w-[85vw] snap-center shrink-0 md:w-auto md:shrink"
@@ -146,8 +146,12 @@ export function FeaturedWeddingsSection() {
                            <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
                            <div className="absolute bottom-0 start-0 end-0 p-6 md:p-8">
                               <div className="flex items-center gap-2 mb-3">
-                                 <span className="luxury-tag">{wedding.season}</span>
-                                 <span className="luxury-tag">{wedding.theme}</span>
+                                 <span className="luxury-tag">
+                                    {wedding.season}
+                                 </span>
+                                 <span className="luxury-tag">
+                                    {wedding.theme}
+                                 </span>
                               </div>
                               <h3 className="font-serif-display text-2xl text-alabaster mb-2">
                                  {wedding.couple}
@@ -162,7 +166,7 @@ export function FeaturedWeddingsSection() {
                            </div>
                         </Link>
                      </div>
-               ))}
+                  ))}
                </div>
 
                {/* Mobile dot indicators + swipe hint */}
@@ -180,7 +184,15 @@ export function FeaturedWeddingsSection() {
                      />
                   ))}
                   <div className="text-charcoal/30 flex items-center gap-1 ms-2">
-                     <svg className="w-3.5 h-3.5 swipe-nudge" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                     <svg
+                        className="w-3.5 h-3.5 swipe-nudge"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                     >
                         <path d="M5 12h14M12 5l7 7-7 7" />
                      </svg>
                   </div>

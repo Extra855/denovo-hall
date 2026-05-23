@@ -37,7 +37,7 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
-const BASE_URL = "https://denovohall.com";
+const BASE_URL = "https://denovo-hall.vercel.com";
 
 export async function generateMetadata({
   params,

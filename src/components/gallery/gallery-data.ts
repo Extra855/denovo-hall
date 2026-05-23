@@ -1,14 +1,22 @@
-export type GalleryCategory = "ceremonies" | "receptions" | "details" | "venues";
+export type GalleryCategory =
+   | "ceremonies"
+   | "receptions"
+   | "details"
+   | "venues";
 
 export type GallerySpan = "tall" | "wide" | "large" | "normal";
 
-export type WeddingSlug = "sarah-michael" | "emma-james" | "olivia-thomas" | "grace-william";
+export type WeddingSlug =
+   | "sarah-akram"
+   | "amal-waleed"
+   | "abtisam-adeeb"
+   | "wafa-muhamad";
 
 export const weddingSlugs: WeddingSlug[] = [
-   "sarah-michael",
-   "emma-james",
-   "olivia-thomas",
-   "grace-william",
+   "sarah-akram",
+   "amal-waleed",
+   "abtisam-adeeb",
+   "wafa-muhamad",
 ];
 
 export interface GalleryImage {
@@ -22,14 +30,14 @@ export interface GalleryImage {
 }
 
 export const featuredWeddingImages: Record<WeddingSlug, string> = {
-   "sarah-michael": "/Sarah-Michael.jpg",
-   "emma-james": "/Emma-James.jpg",
-   "olivia-thomas": "/Olivia-Thomas.jpg",
-   "grace-william": "/Grace-William.jpg",
+   "sarah-akram": "/sarah-akram.jpg",
+   "amal-waleed": "/amal-waleed.jpg",
+   "abtisam-adeeb": "/abtisam-adeeb.jpg",
+   "wafa-muhamad": "/wafa-muhamad.jpg",
 };
 
 export const galleryImages: GalleryImage[] = [
-   // Sarah-Michael (folder 1)
+   // sarah-akram (folder 1)
    {
       id: "sm-1",
       src: "/gallery/featured-weddings/1/1.jpg",
@@ -37,7 +45,7 @@ export const galleryImages: GalleryImage[] = [
       category: "ceremonies",
       titleKey: "Gallery.items.0.title",
       span: "tall",
-      wedding: "sarah-michael",
+      wedding: "sarah-akram",
    },
    {
       id: "sm-2",
@@ -46,7 +54,7 @@ export const galleryImages: GalleryImage[] = [
       category: "receptions",
       titleKey: "Gallery.items.1.title",
       span: "wide",
-      wedding: "sarah-michael",
+      wedding: "sarah-akram",
    },
    {
       id: "sm-3",
@@ -55,7 +63,7 @@ export const galleryImages: GalleryImage[] = [
       category: "details",
       titleKey: "Gallery.items.2.title",
       span: "normal",
-      wedding: "sarah-michael",
+      wedding: "sarah-akram",
    },
    {
       id: "sm-4",
@@ -64,7 +72,7 @@ export const galleryImages: GalleryImage[] = [
       category: "venues",
       titleKey: "Gallery.items.3.title",
       span: "large",
-      wedding: "sarah-michael",
+      wedding: "sarah-akram",
    },
    {
       id: "sm-5",
@@ -73,7 +81,7 @@ export const galleryImages: GalleryImage[] = [
       category: "ceremonies",
       titleKey: "Gallery.items.4.title",
       span: "normal",
-      wedding: "sarah-michael",
+      wedding: "sarah-akram",
    },
    {
       id: "sm-6",
@@ -82,9 +90,9 @@ export const galleryImages: GalleryImage[] = [
       category: "receptions",
       titleKey: "Gallery.items.5.title",
       span: "wide",
-      wedding: "sarah-michael",
+      wedding: "sarah-akram",
    },
-   // Emma-James (folder 2 — deduplicated to folder 1)
+   // amal-waleed (folder 2 — deduplicated to folder 1)
    {
       id: "ej-1",
       src: "/gallery/featured-weddings/1/1.jpg",
@@ -92,7 +100,7 @@ export const galleryImages: GalleryImage[] = [
       category: "ceremonies",
       titleKey: "Gallery.items.6.title",
       span: "normal",
-      wedding: "emma-james",
+      wedding: "amal-waleed",
    },
    {
       id: "ej-2",
@@ -101,7 +109,7 @@ export const galleryImages: GalleryImage[] = [
       category: "receptions",
       titleKey: "Gallery.items.7.title",
       span: "tall",
-      wedding: "emma-james",
+      wedding: "amal-waleed",
    },
    {
       id: "ej-3",
@@ -110,7 +118,7 @@ export const galleryImages: GalleryImage[] = [
       category: "details",
       titleKey: "Gallery.items.8.title",
       span: "wide",
-      wedding: "emma-james",
+      wedding: "amal-waleed",
    },
    {
       id: "ej-4",
@@ -119,7 +127,7 @@ export const galleryImages: GalleryImage[] = [
       category: "venues",
       titleKey: "Gallery.items.9.title",
       span: "normal",
-      wedding: "emma-james",
+      wedding: "amal-waleed",
    },
    {
       id: "ej-5",
@@ -128,7 +136,7 @@ export const galleryImages: GalleryImage[] = [
       category: "ceremonies",
       titleKey: "Gallery.items.10.title",
       span: "large",
-      wedding: "emma-james",
+      wedding: "amal-waleed",
    },
    {
       id: "ej-6",
@@ -137,9 +145,9 @@ export const galleryImages: GalleryImage[] = [
       category: "receptions",
       titleKey: "Gallery.items.11.title",
       span: "normal",
-      wedding: "emma-james",
+      wedding: "amal-waleed",
    },
-   // Olivia-Thomas (folder 3 — deduplicated to folder 1)
+   // abtisam-adeeb (folder 3 — deduplicated to folder 1)
    {
       id: "ot-1",
       src: "/gallery/featured-weddings/1/1.jpg",
@@ -147,7 +155,7 @@ export const galleryImages: GalleryImage[] = [
       category: "ceremonies",
       titleKey: "Gallery.items.12.title",
       span: "wide",
-      wedding: "olivia-thomas",
+      wedding: "abtisam-adeeb",
    },
    {
       id: "ot-2",
@@ -156,7 +164,7 @@ export const galleryImages: GalleryImage[] = [
       category: "receptions",
       titleKey: "Gallery.items.13.title",
       span: "large",
-      wedding: "olivia-thomas",
+      wedding: "abtisam-adeeb",
    },
    {
       id: "ot-3",
@@ -165,7 +173,7 @@ export const galleryImages: GalleryImage[] = [
       category: "details",
       titleKey: "Gallery.items.14.title",
       span: "tall",
-      wedding: "olivia-thomas",
+      wedding: "abtisam-adeeb",
    },
    {
       id: "ot-4",
@@ -174,7 +182,7 @@ export const galleryImages: GalleryImage[] = [
       category: "venues",
       titleKey: "Gallery.items.15.title",
       span: "normal",
-      wedding: "olivia-thomas",
+      wedding: "abtisam-adeeb",
    },
    {
       id: "ot-5",
@@ -183,7 +191,7 @@ export const galleryImages: GalleryImage[] = [
       category: "ceremonies",
       titleKey: "Gallery.items.16.title",
       span: "normal",
-      wedding: "olivia-thomas",
+      wedding: "abtisam-adeeb",
    },
    {
       id: "ot-6",
@@ -192,9 +200,9 @@ export const galleryImages: GalleryImage[] = [
       category: "receptions",
       titleKey: "Gallery.items.17.title",
       span: "wide",
-      wedding: "olivia-thomas",
+      wedding: "abtisam-adeeb",
    },
-   // Grace-William (folder 4 — deduplicated to folder 1)
+   // wafa-muhamad (folder 4 — deduplicated to folder 1)
    {
       id: "gw-1",
       src: "/gallery/featured-weddings/1/1.jpg",
@@ -202,7 +210,7 @@ export const galleryImages: GalleryImage[] = [
       category: "ceremonies",
       titleKey: "Gallery.items.18.title",
       span: "normal",
-      wedding: "grace-william",
+      wedding: "wafa-muhamad",
    },
    {
       id: "gw-2",
@@ -211,7 +219,7 @@ export const galleryImages: GalleryImage[] = [
       category: "receptions",
       titleKey: "Gallery.items.19.title",
       span: "wide",
-      wedding: "grace-william",
+      wedding: "wafa-muhamad",
    },
    {
       id: "gw-3",
@@ -220,7 +228,7 @@ export const galleryImages: GalleryImage[] = [
       category: "details",
       titleKey: "Gallery.items.20.title",
       span: "normal",
-      wedding: "grace-william",
+      wedding: "wafa-muhamad",
    },
    {
       id: "gw-4",
@@ -229,7 +237,7 @@ export const galleryImages: GalleryImage[] = [
       category: "venues",
       titleKey: "Gallery.items.21.title",
       span: "tall",
-      wedding: "grace-william",
+      wedding: "wafa-muhamad",
    },
    {
       id: "gw-5",
@@ -238,7 +246,7 @@ export const galleryImages: GalleryImage[] = [
       category: "ceremonies",
       titleKey: "Gallery.items.22.title",
       span: "large",
-      wedding: "grace-william",
+      wedding: "wafa-muhamad",
    },
    {
       id: "gw-6",
@@ -247,7 +255,7 @@ export const galleryImages: GalleryImage[] = [
       category: "details",
       titleKey: "Gallery.items.23.title",
       span: "wide",
-      wedding: "grace-william",
+      wedding: "wafa-muhamad",
    },
    // // General gallery images from /gallery/
    // {

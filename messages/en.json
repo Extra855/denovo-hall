@@ -124,25 +124,25 @@
 		"cta": "Create Your Story",
 		"items": [
 			{
-				"couple": "Sarah & Michael",
+				"couple": "Sarah & Akram",
 				"theme": "Garden Romance",
 				"color": "Blush & Sage",
 				"season": "Spring 2024"
 			},
 			{
-				"couple": "Emma & James",
+				"couple": "Amal & Waleed",
 				"theme": "Classic Elegance",
 				"color": "Gold & Ivory",
 				"season": "Summer 2024"
 			},
 			{
-				"couple": "Olivia & Thomas",
+				"couple": "Abtisam & Adeeb",
 				"theme": "Modern Minimalist",
 				"color": "White & Green",
 				"season": "Fall 2024"
 			},
 			{
-				"couple": "Grace & William",
+				"couple": "Wafa' & Muhamad",
 				"theme": "Rustic Charm",
 				"color": "Burgundy & Gold",
 				"season": "Winter 2024"
@@ -592,10 +592,10 @@
 			"tapToView": "Tap to view",
 			"coupleAlt": "{couple}'s wedding celebration at De novo",
 			"couples": {
-				"sarah-michael": "Sarah & Michael",
-				"emma-james": "Emma & James",
-				"olivia-thomas": "Olivia & Thomas",
-				"grace-william": "Grace & William"
+				"sarah-akram": "Sarah & Akram",
+				"amal-waleed": "Amal & waleed",
+				"abtisam-adeeb": "Abtisam & Adeeb",
+				"wafa-muhamad": "Wafa' & Muhamad"
 			}
 		},
 		"items": [
@@ -608,7 +608,7 @@
 				"title": "Lawn Ceremony"
 			},
 			{
-				"alt": "Ring exchange during candlelit ceremony",
+				"alt": "Ring exchange",
 				"title": "Candlelit Exchange"
 			},
 			{
@@ -640,7 +640,7 @@
 				"title": "Perfect Rings"
 			},
 			{
-				"alt": "Champagne toast with crystal flutes",
+				"alt": "Toast",
 				"title": "Toast to Love"
 			},
 			{
@@ -680,7 +680,7 @@
 				"title": "Sunlit Atrium"
 			},
 			{
-				"alt": "Couple exchanging vows in white chapel",
+				"alt": "Couple exchanging vows",
 				"title": "Chapel Vows"
 			},
 			{
@@ -692,32 +692,101 @@
 				"title": "Sunset Portrait"
 			},
 			{
-				"alt": "Grace and William's wedding celebration",
+				"alt": "Amal and Waleed's wedding celebration",
 				"title": "Timeless Love"
 			},
-			{ "alt": "Vows under floral arch", "title": "Floral Vows" },
-			{ "alt": "Outdoor ceremony with white chairs", "title": "Open Air" },
-			{ "alt": "Candlelit ring exchange", "title": "Candlelit Moment" },
-			{ "alt": "Couple walking down the aisle", "title": "First Steps" },
-			{ "alt": "Crystal chandeliers in grand hall", "title": "Crystal Hall" },
-			{ "alt": "Gold-accented table setting", "title": "Golden Setting" },
-			{ "alt": "First dance under lights", "title": "Starlit Dance" },
-			{ "alt": "Elegant wedding reception", "title": "Reception Glow" },
-			{ "alt": "Bridal bouquet details", "title": "Bloom Detail" },
-			{ "alt": "Wedding rings on cushion", "title": "Ring Ceremony" },
-			{ "alt": "Champagne toast celebration", "title": "Champagne Toast" },
-			{ "alt": "Place cards at table", "title": "Place Settings" },
-			{ "alt": "Venue at golden hour", "title": "Golden Venue" },
-			{ "alt": "Terrace with string lights", "title": "Lit Terrace" },
-			{ "alt": "Velvet lounge seating", "title": "Lounge Elegance" },
-			{ "alt": "Grand ballroom entrance", "title": "Grand Doors" },
-			{ "alt": "Garden path procession", "title": "Garden Walk" },
-			{ "alt": "Floral table runners", "title": "Floral Runner" },
-			{ "alt": "Gold cutlery and fine china", "title": "Fine Dining" },
-			{ "alt": "Sunlit venue atrium", "title": "Atrium Light" },
-			{ "alt": "White chapel ceremony", "title": "Chapel Moment" },
-			{ "alt": "Dessert table display", "title": "Dessert Display" },
-			{ "alt": "Elegant table decor", "title": "Table Elegance" }
+			{
+				"alt": "Vows under floral arch",
+				"title": "Floral Vows"
+			},
+			{
+				"alt": "Outdoor ceremony with white chairs",
+				"title": "Open Air"
+			},
+			{
+				"alt": "Candlelit ring exchange",
+				"title": "Candlelit Moment"
+			},
+			{
+				"alt": "Couple walking down the aisle",
+				"title": "First Steps"
+			},
+			{
+				"alt": "Crystal chandeliers in grand hall",
+				"title": "Crystal Hall"
+			},
+			{
+				"alt": "Gold-accented table setting",
+				"title": "Golden Setting"
+			},
+			{
+				"alt": "First dance under lights",
+				"title": "Starlit Dance"
+			},
+			{
+				"alt": "Elegant wedding reception",
+				"title": "Reception Glow"
+			},
+			{
+				"alt": "Bridal bouquet details",
+				"title": "Bloom Detail"
+			},
+			{
+				"alt": "Wedding rings on cushion",
+				"title": "Ring Ceremony"
+			},
+			{
+				"alt": "Toast celebration",
+				"title": "Toast"
+			},
+			{
+				"alt": "Place cards at table",
+				"title": "Place Settings"
+			},
+			{
+				"alt": "Venue at golden hour",
+				"title": "Golden Venue"
+			},
+			{
+				"alt": "Terrace with string lights",
+				"title": "Lit Terrace"
+			},
+			{
+				"alt": "Velvet lounge seating",
+				"title": "Lounge Elegance"
+			},
+			{
+				"alt": "Grand ballroom entrance",
+				"title": "Grand Doors"
+			},
+			{
+				"alt": "Garden path procession",
+				"title": "Garden Walk"
+			},
+			{
+				"alt": "Floral table runners",
+				"title": "Floral Runner"
+			},
+			{
+				"alt": "Gold cutlery and fine china",
+				"title": "Fine Dining"
+			},
+			{
+				"alt": "Sunlit venue atrium",
+				"title": "Atrium Light"
+			},
+			{
+				"alt": "White chapel ceremony",
+				"title": "Chapel Moment"
+			},
+			{
+				"alt": "Dessert table display",
+				"title": "Dessert Display"
+			},
+			{
+				"alt": "Elegant table decor",
+				"title": "Table Elegance"
+			}
 		]
 	}
 }

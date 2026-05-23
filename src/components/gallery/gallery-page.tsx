@@ -8,7 +8,11 @@ import { Icons } from "@/components/icons";
 import { Ornament } from "@/components/ornament";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { Link } from "@/i18n/navigation";
-import { galleryImages, type GalleryCategory, type WeddingSlug } from "./gallery-data";
+import {
+   galleryImages,
+   type GalleryCategory,
+   type WeddingSlug,
+} from "./gallery-data";
 import { GalleryFilter } from "./gallery-filter";
 import { GalleryGrid } from "./gallery-grid";
 import { GalleryLightbox } from "./gallery-lightbox";
@@ -17,14 +21,26 @@ import { FeaturedWeddingsGallery } from "./featured-weddings-gallery";
 export function GalleryPage() {
    const t = useTranslations("Gallery");
    const searchParams = useSearchParams();
-   const [activeCategory, setActiveCategory] = useState<GalleryCategory | "all">("all");
+   const [activeCategory, setActiveCategory] = useState<
+      GalleryCategory | "all"
+   >("all");
    const [activeWedding, setActiveWedding] = useState<WeddingSlug | null>(null);
    const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
    // Read ?wedding= param on mount
    useEffect(() => {
       const param = searchParams.get("wedding");
-      if (param && (["sarah-michael", "emma-james", "olivia-thomas", "grace-william"] as WeddingSlug[]).includes(param as WeddingSlug)) {
+      if (
+         param &&
+         (
+            [
+               "sarah-akram",
+               "amal-waleed",
+               "abtisam-adeeb",
+               "wafa-muhamad",
+            ] as WeddingSlug[]
+         ).includes(param as WeddingSlug)
+      ) {
          setActiveWedding(param as WeddingSlug);
       }
    }, [searchParams]);
@@ -54,11 +70,21 @@ export function GalleryPage() {
                <span className="text-sage text-sm tracking-[0.3em] uppercase font-sans block mb-4 animate-fade-up">
                   {t("subtitle")}
                </span>
-               <h1 className="font-serif-display text-4xl md:text-5xl lg:text-6xl text-charcoal mb-6 animate-fade-up" style={{ animationDelay: "100ms" }}>
-                  {t("heading1")} <span className="italic">{t("heading2")}</span>
+               <h1
+                  className="font-serif-display text-4xl md:text-5xl lg:text-6xl text-charcoal mb-6 animate-fade-up"
+                  style={{ animationDelay: "100ms" }}
+               >
+                  {t("heading1")}{" "}
+                  <span className="italic">{t("heading2")}</span>
                </h1>
-               <Ornament className="mb-6 animate-fade-up" style={{ animationDelay: "300ms" }} />
-               <p className="text-charcoal/60 font-sans text-lg max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "400ms" }}>
+               <Ornament
+                  className="mb-6 animate-fade-up"
+                  style={{ animationDelay: "300ms" }}
+               />
+               <p
+                  className="text-charcoal/60 font-sans text-lg max-w-2xl mx-auto animate-fade-up"
+                  style={{ animationDelay: "400ms" }}
+               >
                   {t("description")}
                </p>
             </div>
@@ -73,7 +99,10 @@ export function GalleryPage() {
                />
 
                <div className="mb-10">
-                  <GalleryFilter active={activeCategory} onChange={setActiveCategory} />
+                  <GalleryFilter
+                     active={activeCategory}
+                     onChange={setActiveCategory}
+                  />
                </div>
 
                <p className="text-charcoal/40 text-xs tracking-widest uppercase text-center mb-6 font-sans">
