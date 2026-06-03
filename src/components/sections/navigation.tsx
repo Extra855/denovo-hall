@@ -18,7 +18,10 @@ export function Navigation() {
    const locale = useLocale();
    const router = useRouter();
    const isHomePage = pathname === "/";
+   const isEventsPage = pathname === "/events";
+   const useHeroNav = isHomePage || isEventsPage;
    const localePrefix = `/${locale}`;
+   const inquiryTarget = isEventsPage ? "#corporate-inquiry" : "#inquiry";
 
    useEffect(() => {
       if (isMobileMenuOpen) {
@@ -38,8 +41,8 @@ export function Navigation() {
    }, [isMobileMenuOpen]);
 
    useEffect(() => {
-      // Force glass-header on non-homepage routes
-      if (!isHomePage) {
+      // Force glass-header on pages without a hero
+      if (!useHeroNav) {
          setIsScrolled(true);
          return;
       }
@@ -49,13 +52,25 @@ export function Navigation() {
          tickingRef.current = requestAnimationFrame(() => {
             setIsScrolled(window.scrollY > 50);
 
-            const sections = [
-               "spaces",
-               "testimonials",
-               "experience",
-               "faq",
-               "inquiry",
-            ];
+            const sections = isEventsPage
+               ? [
+                    "corporate-categories",
+                    "corporate-why-us",
+                    "corporate-amenities",
+                    "corporate-spaces",
+                    "corporate-process",
+                    "corporate-testimonials",
+                    "corporate-inquiry",
+                 ]
+               : [
+                    "spaces",
+                    "testimonials",
+                    "features",
+                    "experience",
+                    "amenities",
+                    "faq",
+                    "inquiry",
+                 ];
             for (const section of sections.reverse()) {
                const el = document.getElementById(section);
                if (el) {
@@ -71,18 +86,30 @@ export function Navigation() {
       };
       window.addEventListener("scroll", handleScroll);
       return () => window.removeEventListener("scroll", handleScroll);
-   }, [isHomePage]);
+   }, [useHeroNav, isEventsPage]);
 
-   const navLinks = [
+   const homeNavLinks = [
       { href: "#spaces", label: t("spaces"), isRoute: false },
       { href: "#testimonials", label: t("stories"), isRoute: false },
+      { href: "#features", label: t("features"), isRoute: false },
       { href: "#experience", label: t("experience"), isRoute: false },
       { href: "#faq", label: t("faq"), isRoute: false },
       { href: "/gallery", label: t("gallery"), isRoute: true },
+      { href: "/events", label: t("events"), isRoute: true },
    ];
 
+   const eventsNavLinks = [
+      { href: "#corporate-categories", label: t("events"), isRoute: false },
+      { href: "#corporate-why-us", label: t("features"), isRoute: false },
+      { href: "#corporate-spaces", label: t("spaces"), isRoute: false },
+      { href: "#corporate-testimonials", label: t("stories"), isRoute: false },
+      { href: "/gallery", label: t("gallery"), isRoute: true },
+   ];
+
+   const navLinks = isEventsPage ? eventsNavLinks : homeNavLinks;
+
    const resolveHref = (href: string) =>
-      isHomePage ? href : `${localePrefix}${href}`;
+      isHomePage || isEventsPage ? href : `${localePrefix}${href}`;
 
    const scrollToSection = (
       e: React.MouseEvent<HTMLAnchorElement>,
@@ -94,6 +121,13 @@ export function Navigation() {
       // Wait for body-lock cleanup to restore scroll position before scrolling
       requestAnimationFrame(() => {
          requestAnimationFrame(() => {
+            if (isEventsPage) {
+               const el = document.querySelector(href);
+               if (!el) return;
+               const top = el.getBoundingClientRect().top + window.scrollY - 80;
+               window.scrollTo({ top, behavior: "smooth" });
+               return;
+            }
             if (!isHomePage) {
                router.push("/");
                const scrollToHash = () => {
@@ -221,8 +255,19 @@ export function Navigation() {
                   }`}
                >
                   <a
-                     href={resolveHref("#inquiry")}
-                     onClick={(e) => scrollToSection(e, "#inquiry")}
+                     href={useHeroNav ? inquiryTarget : resolveHref("#inquiry")}
+                     onClick={(e) => {
+                        if (useHeroNav) {
+                           e.preventDefault();
+                           const el = document.querySelector(inquiryTarget);
+                           if (el) {
+                              const top = el.getBoundingClientRect().top + window.scrollY - 80;
+                              window.scrollTo({ top, behavior: "smooth" });
+                           }
+                        } else {
+                           scrollToSection(e, "#inquiry");
+                        }
+                     }}
                   >
                      {tc("bookATour")}
                      <span className="inline-block ml-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
@@ -315,8 +360,24 @@ export function Navigation() {
                      className="bg-alabaster hover:bg-champagne text-charcoal rounded-none px-6 py-4 text-sm tracking-widest uppercase w-full"
                   >
                      <a
-                        href={resolveHref("#inquiry")}
-                        onClick={(e) => scrollToSection(e, "#inquiry")}
+                        href={useHeroNav ? inquiryTarget : resolveHref("#inquiry")}
+                        onClick={(e) => {
+                           setIsMobileMenuOpen(false);
+                           if (useHeroNav) {
+                              e.preventDefault();
+                              requestAnimationFrame(() => {
+                                 requestAnimationFrame(() => {
+                                    const el = document.querySelector(inquiryTarget);
+                                    if (el) {
+                                       const top = el.getBoundingClientRect().top + window.scrollY - 80;
+                                       window.scrollTo({ top, behavior: "smooth" });
+                                    }
+                                 });
+                              });
+                           } else {
+                              scrollToSection(e, "#inquiry");
+                           }
+                        }}
                      >
                         {tc("bookATour")}
                      </a>

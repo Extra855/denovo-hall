@@ -93,7 +93,7 @@ export function InquirySection() {
 
             {isSubmitted ? (
                <div className="text-center py-12 animate-fade-up">
-                  <div className="w-20 h-20 rounded-full bg-sage/20 flex items-center justify-center mx-auto mb-6">
+                  <div className="w-20 h-20 rounded-full bg-peach/20 flex items-center justify-center mx-auto mb-6">
                      <svg className="w-10 h-10 text-sage" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                      </svg>
@@ -117,7 +117,7 @@ export function InquirySection() {
                            name="name"
                            type="text"
                            required
-                           className="bg-alabaster border-champagne/50 rounded-none h-14 focus:border-champagne focus:ring-champagne/20 text-charcoal placeholder:text-muted-foreground/50"
+                           className="bg-alabaster border-champagne/50 rounded-none h-14 focus:border-peach focus:ring-peach/20 text-charcoal placeholder:text-muted-foreground/50"
                            placeholder={t("namePlaceholder")}
                            aria-label={t("nameLabel")}
                         />
@@ -131,7 +131,7 @@ export function InquirySection() {
                            name="email"
                            type="email"
                            required
-                           className="bg-alabaster border-champagne/50 rounded-none h-14 focus:border-champagne focus:ring-champagne/20 text-charcoal placeholder:text-muted-foreground/50"
+                           className="bg-alabaster border-champagne/50 rounded-none h-14 focus:border-peach focus:ring-peach/20 text-charcoal placeholder:text-muted-foreground/50"
                            placeholder={t("emailPlaceholder")}
                            aria-label={t("emailLabel")}
                         />
@@ -146,7 +146,7 @@ export function InquirySection() {
                            id="phone"
                            name="phone"
                            type="tel"
-                           className="bg-alabaster border-champagne/50 rounded-none h-14 focus:border-champagne focus:ring-champagne/20 text-charcoal placeholder:text-muted-foreground/50"
+                           className="bg-alabaster border-champagne/50 rounded-none h-14 focus:border-peach focus:ring-peach/20 text-charcoal placeholder:text-muted-foreground/50"
                            placeholder={t("phonePlaceholder")}
                            aria-label={t("phoneLabel")}
                         />
@@ -159,7 +159,7 @@ export function InquirySection() {
                            id="date"
                            name="date"
                            type="date"
-                           className="bg-alabaster border-champagne/50 rounded-none h-14 focus:border-champagne focus:ring-champagne/20 text-charcoal"
+                           className="bg-alabaster border-champagne/50 rounded-none h-14 focus:border-peach focus:ring-peach/20 text-charcoal"
                            aria-label={t("dateLabel")}
                         />
                      </div>
@@ -175,7 +175,7 @@ export function InquirySection() {
                         min="10"
                         max="1000"
                         placeholder={t("guestsPlaceholder")}
-                        className="bg-alabaster border-champagne/50 rounded-none h-14 focus:border-champagne focus:ring-champagne/20 text-charcoal placeholder:text-muted-foreground/50"
+                        className="bg-alabaster border-champagne/50 rounded-none h-14 focus:border-peach focus:ring-peach/20 text-charcoal placeholder:text-muted-foreground/50"
                         aria-label={t("guestsLabel")}
                      />
                   </div>
@@ -188,7 +188,7 @@ export function InquirySection() {
                         name="message"
                         rows={4}
                         placeholder={t("messagePlaceholder")}
-                        className="w-full bg-alabaster border border-champagne/50 rounded-none p-4 focus:border-champagne focus:ring-champagne/20 text-charcoal placeholder:text-muted-foreground/50 resize-none"
+                        className="w-full bg-alabaster border border-champagne/50 rounded-none p-4 focus:border-peach focus:ring-peach/20 text-charcoal placeholder:text-muted-foreground/50 resize-none"
                         aria-label={t("messageLabel")}
                      />
                   </div>

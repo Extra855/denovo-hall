@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-import { Playfair_Display, Inter, Noto_Sans_Arabic } from "next/font/google";
+import { Cormorant_Garamond, Plus_Jakarta_Sans, Tajawal } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -8,25 +8,26 @@ import { routing } from "@/i18n/routing";
 import { WebVitals } from "@/components/web-vitals";
 import { LocaleAttributes } from "@/components/locale-attributes";
 
-const playfairDisplay = Playfair_Display({
+const cormorantGaramond = Cormorant_Garamond({
   variable: "--font-serif",
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
 });
 
-const inter = Inter({
+const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
   display: "swap",
-  weight: ["300", "400", "500", "600"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
-const notoSansArabic = Noto_Sans_Arabic({
+const tajawal = Tajawal({
   variable: "--font-arabic",
   subsets: ["arabic"],
   display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["200", "300", "400", "500", "700", "800", "900"],
 });
 
 export function generateStaticParams() {
@@ -115,17 +116,10 @@ export default async function LocaleLayout({
 
   const messages = await getMessages();
   const dir = locale === "ar" ? "rtl" : "ltr";
-  const fontVars = `${playfairDisplay.variable} ${inter.variable} ${notoSansArabic.variable}`;
+  const fontVars = `${cormorantGaramond.variable} ${plusJakartaSans.variable} ${tajawal.variable}`;
 
   return (
     <html lang={locale} dir={dir} suppressHydrationWarning className="scroll-smooth">
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: "document.documentElement.classList.add('js-loaded')",
-          }}
-        />
-      </head>
       <body className={`${fontVars} antialiased font-sans`}>
         <NextIntlClientProvider messages={messages}>
           <LocaleAttributes locale={locale} />

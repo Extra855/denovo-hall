@@ -1,23 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Icons } from "@/components/icons";
 import { BlurImage } from "@/components/blur-image";
 
 export function CommunitySection() {
-   const t = useTranslations("Vendors");
    const ig = useTranslations("Instagram");
-   const [activeVendor, setActiveVendor] = useState(0);
-
-   const vendors = [
-      { category: t("items.0.category"), names: t("items.0.names") },
-      { category: t("items.1.category"), names: t("items.1.names") },
-      { category: t("items.2.category"), names: t("items.2.names") },
-      { category: t("items.3.category"), names: t("items.3.names") },
-      { category: t("items.4.category"), names: t("items.4.names") },
-      { category: t("items.5.category"), names: t("items.5.names") },
-   ];
 
    const instagramPosts = [
       {
@@ -90,71 +78,6 @@ export function CommunitySection() {
          </div>
 
          <div className="max-w-7xl mx-auto relative">
-            {/* Vendors — center-aligned heading */}
-            <div className="max-w-5xl mx-auto mb-20 md:mb-28">
-               <div className="mb-12 md:mb-16 text-center animate-fade-up">
-                  <p className="text-xs tracking-widest uppercase text-sage mb-3">
-                     {t("subtitle")}
-                  </p>
-                  <h2 className="font-serif-display heading-medium text-charcoal">
-                     {t("heading")}
-                  </h2>
-                  <p
-                     className="text-muted-foreground text-sm max-w-lg mx-auto mt-3"
-                     style={{ transitionDelay: "0.1s" }}
-                  >
-                     {t("description")}
-                  </p>
-               </div>
-
-               {/* Mobile: pill bar + single card */}
-               <div className="md:hidden mb-8">
-                  <div className="flex gap-2 overflow-x-auto scrollbar-hide -mx-6 px-6 mb-6">
-                     {vendors.map((vendor, index) => (
-                        <button
-                           key={vendor.category}
-                           type="button"
-                           onClick={() => setActiveVendor(index)}
-                           className={`shrink-0 whitespace-nowrap px-4 py-2.5 rounded-full text-xs tracking-widest uppercase border transition-colors ${
-                              activeVendor === index
-                                 ? "bg-charcoal text-alabaster border-charcoal"
-                                 : "bg-transparent text-charcoal/70 border-champagne/50"
-                           }`}
-                           style={{ minHeight: "44px" }}
-                        >
-                           {vendor.category}
-                        </button>
-                     ))}
-                  </div>
-                  <div className="luxury-card p-6 animate-fade-up">
-                     <p className="text-xs tracking-widest uppercase text-sage mb-2">
-                        {vendors[activeVendor].category}
-                     </p>
-                     <p className="font-serif-display text-lg text-charcoal">
-                        {vendors[activeVendor].names}
-                     </p>
-                  </div>
-               </div>
-
-               {/* Desktop: original grid */}
-               <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {vendors.map((vendor, index) => (
-                     <div
-                        key={vendor.category}
-                        className="luxury-card p-6 animate-fade-up"
-                        style={{ transitionDelay: `${0.3 + index * 0.05}s` }}
-                     >
-                        <p className="text-xs tracking-widest uppercase text-sage mb-2">
-                           {vendor.category}
-                        </p>
-                        <p className="font-serif-display text-lg text-charcoal">
-                           {vendor.names}
-                        </p>
-                     </div>
-                  ))}
-               </div>
-            </div>
-
             {/* Instagram — center-aligned */}
             <div>
                <div className="text-center mb-10 animate-fade-up">

@@ -27,7 +27,7 @@ export function WhyChooseUsSection() {
    ];
 
    return (
-      <section id="experience" className="py-24 md:py-32 lg:py-40 px-6 bg-alabaster relative overflow-hidden">
+      <section id="experience" className="py-24 md:py-32 lg:py-40 px-6 bg-beige relative overflow-hidden">
          <div
             className="absolute inset-0 opacity-[0.02]"
             style={{
@@ -42,7 +42,7 @@ export function WhyChooseUsSection() {
                <h2 className="font-serif-display heading-large text-charcoal mb-2">
                   {t("heading")}
                </h2>
-               <p className="text-sm tracking-widest uppercase text-sage">
+               <p className="text-sm tracking-widest uppercase text-peach">
                   {t("subtitle")}
                </p>
             </div>
@@ -55,7 +55,7 @@ export function WhyChooseUsSection() {
                      className="text-center animate-fade-up group"
                      style={{ transitionDelay: `${0.2 + index * 0.1}s` }}
                   >
-                     <div className="flex justify-center mb-4 md:mb-6 text-charcoal group-hover:text-sage transition-colors duration-500">
+                     <div className="flex justify-center mb-4 md:mb-6 text-charcoal group-hover:text-peach transition-colors duration-500">
                         <experience.icon />
                      </div>
                      <h3 className="font-serif-display text-base md:text-xl text-charcoal mb-3 md:mb-4">

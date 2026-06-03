@@ -16,10 +16,12 @@ export function GalleryItem({
    image,
    index,
    onClick,
+   categoryNamespace = "Gallery.categories",
 }: {
    image: GalleryImage;
    index: number;
    onClick: () => void;
+   categoryNamespace?: string;
 }) {
    const t = useTranslations();
 
@@ -39,7 +41,7 @@ export function GalleryItem({
             {/* Mobile caption — always visible, hidden on desktop */}
             <div className="sm:opacity-0 sm:group-hover:opacity-100 absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent pointer-events-none transition-opacity duration-300 flex flex-col justify-end p-2.5 sm:p-4">
                <span className="text-champagne text-[10px] sm:text-xs tracking-widest uppercase font-sans mb-0.5 sm:mb-1">
-                  {t(`Gallery.categories.${image.category}` as Parameters<typeof t>[0])}
+                  {t(`${categoryNamespace}.${image.category}` as Parameters<typeof t>[0])}
                </span>
                <span className="text-alabaster font-serif-display text-sm sm:text-lg">
                   {t(image.titleKey as Parameters<typeof t>[0])}

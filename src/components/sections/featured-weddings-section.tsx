@@ -105,7 +105,7 @@ export function FeaturedWeddingsSection() {
          <div className="max-w-7xl mx-auto relative">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12 md:mb-16">
                <div className="animate-fade-up">
-                  <p className="text-sm tracking-widest uppercase text-sage mb-2">
+                  <p className="text-sm tracking-widest uppercase text-peach mb-2">
                      {t("subtitle")}
                   </p>
                   <h2 className="font-serif-display heading-large text-charcoal">

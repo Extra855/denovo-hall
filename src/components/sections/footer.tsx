@@ -8,13 +8,10 @@ import { ClientYear } from "@/components/client-year";
 export function Footer() {
   const t = useTranslations("Inquiry");
 
-  const links = [
-    { label: t("footer.links.0.label"), href: t("footer.links.0.href") },
-    { label: t("footer.links.1.label"), href: t("footer.links.1.href") },
-    { label: t("footer.links.2.label"), href: t("footer.links.2.href") },
-    { label: t("footer.links.3.label"), href: t("footer.links.3.href") },
-    { label: t("footer.links.4.label"), href: t("footer.links.4.href") },
-  ];
+  const links = Array.from({ length: 6 }, (_, i) => ({
+    label: t(`footer.links.${i}.label`),
+    href: t(`footer.links.${i}.href`),
+  }));
 
   return (
     <footer className="bg-secondary/50">

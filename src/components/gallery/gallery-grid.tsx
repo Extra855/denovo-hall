@@ -6,9 +6,11 @@ import type { GalleryImage } from "./gallery-data";
 export function GalleryGrid({
    images,
    onItemClick,
+   categoryNamespace,
 }: {
    images: GalleryImage[];
    onItemClick: (index: number) => void;
+   categoryNamespace?: string;
 }) {
    return (
       <div className="gallery-masonry">
@@ -18,6 +20,7 @@ export function GalleryGrid({
                image={image}
                index={i}
                onClick={() => onItemClick(i)}
+               categoryNamespace={categoryNamespace}
             />
          ))}
       </div>

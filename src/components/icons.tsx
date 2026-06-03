@@ -319,4 +319,150 @@ export const Icons = {
          />
       </svg>
    ),
+   bridge: () => (
+      <svg
+         width="40"
+         height="40"
+         viewBox="0 0 40 40"
+         fill="none"
+         xmlns="http://www.w3.org/2000/svg"
+         className="stroke-current"
+         strokeWidth="1.5"
+      >
+         <path d="M4 28C4 28 12 16 20 16C28 16 36 28 36 28" />
+         <path d="M4 28H36" />
+         <path d="M20 16V28" />
+         <path d="M8 28V32" strokeLinecap="round" />
+         <path d="M32 28V32" strokeLinecap="round" />
+         <path d="M12 22L14 20" strokeLinecap="round" />
+         <path d="M28 22L26 20" strokeLinecap="round" />
+      </svg>
+   ),
+   pool: () => (
+      <svg
+         width="40"
+         height="40"
+         viewBox="0 0 40 40"
+         fill="none"
+         xmlns="http://www.w3.org/2000/svg"
+         className="stroke-current"
+         strokeWidth="1.5"
+      >
+         <path d="M4 30C4 30 8 26 12 30C16 34 20 26 24 30C28 34 32 26 36 30" />
+         <path d="M4 24C4 24 8 20 12 24C16 28 20 20 24 24C28 28 32 20 36 24" />
+         <path d="M20 8V18" strokeLinecap="round" />
+         <path d="M16 12L20 8L24 12" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+   ),
+   accessibility: () => (
+      <svg
+         width="40"
+         height="40"
+         viewBox="0 0 40 40"
+         fill="none"
+         xmlns="http://www.w3.org/2000/svg"
+         className="stroke-current"
+         strokeWidth="1.5"
+      >
+         <circle cx="20" cy="8" r="3" />
+         <path d="M8 16H32" strokeLinecap="round" />
+         <path d="M20 16V32" strokeLinecap="round" />
+         <path d="M14 32L20 24L26 32" strokeLinecap="round" strokeLinejoin="round" />
+         <path d="M12 22L8 28" strokeLinecap="round" />
+         <path d="M28 22L32 28" strokeLinecap="round" />
+      </svg>
+   ),
+   prayer: () => (
+      <svg
+         width="40"
+         height="40"
+         viewBox="0 0 40 40"
+         fill="none"
+         xmlns="http://www.w3.org/2000/svg"
+         className="stroke-current"
+         strokeWidth="1.5"
+      >
+         <path d="M20 6C20 6 12 14 12 20C12 26 16 30 20 30C24 30 28 26 28 20C28 14 20 6 20 6Z" />
+         <path d="M20 14V24" strokeLinecap="round" />
+         <path d="M16 20H24" strokeLinecap="round" />
+      </svg>
+   ),
+   chair: () => (
+      <svg
+         width="40"
+         height="40"
+         viewBox="0 0 40 40"
+         fill="none"
+         xmlns="http://www.w3.org/2000/svg"
+         className="stroke-current"
+         strokeWidth="1.5"
+      >
+         <path d="M12 4V20" strokeLinecap="round" />
+         <path d="M28 4V20" strokeLinecap="round" />
+         <path d="M12 8H28" />
+         <path d="M10 20H30" />
+         <path d="M10 20L8 34" strokeLinecap="round" />
+         <path d="M30 20L32 34" strokeLinecap="round" />
+      </svg>
+   ),
+   speaker: () => (
+      <svg
+         width="40"
+         height="40"
+         viewBox="0 0 40 40"
+         fill="none"
+         xmlns="http://www.w3.org/2000/svg"
+         className="stroke-current"
+         strokeWidth="1.5"
+      >
+         <rect x="10" y="8" width="20" height="24" rx="2" />
+         <circle cx="20" cy="22" r="5" />
+         <circle cx="20" cy="14" r="2" />
+      </svg>
+   ),
+   kitchen: () => (
+      <svg
+         width="40"
+         height="40"
+         viewBox="0 0 40 40"
+         fill="none"
+         xmlns="http://www.w3.org/2000/svg"
+         className="stroke-current"
+         strokeWidth="1.5"
+      >
+         <path d="M6 32H34" strokeLinecap="round" />
+         <path d="M10 32V14" strokeLinecap="round" />
+         <path d="M30 32V14" strokeLinecap="round" />
+         <path d="M10 14H30" />
+         <path d="M10 22H30" />
+         <circle cx="20" cy="18" r="2" />
+         <circle cx="16" cy="27" r="2" />
+         <circle cx="24" cy="27" r="2" />
+      </svg>
+   ),
+   stage: () => (
+      <svg
+         width="40"
+         height="40"
+         viewBox="0 0 40 40"
+         fill="none"
+         xmlns="http://www.w3.org/2000/svg"
+         className="stroke-current"
+         strokeWidth="1.5"
+      >
+         <path d="M4 34L20 6L36 34H4Z" />
+         <path d="M20 14V24" strokeLinecap="round" />
+         <circle cx="20" cy="28" r="2" />
+      </svg>
+   ),
+   sparkle: () => (
+      <svg
+         width="24"
+         height="24"
+         viewBox="0 0 24 24"
+         fill="currentColor"
+      >
+         <path d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z" />
+      </svg>
+   ),
 };

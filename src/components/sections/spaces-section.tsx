@@ -120,7 +120,7 @@ export function SpacesSection() {
 
    return (
       <>
-         <section id="spaces" className="py-24 md:py-32 lg:py-40 px-6 bg-alabaster relative overflow-hidden">
+         <section id="spaces" className="py-24 md:py-32 lg:py-40 px-6 bg-beige relative overflow-hidden">
             <div
                className="absolute inset-0 opacity-[0.02]"
                style={{

@@ -2,11 +2,13 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
+import { usePathname } from "@/i18n/navigation";
 
 export function FloatingCTA() {
    const [isVisible, setIsVisible] = useState(false);
    const t = useTranslations("FloatingCTA");
    const tickingRef = useRef(0);
+   const pathname = usePathname();
 
    useEffect(() => {
       const handleScroll = () => {
@@ -24,7 +26,8 @@ export function FloatingCTA() {
    }, []);
 
    const scrollToInquiry = () => {
-      const el = document.getElementById("inquiry");
+      const targetId = pathname === "/events" ? "corporate-inquiry" : "inquiry";
+      const el = document.getElementById(targetId);
       if (el) {
          const offset = 80;
          const top = el.getBoundingClientRect().top + window.scrollY - offset;
@@ -45,7 +48,7 @@ export function FloatingCTA() {
          aria-label={t("label")}
       >
          <span>{t("text")}</span>
-         <span className="w-2 h-2 rounded-full bg-champagne animate-pulse" />
+         <span className="w-2 h-2 rounded-full bg-peach animate-pulse" />
       </button>
    );
 }

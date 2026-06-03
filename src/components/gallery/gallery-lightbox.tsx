@@ -15,12 +15,22 @@ export function GalleryLightbox({
    isOpen,
    onClose,
    onNavigate,
+   categoryNamespace = "Gallery.categories",
+   closeLabelKey = "Gallery.closeLightbox",
+   prevLabelKey = "Gallery.previousImage",
+   nextLabelKey = "Gallery.nextImage",
+   counterKey = "Gallery.imageCounter",
 }: {
    images: GalleryImage[];
    currentIndex: number;
    isOpen: boolean;
    onClose: () => void;
    onNavigate: (index: number) => void;
+   categoryNamespace?: string;
+   closeLabelKey?: string;
+   prevLabelKey?: string;
+   nextLabelKey?: string;
+   counterKey?: string;
 }) {
    const t = useTranslations();
    const image = images[currentIndex];
@@ -73,7 +83,7 @@ export function GalleryLightbox({
                {/* Close button */}
                <button
                   onClick={onClose}
-                  aria-label={t("Gallery.closeLightbox" as Parameters<typeof t>[0])}
+                  aria-label={t(closeLabelKey as Parameters<typeof t>[0])}
                   className="absolute top-4 end-4 z-50 w-12 h-12 rounded-full bg-white/10 text-alabaster hover:bg-white/20 transition-colors flex items-center justify-center"
                >
                   <Icons.close />
@@ -84,7 +94,7 @@ export function GalleryLightbox({
                   onClick={() =>
                      onNavigate(currentIndex > 0 ? currentIndex - 1 : total - 1)
                   }
-                  aria-label={t("Gallery.previousImage" as Parameters<typeof t>[0])}
+                  aria-label={t(prevLabelKey as Parameters<typeof t>[0])}
                   className="gallery-lightbox-nav hidden md:flex absolute start-4 top-1/2 -translate-y-1/2 z-50 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm text-alabaster hover:bg-white/20 transition-colors items-center justify-center rtl:scale-x-[-1]"
                >
                   <Icons.chevronLeft />
@@ -95,7 +105,7 @@ export function GalleryLightbox({
                   onClick={() =>
                      onNavigate(currentIndex < total - 1 ? currentIndex + 1 : 0)
                   }
-                  aria-label={t("Gallery.nextImage" as Parameters<typeof t>[0])}
+                  aria-label={t(nextLabelKey as Parameters<typeof t>[0])}
                   className="gallery-lightbox-nav hidden md:flex absolute end-4 top-1/2 -translate-y-1/2 z-50 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm text-alabaster hover:bg-white/20 transition-colors items-center justify-center rtl:scale-x-[-1]"
                >
                   <Icons.chevronRight />
@@ -141,14 +151,14 @@ export function GalleryLightbox({
                >
                   <div className="min-w-0 flex-1">
                      <span className="text-champagne text-[10px] sm:text-xs tracking-widest uppercase font-sans">
-                        {t(`Gallery.categories.${image.category}` as Parameters<typeof t>[0])}
+                        {t(`${categoryNamespace}.${image.category}` as Parameters<typeof t>[0])}
                      </span>
                      <p className="text-alabaster font-serif-display text-sm sm:text-lg mt-0.5 sm:mt-1 truncate">
                         {t(image.titleKey as Parameters<typeof t>[0])}
                      </p>
                   </div>
                   <span className="text-alabaster/60 text-xs sm:text-sm font-sans shrink-0 ms-3">
-                     {t("Gallery.imageCounter" as Parameters<typeof t>[0], {
+                     {t(counterKey as Parameters<typeof t>[0], {
                         current: currentIndex + 1,
                         total,
                      })}

@@ -201,7 +201,7 @@ export function TestimonialsSection() {
                <div className="animate-fade-up order-1 md:order-none" style={{ transitionDelay: "0.2s" }}>
                   <div className="flex gap-1 mb-6">
                      {[...Array(5)].map((_, i) => (
-                        <svg key={i} className="w-4 h-4 text-champagne" viewBox="0 0 20 20" fill="currentColor">
+                        <svg key={i} className="w-4 h-4 text-peach" viewBox="0 0 20 20" fill="currentColor">
                            <path d="M10 2L11.545 7.09H17L12.727 9.91L14.272 15L10 12.18L5.728 15L7.273 9.91L3 7.09H8.455L10 2Z" />
                         </svg>
                      ))}
@@ -215,7 +215,7 @@ export function TestimonialsSection() {
                   >
                      &ldquo;{testimonials[currentIndex].quote}&rdquo;
                   </blockquote>
-                  <div className="border-s-2 border-champagne ps-6 mb-8">
+                  <div className="border-s-2 border-peach ps-6 mb-8">
                      <p className="text-alabaster font-medium text-lg">{testimonials[currentIndex].couple}</p>
                      <p className="text-alabaster/60">{testimonials[currentIndex].date}</p>
                   </div>

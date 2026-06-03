@@ -18,9 +18,11 @@
 	"Navigation": {
 		"spaces": "The Spaces",
 		"stories": "Stories",
+		"features": "Features",
 		"experience": "Experience",
 		"faq": "FAQ",
 		"gallery": "Gallery",
+		"events": "Events",
 		"closeMenu": "Close menu",
 		"openMenu": "Open menu",
 		"mainNav": "Main navigation"
@@ -357,37 +359,6 @@
 			"december": "December"
 		}
 	},
-	"Vendors": {
-		"subtitle": "Our Network",
-		"heading": "Preferred Partners",
-		"description": "We collaborate with the finest professionals in the industry to ensure every detail exceeds expectations.",
-		"items": [
-			{
-				"category": "Photography",
-				"names": "Eternal Moments Studio, Lumiere Photography"
-			},
-			{
-				"category": "Floral Design",
-				"names": "Bloom & Branch, The Gilded Stem"
-			},
-			{
-				"category": "Entertainment",
-				"names": "Virtuoso Strings, Ensemble Elite"
-			},
-			{
-				"category": "Wedding Planning",
-				"names": "Grace & Gold Events, Love Story Designs"
-			},
-			{
-				"category": "Beauty",
-				"names": "Blush Artistry, The Bridal Glam"
-			},
-			{
-				"category": "Invitations",
-				"names": "Paper & Silk, The Lettered Bride"
-			}
-		]
-	},
 	"Instagram": {
 		"subtitle": "Follow Our Journey",
 		"handle": "@DenovoHall",
@@ -547,6 +518,10 @@
 				{
 					"label": "Contact",
 					"href": "#inquiry"
+				},
+				{
+					"label": "Events",
+					"href": "/events"
 				}
 			],
 			"copyright": "De novo Hall, LLC. All rights reserved. Registered in Yemen republic.",
@@ -788,5 +763,514 @@
 				"title": "Table Elegance"
 			}
 		]
+	},
+	"VenueFeatures": {
+		"subtitle": "Venue Features",
+		"heading": "Where Luxury Meets Nature",
+		"capacity": {
+			"total": "1,000",
+			"totalLabel": "Total Guests",
+			"indoor": "500",
+			"indoorLabel": "Indoor Hall",
+			"outdoor": "500",
+			"outdoorLabel": "Outdoor Garden",
+			"hallLabel": "Panoramic Glass Hall"
+		},
+		"glassBridge": {
+			"subtitle": "The Grand Entrance",
+			"heading": "A Fairytale Entrance",
+			"description": "A stunning glass bridge extends over the pool, featuring an illuminated waterfall beneath it. Specifically designed for the bride's grand entrance and serves as a breathtaking photo spot for the couple.",
+			"items": [
+				"Glass bridge over the pool with illuminated waterfall",
+				"Designed for the bride's grand Zaffa entrance",
+				"A breathtaking photo spot for the couple"
+			]
+		},
+		"suites": {
+			"subtitle": "Bridal Suites",
+			"heading": "Everything the Bride Needs",
+			"items": [
+				{
+					"title": "Bridal Studio",
+					"description": "A private, fully equipped studio for hair, makeup, and final preparations"
+				},
+				{
+					"title": "Bridesmaids Room",
+					"description": "A spacious room for the bridal party to prepare and relax together"
+				},
+				{
+					"title": "Master Bedroom",
+					"description": "A luxurious private suite for the couple to rest and refresh"
+				},
+				{
+					"title": "Sauna & Spa",
+					"description": " unwind before or after the celebration with our private sauna"
+				}
+			]
+		},
+		"facilities": {
+			"heading": "Additional Facilities",
+			"items": [
+				{
+					"title": "Prayer Room",
+					"description": "A quiet, fully equipped prayer room for the comfort of your guests"
+				},
+				{
+					"title": "Full Accessibility",
+					"description": "Smooth pathways and ramps ensuring effortless access for all guests"
+				},
+				{
+					"title": "Decorative Ceiling",
+					"description": "A dynamic ceiling adorned with floral arrangements, crystals, and chandeliers"
+				}
+			]
+		},
+		"cta": "Book a Tour"
+	},
+	"IncludedAmenities": {
+		"subtitle": "What's Included",
+		"heading": "Everything Included, No Hidden Fees",
+		"description": "Our venue stands out by offering all amenities entirely free of charge, with no hidden or additional fees.",
+		"categories": {
+			"furniture": {
+				"title": "Furniture & Decor",
+				"items": [
+					"Premium clear acrylic chairs",
+					"Elegant golden chairs",
+					"Luxurious sofa seating",
+					"Luxury linens for all tables",
+					"Candelabras and elegant vases",
+					"Dedicated wedding cake table"
+				]
+			},
+			"systems": {
+				"title": "Systems & Audio/Visual",
+				"items": [
+					"Central AC and heating",
+					"Outdoor patio heaters",
+					"Integrated sound system (indoor + outdoor)",
+					"Ceiling-mounted disco lighting",
+					"Central smoke extraction system"
+				]
+			},
+			"kitchen": {
+				"title": "Kitchen Facilities",
+				"items": [
+					"Fully equipped kitchen for large banquets",
+					"Large cooking pots and kettles",
+					"Serving and chafing dishes",
+					"Stoves and cooking tools"
+				]
+			}
+		},
+		"stages": {
+			"subtitle": "Wedding Stage",
+			"heading": "Choose Your Stage Design",
+			"consultation": "Free interior design consultation with every contract",
+			"items": [
+				{
+					"tier": "Complimentary",
+					"badge": "Included",
+					"price": "Included",
+					"description": "A sophisticated wedding stage included in the base price"
+				},
+				{
+					"tier": "VIP Stage",
+					"badge": "Popular",
+					"price": "$200 - $300",
+					"description": "An elevated premium stage design with luxurious detailing"
+				},
+				{
+					"tier": "Custom Stage",
+					"badge": "Made to Order",
+					"price": "Custom Quote",
+					"description": "A fully bespoke stage designed to your exact specifications"
+				}
+			]
+		},
+		"offer": {
+			"badge": "Limited Time",
+			"heading": "Off-Season Special",
+			"discount": "20% Off",
+			"months": "November, December, January, February"
+		},
+		"value": {
+			"subtitle": "The Value",
+			"heading": "See How Much You Save",
+			"othersLabel": "At Other Venues",
+			"oursLabel": "With De Novo",
+			"included": "INCLUDED",
+			"items": [
+				{
+					"item": "Sound system & disco lighting",
+					"othersPrice": "$300 - $400",
+					"oursPrice": "INCLUDED"
+				},
+				{
+					"item": "Acrylic / sofa chair rental",
+					"othersPrice": "Extra cost per piece",
+					"oursPrice": "INCLUDED"
+				},
+				{
+					"item": "Air conditioning & heating",
+					"othersPrice": "Extra charges",
+					"oursPrice": "INCLUDED"
+				},
+				{
+					"item": "Premium table linens",
+					"othersPrice": "Not included",
+					"oursPrice": "INCLUDED"
+				},
+				{
+					"item": "Cake table & decor items",
+					"othersPrice": "Extra rental",
+					"oursPrice": "INCLUDED"
+				},
+				{
+					"item": "Outdoor bar setup",
+					"othersPrice": "Extra cost",
+					"oursPrice": "INCLUDED"
+				}
+			],
+			"footer": "All these luxurious details are included in the venue's base price."
+		},
+		"cta": "Book a Tour"
+	},
+	"CorporateEvents": {
+		"hero": {
+			"tagline": "Corporate Events & Galas",
+			"heading1": "Elevate Your",
+			"heading2": "Next Event",
+			"description": "From corporate conferences to grand celebrations, De novo provides a sophisticated canvas that transforms to match your vision.",
+			"cta": "Request a Proposal",
+			"altImage": "Corporate event venue"
+		},
+		"stats": {
+			"heading1": "Trusted by",
+			"heading2": "Leading",
+			"heading3": "Organizations",
+			"events": "Corporate Events",
+			"companies": "Companies Served",
+			"capacity": "Guest Capacity",
+			"satisfaction": "Client Satisfaction",
+			"trustBadges": [
+				"Corporate Venue in Yemen",
+				"Proposal Turnaround",
+				"Licensed & Insured"
+			]
+		},
+		"categories": {
+			"subtitle": "Event Types",
+			"heading": "Tailored for Every Occasion",
+			"conferences": {
+				"title": "Conferences & Seminars",
+				"description": "State-of-the-art spaces designed for impactful presentations, panels, and corporate gatherings.",
+				"features": [
+					"Theater-style seating for up to 500",
+					"Built-in AV and sound systems",
+					"Breakout rooms and VIP lounges",
+					"Full catering and coffee service"
+				]
+			},
+			"celebrations": {
+				"title": "Celebrations & Galas",
+				"description": "Transformative spaces that turn corporate milestones, product launches, and annual galas into unforgettable experiences.",
+				"features": [
+					"Fully customizable decor and lighting",
+					"Red carpet entrance options",
+					"Live entertainment staging",
+					"Gala dinner and cocktail setups"
+				]
+			}
+		},
+		"whyUs": {
+			"subtitle": "Why De Novo",
+			"heading": "The Corporate Advantage",
+			"cta": "Request a Proposal",
+			"items": [
+				{
+					"title": "Flexible Spaces",
+					"description": "Configurable layouts from boardroom to ballroom. Adapt our venue to any format or guest count."
+				},
+				{
+					"title": "Premium Technology",
+					"description": "Integrated AV systems, high-speed connectivity, and professional-grade lighting for seamless presentations."
+				},
+				{
+					"title": "Dedicated Coordination",
+					"description": "Your personal event manager handles logistics, vendor coordination, and timeline management."
+				},
+				{
+					"title": "Catering Excellence",
+					"description": "From coffee breaks to multi-course banquets, our culinary team delivers exceptional dining experiences."
+				}
+			]
+		},
+		"amenities": {
+			"subtitle": "What's Included",
+			"heading": "Premium Amenities & Services",
+			"description": "Every corporate event at De Novo comes with a comprehensive suite of amenities to ensure a seamless experience.",
+			"categories": {
+				"technology": {
+					"title": "Technology & AV",
+					"items": [
+						"High-speed Wi-Fi throughout",
+						"Projectors & large-format displays",
+						"Professional sound systems",
+						"Wireless microphones & podium",
+						"Live streaming setup available"
+					]
+				},
+				"catering": {
+					"title": "Catering & Dining",
+					"items": [
+						"Customizable menu options",
+						"Coffee & tea service stations",
+						"Formal dinner & buffet setups",
+						"Dedicated serving staff",
+						"Dietary accommodation available"
+					]
+				},
+				"furniture": {
+					"title": "Setup & Furniture",
+					"items": [
+						"Theater, classroom & U-shape layouts",
+						"Premium table linens & chair covers",
+						"Registration & welcome desks",
+						"Stage & podium construction"
+					]
+				}
+			}
+		},
+		"spaces": {
+			"subtitle": "Our Spaces",
+			"heading": "Venues That Inspire",
+			"items": [
+				{
+					"title": "The Grand Ballroom",
+					"description": "A soaring, pillar-free hall perfect for large-scale conferences, gala dinners, and product launches.",
+					"capacity": "Up to 500 guests",
+					"image": "/Grand-Ballroom.jpg"
+				},
+				{
+					"title": "The Garden Terrace",
+					"description": "An open-air setting ideal for cocktail receptions, networking events, and celebration dinners.",
+					"capacity": "Up to 500 guests",
+					"image": "/Garden-Terrace.jpg"
+				},
+				{
+					"title": "The Exchange Hall",
+					"description": "A versatile mid-size space for board meetings, seminars, and intimate corporate gatherings.",
+					"capacity": "Up to 200 guests",
+					"image": "/Exchange-Hall.jpg"
+				}
+			]
+		},
+		"process": {
+			"subtitle": "How It Works",
+			"heading": "Your Event Journey",
+			"items": [
+				{
+					"title": "Inquiry",
+					"description": "Share your event vision, guest count, and preferred dates. We respond within 24 hours with initial options.",
+					"duration": "24-hour response"
+				},
+				{
+					"title": "Consultation",
+					"description": "Meet with our events team for a venue tour, discuss layouts, catering, and technical requirements.",
+					"duration": "1-2 meetings"
+				},
+				{
+					"title": "Planning",
+					"description": "We finalize every detail — from floor plan and AV setup to menu selection and decor scheme.",
+					"duration": "2-4 weeks"
+				},
+				{
+					"title": "Event Day",
+					"description": "Your dedicated coordinator manages setup, vendor coordination, and timeline so you can focus on your guests.",
+					"duration": "Full-day support"
+				}
+			],
+			"tipsSubtitle": "Expert Insights",
+			"tipsHeading": "Corporate Planning Tips",
+			"readMore": "Read more",
+			"readLess": "Read less",
+			"tips": [
+				{
+					"title": "Book Early",
+					"description": "Corporate event spaces fill up quickly, especially during peak season. We recommend booking 3-6 months in advance to secure your preferred date and allow adequate planning time for catering, AV setup, and decor customization."
+				},
+				{
+					"title": "Define Your Objectives",
+					"description": "Whether it's a product launch, team building, or annual gala — clear objectives help us tailor the space, technology, and catering to maximize impact and ensure every element serves your event's purpose."
+				},
+				{
+					"title": "Consider Your Guest Experience",
+					"description": "From arrival to departure, every touchpoint matters. Plan for comfortable seating, accessible refreshment stations, smooth transitions between sessions, and thoughtful lighting that sets the right mood for each part of your event."
+				},
+				{
+					"title": "Leverage Technology",
+					"description": "Our integrated AV systems support live streaming, hybrid meetings, and immersive presentations. Discuss your technical needs early so we can configure the optimal setup for impactful delivery."
+				}
+			],
+			"cta": "Start Planning"
+		},
+		"testimonials": {
+			"subtitle": "Client Testimonials",
+			"heading": "Trusted by Leading Organizations",
+			"prevLabel": "Previous testimonial",
+			"nextLabel": "Next testimonial",
+			"goToLabel": "Go to testimonial {index}",
+			"items": [
+				{
+					"quote": "De novo transformed our annual conference into an experience our team still talks about. The attention to detail and seamless coordination were exceptional.",
+					"name": "Ahmed Al-Rashid",
+					"role": "CEO",
+					"company": "Horizon Technologies",
+					"image": "/corporate-testimonial-1.jpg",
+					"imageAlt": "Ahmed Al-Rashid at corporate event"
+				},
+				{
+					"quote": "The versatility of the space allowed us to host a product launch that truly reflected our brand. The AV setup and catering exceeded all expectations.",
+					"name": "Sara Al-Mansouri",
+					"role": "Marketing Director",
+					"company": "Gulf Innovation Group",
+					"image": "/corporate-testimonial-2.jpg",
+					"imageAlt": "Sara Al-Mansouri at product launch"
+				},
+				{
+					"quote": "From planning to execution, the De novo team was phenomenal. Our gala dinner was flawless, and our guests were thoroughly impressed by the venue.",
+					"name": "Khalid Al-Hamdani",
+					"role": "Events Manager",
+					"company": "Yemen Business Council",
+					"image": "/corporate-testimonial-3.jpg",
+					"imageAlt": "Khalid Al-Hamdani at gala dinner"
+				}
+			]
+		},
+		"inquiry": {
+			"subtitle": "Get Started",
+			"heading": "Request a Proposal",
+			"description": "Tell us about your event and our team will craft a tailored proposal within 24 hours.",
+			"companyName": "Company Name",
+			"companyNamePlaceholder": "Acme Corporation",
+			"companyNameLabel": "Your company name",
+			"eventType": "Event Type",
+			"eventTypePlaceholder": "Select event type",
+			"eventTypeLabel": "Type of event",
+			"eventTypes": {
+				"conference": "Conference & Seminar",
+				"gala": "Gala Dinner",
+				"launch": "Product Launch",
+				"celebration": "Corporate Celebration",
+				"meeting": "Board Meeting",
+				"other": "Other"
+			},
+			"eventDate": "Event Date(s)",
+			"eventDatePlaceholder": "e.g. March 15, 2025",
+			"eventDateLabel": "Preferred event date(s)",
+			"guests": "Expected Guests",
+			"guestsPlaceholder": "Select guest count",
+			"guestsLabel": "Expected number of guests",
+			"guestRanges": {
+				"small": "Under 50",
+				"medium": "50 - 150",
+				"large": "150 - 300",
+				"xlarge": "300 - 500",
+				"xxlarge": "500+"
+			},
+			"contactName": "Contact Name",
+			"contactNamePlaceholder": "Sarah Johnson",
+			"contactNameLabel": "Your full name",
+			"email": "Email Address",
+			"emailPlaceholder": "sarah@company.com",
+			"emailLabel": "Your email address",
+			"phone": "Phone Number",
+			"phonePlaceholder": "+967-71583428",
+			"phoneLabel": "Your phone number",
+			"message": "Event Details",
+			"messagePlaceholder": "Tell us about your event vision, special requirements, or any questions...",
+			"messageLabel": "Additional details",
+			"submit": "Request a Proposal",
+			"sending": "Sending...",
+			"thankYouTitle": "Thank You",
+			"thankYouMessage": "Our events team will send you a tailored proposal within 24 hours.",
+			"errorRateLimit": "Too many requests. Please wait a moment and try again.",
+			"errorValidation": "Please check your input and try again.",
+			"errorGeneral": "Something went wrong. Please try again later.",
+			"errorNetwork": "Unable to connect. Please check your internet and try again."
+		},
+		"gallery": {
+			"title": "Our Events in Action",
+			"subtitle": "Gallery",
+			"description": "Explore our portfolio of corporate events hosted at De Novo. From large-scale conferences to intimate networking sessions, see how our spaces transform to create unforgettable experiences.",
+			"allCategories": "All Events",
+			"categories": {
+				"conferences": "Conferences",
+				"galas": "Galas",
+				"productLaunch": "Product Launch",
+				"celebrations": "Celebrations",
+				"seminars": "Seminars",
+				"networking": "Networking"
+			},
+			"resultCount": "{count} events",
+			"closeLightbox": "Close",
+			"previousImage": "Previous image",
+			"nextImage": "Next image",
+			"imageCounter": "{current} / {total}",
+			"items": [
+				{ "alt": "Keynote speaker addressing conference attendees", "title": "Keynote Address" },
+				{ "alt": "Conference hall with stage and audience seating", "title": "Main Stage" },
+				{ "alt": "Panel discussion with industry leaders", "title": "Expert Panel" },
+				{ "alt": "Elegant gala dinner with table settings", "title": "Gala Dinner" },
+				{ "alt": "Award ceremony on stage with spotlights", "title": "Award Night" },
+				{ "alt": "Formal gala with chandeliers and decor", "title": "Grand Celebration" },
+				{ "alt": "Product reveal with dramatic lighting", "title": "Product Reveal" },
+				{ "alt": "Launch event with branded stage design", "title": "Brand Launch" },
+				{ "alt": "Tech product showcase with interactive displays", "title": "Tech Showcase" },
+				{ "alt": "Corporate anniversary celebration", "title": "Anniversary Gala" },
+				{ "alt": "Team celebration with decorations", "title": "Team Milestone" },
+				{ "alt": "Holiday corporate party", "title": "Holiday Celebration" },
+				{ "alt": "Seminar workshop with breakout groups", "title": "Workshop Session" },
+				{ "alt": "Training seminar with presentation screen", "title": "Training Day" },
+				{ "alt": "Educational seminar with attendees at desks", "title": "Knowledge Forum" },
+				{ "alt": "Networking mixer with appetizers", "title": "Networking Mixer" },
+				{ "alt": "Business professionals connecting at event", "title": "Connections" },
+				{ "alt": "Cocktail networking reception", "title": "Cocktail Hour" }
+			]
+		},
+		"meta": {
+			"title": "Corporate Events & Galas | De Novo — Premium Venue in Sana'a",
+			"description": "Host your next corporate event, conference, gala, or product launch at De Novo in Sana'a, Yemen. Flexible spaces, premium AV, dedicated coordination.",
+			"keywords": "corporate events Sana'a,conference venue Yemen,gala dinner venue,product launch venue,corporate event hall,business events Sana'a,De novo events",
+			"ogTitle": "Corporate Events & Galas | De Novo",
+			"ogDescription": "Premium corporate event venue in Sana'a. Conferences, galas, product launches, and celebrations."
+		},
+		"faq": {
+			"subtitle": "FAQ",
+			"heading": "Common Questions",
+			"items": [
+				{
+					"question": "How far in advance should we book for a corporate event?",
+					"answer": "We recommend booking at least 4–6 weeks in advance for corporate events. For large conferences or galas, 8–12 weeks ensures full customization of spaces, catering, and AV setup. Last-minute inquiries are welcome based on availability."
+				},
+				{
+					"question": "What audiovisual and technology capabilities are available?",
+					"answer": "All event spaces include high-speed WiFi, built-in projection systems, surround sound, wireless microphones, and LED display walls. Our technical team provides on-site support for presentations, live streaming, and hybrid meeting setups."
+				},
+				{
+					"question": "Can we customize the catering and menu for our event?",
+					"answer": "Absolutely. Our culinary team offers fully customizable menus — from working lunches and coffee breaks to multi-course gala dinners. We accommodate dietary requirements, offer international and local Yemeni cuisine, and provide full beverage service."
+				},
+				{
+					"question": "What are the capacity and layout options for corporate events?",
+					"answer": "The Grand Ballroom hosts up to 500 guests with flexible configurations: theater, classroom, banquet, or cocktail. The Garden Terrace accommodates 500 for outdoor events, and Exchange Hall is ideal for 200-person meetings or breakout sessions."
+				},
+				{
+					"question": "What is included in a corporate event package?",
+					"answer": "Every package includes exclusive venue access, full AV setup, dedicated event coordinator, custom floor plan, catering service, on-site technical support, and complimentary parking. Additional services like décor, photography, and entertainment can be arranged."
+				}
+			]
+		}
 	}
 }

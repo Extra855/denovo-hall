@@ -34,6 +34,8 @@
   --color-charcoal: #2C2C2C;
   --color-champagne: #E8DCC4;
   --color-sage: #A9B3A2;
+  --color-peach: #E8C9B0;
+  --color-beige: #EDE4D5;
 }
 
 :root {
@@ -86,7 +88,7 @@
   }
   
   ::selection {
-    background-color: #E8DCC4;
+    background-color: #E8C9B0;
     color: #2C2C2C;
   }
 }
@@ -109,7 +111,7 @@
 
 @layer utilities {
   .font-serif-display {
-    font-family: var(--font-serif), 'Playfair Display', Georgia, serif;
+    font-family: var(--font-serif), 'Cormorant Garamond', Georgia, serif;
   }
   
   .text-balance {
@@ -180,10 +182,10 @@
   
   @keyframes pulse-soft {
     0%, 100% {
-      box-shadow: 0 0 0 0 rgba(232, 220, 196, 0.4);
+      box-shadow: 0 0 0 0 rgba(232, 201, 176, 0.4);
     }
     50% {
-      box-shadow: 0 0 0 12px rgba(232, 220, 196, 0);
+      box-shadow: 0 0 0 12px rgba(232, 201, 176, 0);
     }
   }
   
@@ -306,17 +308,17 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #D4C9B0;
+  background: #E8C9B0;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #C4B9A0;
+  background: #D4B89E;
 }
 
 /* Focus styles for accessibility */
 :focus-visible {
-  outline: 2px solid #A9B3A2;
+  outline: 2px solid #E8C9B0;
   outline-offset: 2px;
 }
 
@@ -399,9 +401,9 @@
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, #E8DCC4, #A9B3A2, #E8DCC4);
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
+  background: linear-gradient(135deg, #E8DCC4, #E8C9B0, #A9B3A2);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -409,12 +411,23 @@
 
 /* Glow effect for CTAs */
 .glow-subtle {
-  box-shadow: 0 0 20px rgba(232, 220, 196, 0.3);
+  box-shadow: 0 0 20px rgba(232, 201, 176, 0.3);
+}
+
+/* Peach glow effect */
+.glow-peach {
+  box-shadow: 0 0 25px rgba(232, 201, 176, 0.4);
+}
+
+/* Beige card background */
+.card-beige {
+  background: #EDE4D5;
+  border: 1px solid rgba(232, 201, 176, 0.3);
 }
 
 /* Text gradient */
 .text-gradient {
-  background: linear-gradient(135deg, #E8DCC4 0%, #A9B3A2 100%);
+  background: linear-gradient(135deg, #E8DCC4 0%, #E8C9B0 50%, #A9B3A2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -443,7 +456,7 @@
 
 /* Luxury gold accent line */
 .gold-line {
-  background: linear-gradient(90deg, transparent, #E8DCC4, transparent);
+  background: linear-gradient(90deg, transparent, #E8C9B0, #E8DCC4, transparent);
   height: 1px;
 }
 
@@ -496,9 +509,9 @@
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, #E8DCC4, #A9B3A2, #E8DCC4);
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
+  background: linear-gradient(135deg, #E8DCC4, #E8C9B0, #A9B3A2);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -506,12 +519,23 @@
 
 /* Glow effect for CTAs */
 .glow-subtle {
-  box-shadow: 0 0 20px rgba(232, 220, 196, 0.3);
+  box-shadow: 0 0 20px rgba(232, 201, 176, 0.3);
+}
+
+/* Peach glow effect */
+.glow-peach {
+  box-shadow: 0 0 25px rgba(232, 201, 176, 0.4);
+}
+
+/* Beige card background */
+.card-beige {
+  background: #EDE4D5;
+  border: 1px solid rgba(232, 201, 176, 0.3);
 }
 
 /* Text gradient */
 .text-gradient {
-  background: linear-gradient(135deg, #E8DCC4 0%, #A9B3A2 100%);
+  background: linear-gradient(135deg, #E8DCC4 0%, #E8C9B0 50%, #A9B3A2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -561,9 +585,9 @@
   background: linear-gradient(
     90deg,
     #E8DCC4 0%,
-    #F5F0E1 25%,
+    #E8E6E1 25%,
     #E8DCC4 50%,
-    #F5F0E1 75%,
+    #E8E6E1 75%,
     #E8DCC4 100%
   );
   background-size: 200% auto;
@@ -747,7 +771,7 @@
   justify-content: center;
   border: 2px solid #E8DCC4;
   border-radius: 50%;
-  font-family: var(--font-serif), Georgia, serif;
+  font-family: var(--font-serif), 'Cormorant Garamond', Georgia, serif;
   font-size: 1.25rem;
   color: #2C2C2C;
   background: #FAF9F6;
@@ -783,7 +807,7 @@
 
 /* Metallic gold accent */
 .gold-accent {
-  background: linear-gradient(135deg, #D4AF37 0%, #F5E6A3 50%, #D4AF37 100%);
+  background: linear-gradient(135deg, #D4AF37 0%, #E8E6E1 50%, #D4AF37 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -916,7 +940,7 @@
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #F5F0EB;
+  color: #FAF9F6;
   transition: all 0.3s ease;
 }
 
@@ -1004,7 +1028,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  font-family: var(--font-serif), Georgia, serif;
+  font-family: var(--font-serif), 'Cormorant Garamond', Georgia, serif;
   font-size: 1.5rem;
   color: rgba(212, 175, 55, 0.5);
   line-height: 1;
@@ -1401,7 +1425,7 @@ input[type="range"].luxury-range::-webkit-slider-thumb:hover {
   position: absolute;
   top: 1rem;
   left: 1.5rem;
-  font-family: var(--font-serif), Georgia, serif;
+  font-family: var(--font-serif), 'Cormorant Garamond', Georgia, serif;
   font-size: 4rem;
   color: rgba(232, 220, 196, 0.3);
   line-height: 1;
@@ -1944,6 +1968,75 @@ input[type="range"].luxury-range::-webkit-slider-thumb:hover {
   }
 }
 
+/* Amenity list item */
+.amenity-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.amenity-item:hover {
+  transform: translateX(4px);
+}
+
+/* Stage card highlight */
+.stage-highlight {
+  position: relative;
+  background: rgba(232, 220, 196, 0.05);
+  border: 1px solid rgba(232, 220, 196, 0.15);
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.stage-highlight:hover {
+  border-color: rgba(232, 220, 196, 0.3);
+  transform: translateY(-4px);
+}
+
+/* Off-season offer banner */
+.offer-banner {
+  background: linear-gradient(135deg, rgba(232, 220, 196, 0.15) 0%, rgba(232, 220, 196, 0.05) 100%);
+  border: 1px solid rgba(232, 220, 196, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.offer-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  start: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(232, 220, 196, 0.1) 0%, transparent 70%);
+  animation: banner-shimmer 6s ease-in-out infinite;
+}
+
+@keyframes banner-shimmer {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10%, 10%);
+  }
+}
+
+/* Value comparison highlight column */
+.value-column-highlight {
+  position: relative;
+  background: rgba(232, 220, 196, 0.08);
+  border: 1px solid rgba(232, 220, 196, 0.2);
+}
+
+.value-column-highlight::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(232, 220, 196, 0.05) 0%, transparent 100%);
+  pointer-events: none;
+}
+
 /* Social proof bar */
 .social-proof-bar {
   background: linear-gradient(90deg, 
@@ -2092,7 +2185,7 @@ input[type="range"].luxury-range::-webkit-slider-thumb:hover {
 
 /* Gradient text for premium feel */
 .text-premium-gradient {
-  background: linear-gradient(135deg, #D4AF37 0%, #E8DCC4 40%, #D4AF37 60%, #F5E6A3 100%);
+  background: linear-gradient(135deg, #D4AF37 0%, #E8DCC4 40%, #D4AF37 60%, #E8E6E1 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -2183,7 +2276,7 @@ select:focus-visible {
   font-size: 0.9rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  background: linear-gradient(135deg, #E8DCC4 0%, #D4C9B0 100%);
+  background: linear-gradient(135deg, #E8DCC4 0%, #D4AF37 100%);
   border: 2px solid rgba(212, 175, 55, 0.3);
   box-shadow: 
     0 4px 20px rgba(232, 220, 196, 0.4),
@@ -2198,7 +2291,7 @@ select:focus-visible {
     0 8px 30px rgba(232, 220, 196, 0.5),
     0 15px 50px rgba(44, 44, 44, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.4);
-  background: linear-gradient(135deg, #F5E6A3 0%, #E8DCC4 100%);
+  background: linear-gradient(135deg, #E8E6E1 0%, #E8DCC4 100%);
 }
 
 /* Navigation link enhanced contrast */
@@ -2348,7 +2441,7 @@ select:focus-visible {
   left: -1rem;
   top: -0.5rem;
   font-size: 4rem;
-  font-family: var(--font-serif), Georgia, serif;
+  font-family: var(--font-serif), 'Cormorant Garamond', Georgia, serif;
   color: rgba(232, 220, 196, 0.4);
   line-height: 1;
 }
@@ -2484,7 +2577,7 @@ select:focus-visible {
 .countdown-value {
   font-size: 2.5rem;
   font-weight: 300;
-  font-family: var(--font-serif), Georgia, serif;
+  font-family: var(--font-serif), 'Cormorant Garamond', Georgia, serif;
   color: #2C2C2C;
   line-height: 1;
 }
@@ -2515,7 +2608,7 @@ select:focus-visible {
 
 .price-tag .amount {
   font-size: 2rem;
-  font-family: var(--font-serif), Georgia, serif;
+  font-family: var(--font-serif), 'Cormorant Garamond', Georgia, serif;
   color: #2C2C2C;
 }
 

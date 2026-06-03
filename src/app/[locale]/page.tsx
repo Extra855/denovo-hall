@@ -28,6 +28,14 @@ const WhyChooseUsSection = dynamic(
   () => import("@/components/sections/why-choose-us-section").then(m => m.WhyChooseUsSection),
   { loading: () => <div className="min-h-[400px]" /> }
 );
+const VenueFeaturesSection = dynamic(
+  () => import("@/components/sections/venue-features-section").then(m => m.VenueFeaturesSection),
+  { loading: () => <div className="min-h-[400px]" /> }
+);
+const IncludedAmenitiesSection = dynamic(
+  () => import("@/components/sections/included-amenities-section").then(m => m.IncludedAmenitiesSection),
+  { loading: () => <div className="min-h-[400px]" /> }
+);
 const PlanningGuideSection = dynamic(
   () => import("@/components/sections/planning-guide-section").then(m => m.PlanningGuideSection),
   { loading: () => <div className="min-h-[400px]" /> }
@@ -121,7 +129,9 @@ export default async function Home({
       <ScrollReveal><SpacesSection /></ScrollReveal>
       <ScrollReveal><FeaturedWeddingsSection /></ScrollReveal>
       <ScrollReveal><TestimonialsSection /></ScrollReveal>
+      <ScrollReveal><VenueFeaturesSection /></ScrollReveal>
       <ScrollReveal><WhyChooseUsSection /></ScrollReveal>
+      <ScrollReveal><IncludedAmenitiesSection /></ScrollReveal>
       <ScrollReveal><PlanningGuideSection /></ScrollReveal>
       <ScrollReveal><CommunitySection /></ScrollReveal>
       <ScrollReveal><HelpSection /></ScrollReveal>
