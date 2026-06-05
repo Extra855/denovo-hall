@@ -1,129 +1,119 @@
 # Font Change Guide — De Novo
 
-The site uses 3 fonts via `next/font/google`, mapped to CSS custom properties. RTL (Arabic) overrides both properties to point at the Arabic font.
+The site uses 3 Google Fonts loaded via `next/font/google`, each mapped to a CSS custom property. Components reference these through Tailwind utility classes (`font-sans`, `font-serif`, `font-serif-display`). RTL (Arabic) overrides both properties to point at the Arabic font automatically.
 
-## Current Setup
+## Current Fonts (as of June 2026)
 
 | Role | Font | CSS Variable | Tailwind Class |
 |------|------|-------------|----------------|
-| Body (sans) | Inter | `--font-sans` | `font-sans` |
-| Headings (serif) | Playfair Display | `--font-serif` | `font-serif` |
-| Arabic (RTL) | Noto Sans Arabic | `--font-arabic` | `font-arabic` |
+| Body (sans) | Plus Jakarta Sans | `--font-sans` | `font-sans` |
+| Headings (serif) | Cormorant Garamond | `--font-serif` | `font-serif`, `font-serif-display` |
+| Arabic (RTL) | Tajawal | `--font-arabic` | `font-arabic` |
 
 ## Files to Edit
 
-| File | Purpose |
-|------|---------|
-| `src/app/[locale]/layout.tsx` | Font imports + CSS variable assignment |
-| `src/app/globals.css` | Theme variables, RTL override, fallback stacks |
+| File | What to change |
+|------|----------------|
+| `src/app/[locale]/layout.tsx` | Font imports, config objects, `fontVars` string |
+| `src/app/globals.css` | `.font-serif-display` fallback, scattered `font-family` fallbacks |
 
 ---
 
-## Step 1 — Change the English Fonts
+## Step 1 — Change English Fonts
 
-**`src/app/[locale]/layout.tsx`** (lines 2–30)
+Edit `src/app/[locale]/layout.tsx` (top of file).
 
-Replace the import and configuration:
+Replace the import:
 
 ```tsx
-// Before
-import { Playfair_Display, Inter, Noto_Sans_Arabic } from "next/font/google";
-
-const playfairDisplay = Playfair_Display({
-  variable: "--font-serif",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
-});
-
-const inter = Inter({
-  variable: "--font-sans",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["300", "400", "500", "600"],
-});
+// Change this line:
+import { Cormorant_Garamond, Plus_Jakarta_Sans, Tajawal } from "next/font/google";
 ```
 
-```tsx
-// After (example: swap to Cormorant Garamond + DM Sans)
-import { Cormorant_Garamond, DM_Sans, Noto_Sans_Arabic } from "next/font/google";
+Replace config objects:
 
+```tsx
+// Heading font — CSS variable must stay "--font-serif"
 const cormorantGaramond = Cormorant_Garamond({
   variable: "--font-serif",
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
 });
 
-const dmSans = DM_Sans({
+// Body font — CSS variable must stay "--font-sans"
+const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
-  display: "swap",
-  weight: ["300", "400", "500", "600"],
-});
-```
-
-Update line 118 to use the new variable names:
-
-```tsx
-const fontVars = `${cormorantGaramond.variable} ${dmSans.variable} ${notoSansArabic.variable}`;
-```
-
-**Key rule:** Keep `variable: "--font-serif"` / `"--font-sans"` — these CSS variable names are referenced everywhere. Only change the Google Font import and the JS variable name.
-
----
-
-## Step 2 — Change the Arabic Font
-
-**`src/app/[locale]/layout.tsx`** (lines 25–30)
-
-```tsx
-// Example: swap to IBM Plex Sans Arabic
-import { IBM_Plex_Sans_Arabic } from "next/font/google";
-
-const ibmPlexArabic = IBM_Plex_Sans_Arabic({
-  variable: "--font-arabic",
-  subsets: ["arabic"],
   display: "swap",
   weight: ["300", "400", "500", "600", "700"],
 });
 ```
 
-Keep `variable: "--font-arabic"`. Update `fontVars` accordingly.
+Update the `fontVars` string (~line 118) with your new JS variable names:
+
+```tsx
+const fontVars = `${cormorantGaramond.variable} ${plusJakartaSans.variable} ${tajawal.variable}`;
+```
+
+**Critical**: Keep `variable: "--font-serif"` and `variable: "--font-sans"`. These CSS variable names are referenced in `globals.css` and every component. Only change the Google Font import and the JS variable name.
+
+---
+
+## Step 2 — Change Arabic Font
+
+Same file, `src/app/[locale]/layout.tsx`:
+
+```tsx
+// CSS variable must stay "--font-arabic"
+const tajawal = Tajawal({
+  variable: "--font-arabic",
+  subsets: ["arabic"],
+  display: "swap",
+  weight: ["200", "300", "400", "500", "700", "800", "900"],
+});
+```
+
+Keep `variable: "--font-arabic"`. Update `fontVars` to use the new JS variable name.
 
 ---
 
 ## Step 3 — Update CSS Fallbacks
 
-**`src/app/globals.css`**
+Edit `src/app/globals.css`.
 
-1. **`@theme inline` block** (line 7–10) — no changes needed if variable names stay the same.
+### Theme block (`@theme inline`)
+Lines ~7–10. No changes needed — variable names stay the same.
 
-2. **RTL override** (line 99–103) — no changes needed. It remaps `--font-sans` and `--font-serif` to `--font-arabic` automatically.
+### RTL override
+Lines ~99–103. No changes needed. The `[dir="rtl"]` block remaps `--font-sans` and `--font-serif` to `--font-arabic` automatically.
 
-3. **`.font-serif-display`** (line 113–115) — update the fallback font name:
+### `.font-serif-display` utility
+Line ~113. Update the fallback name to match your new serif font:
 
 ```css
-/* Before */
-.font-serif-display {
-  font-family: var(--font-serif), 'Playfair Display', Georgia, serif;
-}
-
-/* After */
 .font-serif-display {
   font-family: var(--font-serif), 'Cormorant Garamond', Georgia, serif;
 }
 ```
 
-4. **Scattered `font-family` declarations** (lines 774, 1031, 1428, 2444, 2580, 2611) — these use `var(--font-serif), Georgia, serif`. Update the fallback name if desired, or leave `Georgia` as a generic serif fallback.
+### Scattered `font-family` declarations
+Lines ~774, 1031, 1428, 2444, 2580, 2611. These all use the same pattern. Update the fallback name:
+
+```css
+font-family: var(--font-serif), 'Cormorant Garamond', Georgia, serif;
+```
+
+You can leave `Georgia, serif` as generic fallbacks — they only activate if Google Fonts fail to load.
 
 ---
 
-## Step 4 — Verify Component Usage
+## Step 4 — Verify
 
-Most components use Tailwind utility classes (`font-sans`, `font-serif`, `font-serif-display`). These resolve through the CSS variables, so they update automatically. No component edits needed.
+Components use Tailwind classes (`font-sans`, `font-serif`, `font-serif-display`). These resolve through CSS variables, so they update automatically. No component edits needed.
 
-To find any hardcoded font references:
+Find any hardcoded references to old font names:
 
 ```bash
 grep -rn "Playfair\|Inter\|Noto_Sans" src/ --include="*.tsx" --include="*.ts"
@@ -131,28 +121,78 @@ grep -rn "Playfair\|Inter\|Noto_Sans" src/ --include="*.tsx" --include="*.ts"
 
 ---
 
-## Step 5 — Available Google Fonts for Arabic
+## Available Google Fonts
 
-| Font | Style | Notes |
-|------|-------|-------|
-| `Noto_Sans_Arabic` | Clean sans | Current default, excellent weight range |
-| `Noto_Kufi_Arabic` | Geometric sans | More modern, structured |
-| `IBM_Plex_Sans_Arabic` | Professional sans | Clean, corporate feel |
-| `Readex_Pro` | Minimal sans | Variable weight, contemporary |
-| `Cairo` | Rounded sans | Friendly, readable at small sizes |
-| `Tajawal` | Light sans | Elegant, thin weights available |
-| `Amiri` | Naskh serif | Traditional, good for headings |
+### English — Serif (headings)
 
-Import syntax: `import { Cairo } from "next/font/google"` → use as `Cairo({ variable: "--font-arabic", subsets: ["arabic"], ... })`.
+| Font | Import Name | Personality |
+|------|-------------|-------------|
+| Cormorant Garamond | `Cormorant_Garamond` | Editorial, refined, high-contrast strokes |
+| Playfair Display | `Playfair_Display` | Classic luxury, very common on wedding sites |
+| EB Garamond | `EB_Garamond` | Historical, warm, humanist |
+| Libre Caslon Display | `Libre_Caslon_Display` | Magazine editorial, sharp |
+| Fraunces | `Fraunces` | Quirky, warm, optical size axis |
+| Cinzel | `Cinzel` | Classical Roman inscriptions, regal |
+| DM Serif Display | `DM_Serif_Display` | Bold, modern editorial |
+| Bitter | `Bitter` | Slab-serif, contemporary, readable |
+
+### English — Sans (body)
+
+| Font | Import Name | Personality |
+|------|-------------|-------------|
+| Plus Jakarta Sans | `Plus_Jakarta_Sans` | Warm geometric, friendly terminals |
+| Inter | `Inter` | Clinical, excellent readability, generic |
+| DM Sans | `DM_Sans` | Clean, geometric, low-contrast |
+| Outfit | `Outfit` | Geometric, modern, slightly rounded |
+| Sora | `Sora` | Technical, geometric, precise |
+| Manrope | `Manrope` | Geometric, wide, contemporary |
+| Space Grotesk | `Space_Grotesk` | Monospaced-influenced, techy |
+
+### Arabic
+
+| Font | Import Name | Personality |
+|------|-------------|-------------|
+| Tajawal | `Tajawal` | Elegant thin weights, warm, modern |
+| Noto Sans Arabic | `Noto_Sans_Arabic` | Clinical neutrality, excellent coverage |
+| Noto Kufi Arabic | `Noto_Kufi_Arabic` | Geometric, structured, modern |
+| Cairo | `Cairo` | Rounded, friendly, readable |
+| Readex Pro | `Readex_Pro` | Variable weight, contemporary |
+| IBM Plex Sans Arabic | `IBM_Plex_Sans_Arabic` | Professional, corporate |
+| Almarai | `Almarai` | Designed for Arabic, modern |
+| Amiri | `Amiri` | Naskh serif, traditional, good for headings |
+
+---
+
+## Architecture Notes
+
+### How RTL font switching works
+
+```
+English (LTR):
+  --font-sans → Plus Jakarta Sans
+  --font-serif → Cormorant Garamond
+
+Arabic (RTL): [dir="rtl"] body override in globals.css
+  --font-sans → Tajawal (via --font-arabic)
+  --font-serif → Tajawal (via --font-arabic)
+```
+
+The `[dir="rtl"]` block (globals.css ~line 99) reassigns both `--font-sans` and `--font-serif` to `--font-arabic`. This means every `font-sans` and `font-serif` / `font-serif-display` class automatically uses the Arabic font in RTL mode. No component-level logic needed.
+
+### Why CSS variables instead of direct font-family
+
+`next/font/google` injects font files and creates a unique CSS class + variable per font. Using `variable: "--font-serif"` lets us swap the underlying font in one place (layout.tsx) without touching 50+ component files.
 
 ---
 
 ## Checklist
 
 - [ ] Replace font import in `layout.tsx`
-- [ ] Update font config objects (keep `variable` names unchanged)
+- [ ] Update font config objects (keep `variable` names: `--font-serif`, `--font-sans`, `--font-arabic`)
 - [ ] Update `fontVars` string with new JS variable names
-- [ ] Update fallback names in `globals.css` (`.font-serif-display` + scattered `font-family` lines)
-- [ ] Run `bun run build` to verify no font loading errors
-- [ ] Test both `/en` and `/ar` routes for correct rendering
-- [ ] Check RTL layout — Arabic font should override both serif and sans via the `[dir="rtl"]` block
+- [ ] Update fallback name in `.font-serif-display` (globals.css)
+- [ ] Update fallback names in scattered `font-family` declarations (globals.css)
+- [ ] `bun run build` — verify no font loading errors
+- [ ] Test `/en` — new serif headings + new sans body
+- [ ] Test `/ar` — Arabic font overrides both via `[dir="rtl"]`
+- [ ] Verify RTL layout: no letter-spacing, no text-transform

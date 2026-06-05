@@ -26,16 +26,16 @@ const CorporateAmenitiesSection = dynamic(
    () => import("@/components/sections/corporate-amenities-section").then(m => m.CorporateAmenitiesSection),
    { loading: () => <div className="min-h-[400px]" /> }
 );
-const CorporateSpacesSection = dynamic(
-   () => import("@/components/sections/corporate-spaces-section").then(m => m.CorporateSpacesSection),
-   { loading: () => <div className="min-h-[400px]" /> }
-);
 const CorporateProcessSection = dynamic(
    () => import("@/components/sections/corporate-process-section").then(m => m.CorporateProcessSection),
    { loading: () => <div className="min-h-[400px]" /> }
 );
 const CorporateGallerySection = dynamic(
    () => import("@/components/sections/corporate-gallery-section").then(m => m.CorporateGallerySection),
+   { loading: () => <div className="min-h-[400px]" /> }
+);
+const CorporateFeaturedEventsSection = dynamic(
+   () => import("@/components/sections/corporate-featured-events-section").then(m => m.CorporateFeaturedEventsSection),
    { loading: () => <div className="min-h-[400px]" /> }
 );
 const CorporateTestimonialsSection = dynamic(
@@ -168,8 +168,8 @@ export default async function CorporateEventsRoute({
          <ScrollReveal><CorporateCategoriesSection /></ScrollReveal>
          <ScrollReveal><CorporateWhyUsSection /></ScrollReveal>
          <ScrollReveal><CorporateAmenitiesSection /></ScrollReveal>
-         <ScrollReveal><CorporateSpacesSection /></ScrollReveal>
          <ScrollReveal><CorporateGallerySection /></ScrollReveal>
+         <ScrollReveal><CorporateFeaturedEventsSection /></ScrollReveal>
          <ScrollReveal><CorporateProcessSection /></ScrollReveal>
          <ScrollReveal><CorporateTestimonialsSection /></ScrollReveal>
          <ScrollReveal><CorporateHelpSection /></ScrollReveal>
