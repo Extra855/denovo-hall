@@ -763,11 +763,11 @@
 		"capacity": {
 			"total": "1,000",
 			"totalLabel": "Total Guests",
-			"indoor": "500",
-			"indoorLabel": "Indoor Hall",
-			"outdoor": "500",
-			"outdoorLabel": "Outdoor Garden",
-			"hallLabel": "Panoramic Glass Hall"
+			"distribution": "Distributed across the Main Hall, Garden & Pool Area"
+		},
+		"panoramicHall": {
+			"heading": "Panoramic Glass Hall",
+			"description": "Floor-to-ceiling glass walls frame sweeping views of the surrounding landscape, immersing your celebration in natural beauty and golden-hour light."
 		},
 		"glassBridge": {
 			"subtitle": "The Grand Entrance",

@@ -5,14 +5,50 @@ import { Button } from "@/components/ui/button";
 import { Icons } from "@/components/icons";
 import { useAnimatedCounter } from "@/hooks/use-animated-counter";
 
-function StatCounter({ value, label }: { value: number; label: string }) {
-   const { count, ref } = useAnimatedCounter(value);
+
+function CapacityBlock({ t }: { t: ReturnType<typeof useTranslations> }) {
+   const { count, ref } = useAnimatedCounter(1000);
    return (
-      <div ref={ref} className="text-center animate-fade-up">
-         <div className="font-serif-display text-4xl md:text-5xl text-peach stat-value-glow mb-2">
-            {count.toLocaleString()}
+      <div className="text-center md:text-end">
+         <div className="flex justify-center md:justify-end mb-4">
+            <div className="w-16 h-px bg-champagne" />
          </div>
-         <p className="text-alabaster/60 text-sm tracking-widest uppercase">{label}</p>
+         <div ref={ref} className="animate-fade-up">
+            <div className="font-serif-display text-5xl md:text-6xl text-peach stat-value-glow mb-2">
+               {count.toLocaleString()}
+            </div>
+         </div>
+         <p className="text-alabaster/60 text-sm tracking-widest uppercase mb-3 animate-fade-up" style={{ transitionDelay: "0.1s" }}>
+            {t("capacity.totalLabel")}
+         </p>
+         <p className="text-alabaster/40 text-sm animate-fade-up" style={{ transitionDelay: "0.3s" }}>
+            {t("capacity.distribution")}
+         </p>
+      </div>
+   );
+}
+
+function PanoramicHallBlock({ t }: { t: ReturnType<typeof useTranslations> }) {
+   return (
+      <div className="animate-fade-up">
+         <div className="flex items-center gap-4 mb-2">
+            <div className="w-8 h-px bg-champagne" />
+            <p className="text-sm tracking-widest uppercase text-sage">
+               {t("panoramicHall.heading")}
+            </p>
+         </div>
+         <h3 className="font-serif-display text-3xl md:text-4xl text-alabaster mb-4">
+            {t("panoramicHall.heading")}
+         </h3>
+         <p className="text-alabaster/60 leading-relaxed mb-6">
+            {t("panoramicHall.description")}
+         </p>
+         <div className="aspect-video bg-alabaster/5 border border-alabaster/10 flex items-center justify-center">
+            <div className="text-alabaster/20 text-center">
+               <Icons.bridge />
+               <p className="text-xs mt-2 tracking-widest uppercase">Panoramic View Placeholder</p>
+            </div>
+         </div>
       </div>
    );
 }
@@ -45,19 +81,10 @@ export function VenueFeaturesSection() {
                </h2>
             </div>
 
-            {/* Capacity Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-20 md:mb-28">
-               <StatCounter value={1000} label={t("capacity.totalLabel")} />
-               <StatCounter value={500} label={t("capacity.indoorLabel")} />
-               <StatCounter value={500} label={t("capacity.outdoorLabel")} />
-               <div className="text-center animate-fade-up">
-                  <div className="font-serif-display text-lg md:text-xl text-peach mb-2">
-                     {t("capacity.hallLabel")}
-                  </div>
-                  <p className="text-alabaster/60 text-sm tracking-widest uppercase">
-                     {t("capacity.indoorLabel")}
-                  </p>
-               </div>
+            {/* Capacity Stats & Panoramic Hall */}
+            <div className="grid md:grid-cols-2 gap-12 md:gap-16 mb-20 md:mb-28 items-center">
+               <CapacityBlock t={t} />
+               <PanoramicHallBlock t={t} />
             </div>
 
             {/* Glass Bridge Hero */}
