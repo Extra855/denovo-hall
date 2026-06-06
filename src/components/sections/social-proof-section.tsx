@@ -10,7 +10,7 @@ export function SocialProofSection() {
    const sp = useTranslations("SocialProof");
 
    const weddingsCounter = useAnimatedCounter(300);
-   const yearsCounter = useAnimatedCounter(3);
+   const yearsCounter = useAnimatedCounter(2);
    const guestsCounter = useAnimatedCounter(250000);
    const ratingCounter = useAnimatedCounter(4.3);
 
