@@ -102,15 +102,38 @@ export function SpacesSection() {
    ];
 
    const inspirations = [
-      { id: 1, title: tg("items.0.title"), image: "/romantic.jpg", description: tg("items.0.description") },
-      { id: 2, title: tg("items.1.title"), image: "/Garden-Terrace.jpg", description: tg("items.1.description") },
-      { id: 3, title: tg("items.2.title"), image: "/vintage.jpg", description: tg("items.2.description") },
-      { id: 4, title: tg("items.3.title"), image: "/hero.jpg", description: tg("items.3.description") },
+      {
+         id: 1,
+         title: tg("items.0.title"),
+         image: "/romantic.jpg",
+         description: tg("items.0.description"),
+      },
+      {
+         id: 2,
+         title: tg("items.1.title"),
+         image: "/modern.jpg",
+         description: tg("items.1.description"),
+      },
+      {
+         id: 3,
+         title: tg("items.2.title"),
+         image: "/vintage.jpg",
+         description: tg("items.2.description"),
+      },
+      {
+         id: 4,
+         title: tg("items.3.title"),
+         image: "/glam.jpg",
+         description: tg("items.3.description"),
+      },
    ];
 
    return (
       <>
-         <section id="spaces" className="py-24 md:py-32 lg:py-40 px-6 bg-beige relative overflow-hidden">
+         <section
+            id="spaces"
+            className="py-24 md:py-32 lg:py-40 px-6 bg-beige relative overflow-hidden"
+         >
             <div
                className="absolute inset-0 opacity-[0.02]"
                style={{
@@ -130,7 +153,10 @@ export function SpacesSection() {
                   >
                      {ti("heading")}
                   </h2>
-                  <Ornament className="mb-6 animate-fade-up" style={{ transitionDelay: "0.15s" }} />
+                  <Ornament
+                     className="mb-6 animate-fade-up"
+                     style={{ transitionDelay: "0.15s" }}
+                  />
                   <p
                      className="text-muted-foreground body-large max-w-2xl mx-auto animate-fade-up leading-relaxed"
                      style={{ transitionDelay: "0.2s" }}
@@ -147,7 +173,12 @@ export function SpacesSection() {
                         className="inspiration-card animate-fade-up"
                         style={{ transitionDelay: `${0.3 + index * 0.1}s` }}
                      >
-                        <BlurImage src={item.image} alt={item.title} sizes="(max-width: 768px) 50vw, 25vw" className="object-cover" />
+                        <BlurImage
+                           src={item.image}
+                           alt={item.title}
+                           sizes="(max-width: 768px) 50vw, 25vw"
+                           className="object-cover"
+                        />
                         <div className="inspiration-content">
                            <h3 className="font-serif-display text-lg md:text-xl text-alabaster mb-1">
                               {item.title}
@@ -173,7 +204,10 @@ export function SpacesSection() {
                         {t("heading")}
                      </h2>
                   </div>
-                  <div className="md:col-span-7 flex items-end animate-fade-up" style={{ transitionDelay: "0.1s" }}>
+                  <div
+                     className="md:col-span-7 flex items-end animate-fade-up"
+                     style={{ transitionDelay: "0.1s" }}
+                  >
                      <p className="text-muted-foreground body-regular">
                         {t("description")}
                      </p>
@@ -181,15 +215,35 @@ export function SpacesSection() {
                </div>
 
                {/* Capacity subtext */}
-               <div className="mb-12 md:mb-16 animate-fade-up" style={{ transitionDelay: "0.15s" }}>
+               <div
+                  className="mb-12 md:mb-16 animate-fade-up"
+                  style={{ transitionDelay: "0.15s" }}
+               >
                   <span className="inline-flex items-center gap-2 text-sm tracking-wide text-charcoal bg-champagne/30 px-4 py-2 rounded-full border border-champagne/50">
-                     <svg className="w-4 h-4 text-charcoal/70" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                     <svg
+                        className="w-4 h-4 text-charcoal/70"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                     >
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                     </svg>
                      {t("capacity")}
                   </span>
                </div>
 
                {/* Mobile carousel */}
-               <div className="md:hidden -mx-6 relative" role="region" aria-label="Venue spaces">
+               <div
+                  className="md:hidden -mx-6 relative"
+                  role="region"
+                  aria-label="Venue spaces"
+               >
                   <div
                      ref={carouselRef}
                      className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide scroll-smooth"
@@ -203,7 +257,12 @@ export function SpacesSection() {
                            aria-label={`Space ${index + 1} of ${spaceCount}`}
                         >
                            <div className="relative h-[70vh] max-h-[600px] min-h-[400px]">
-                              <BlurImage src={space.image} alt={space.title} sizes="100vw" className="object-cover" />
+                              <BlurImage
+                                 src={space.image}
+                                 alt={space.title}
+                                 sizes="100vw"
+                                 className="object-cover"
+                              />
                               <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/30 to-transparent" />
                               <div className="absolute bottom-0 inset-x-0 p-6 pb-8">
                                  <h3 className="font-serif-display text-2xl text-alabaster mb-2">
@@ -236,7 +295,15 @@ export function SpacesSection() {
                         </button>
                      ))}
                      <div className="text-charcoal/30 flex items-center gap-1 ms-3">
-                        <svg className="w-3.5 h-3.5 swipe-nudge" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <svg
+                           className="w-3.5 h-3.5 swipe-nudge"
+                           viewBox="0 0 24 24"
+                           fill="none"
+                           stroke="currentColor"
+                           strokeWidth="2"
+                           strokeLinecap="round"
+                           strokeLinejoin="round"
+                        >
                            <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
                      </div>
@@ -246,13 +313,23 @@ export function SpacesSection() {
                {/* Desktop grid — asymmetric 7+5 */}
                <div className="hidden md:grid md:grid-cols-12 gap-6 md:gap-8">
                   {/* Main Hall — 7 cols hero */}
-                  <div className="md:col-span-7 animate-fade-up group" style={{ transitionDelay: "0.3s" }}>
+                  <div
+                     className="md:col-span-7 animate-fade-up group"
+                     style={{ transitionDelay: "0.3s" }}
+                  >
                      <div
                         className="img-zoom rounded-sm overflow-hidden relative cursor-pointer"
-                        onClick={() => openLightbox(spaces[0].image, spaces[0].title)}
+                        onClick={() =>
+                           openLightbox(spaces[0].image, spaces[0].title)
+                        }
                      >
                         <div className="w-full h-[400px] md:h-[500px] relative">
-                           <BlurImage src={spaces[0].image} alt={spaces[0].title} sizes="(max-width: 768px) 100vw, 58vw" className="object-cover" />
+                           <BlurImage
+                              src={spaces[0].image}
+                              alt={spaces[0].title}
+                              sizes="(max-width: 768px) 100vw, 58vw"
+                              className="object-cover"
+                           />
                            <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/20 transition-colors duration-500 flex items-center justify-center">
                               <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-alabaster">
                                  <Icons.expand />
@@ -261,21 +338,36 @@ export function SpacesSection() {
                         </div>
                      </div>
                      <div className="mt-6">
-                        <h3 className="font-serif-display text-2xl text-charcoal">{spaces[0].title}</h3>
-                        <p className="text-muted-foreground mt-2">{spaces[0].description}</p>
+                        <h3 className="font-serif-display text-2xl text-charcoal">
+                           {spaces[0].title}
+                        </h3>
+                        <p className="text-muted-foreground mt-2">
+                           {spaces[0].description}
+                        </p>
                      </div>
                   </div>
 
                   {/* Right column — Garden Terrace + Pool Area stacked */}
                   <div className="md:col-span-5 flex flex-col gap-6 md:gap-8">
                      {spaces.slice(1, 3).map((space, index) => (
-                        <div key={space.id} className="animate-fade-up group" style={{ transitionDelay: `${0.4 + index * 0.1}s` }}>
+                        <div
+                           key={space.id}
+                           className="animate-fade-up group"
+                           style={{ transitionDelay: `${0.4 + index * 0.1}s` }}
+                        >
                            <div
                               className="img-zoom rounded-sm overflow-hidden relative cursor-pointer"
-                              onClick={() => openLightbox(space.image, space.title)}
+                              onClick={() =>
+                                 openLightbox(space.image, space.title)
+                              }
                            >
                               <div className="w-full h-[280px] relative">
-                                 <BlurImage src={space.image} alt={space.title} sizes="(max-width: 768px) 100vw, 42vw" className="object-cover" />
+                                 <BlurImage
+                                    src={space.image}
+                                    alt={space.title}
+                                    sizes="(max-width: 768px) 100vw, 42vw"
+                                    className="object-cover"
+                                 />
                               </div>
                               <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/20 transition-colors duration-500 flex items-center justify-center">
                                  <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-alabaster">
@@ -284,8 +376,12 @@ export function SpacesSection() {
                               </div>
                            </div>
                            <div className="mt-4">
-                              <h3 className="font-serif-display text-xl text-charcoal">{space.title}</h3>
-                              <p className="text-muted-foreground text-sm mt-1">{space.description}</p>
+                              <h3 className="font-serif-display text-xl text-charcoal">
+                                 {space.title}
+                              </h3>
+                              <p className="text-muted-foreground text-sm mt-1">
+                                 {space.description}
+                              </p>
                            </div>
                         </div>
                      ))}

@@ -38,40 +38,51 @@ function observeSubtree(root: HTMLElement) {
 export function ScrollReveal({ children }: { children: React.ReactNode }) {
    const ref = useRef<HTMLDivElement>(null);
    const moRef = useRef<MutationObserver | null>(null);
+   const cleanupRef = useRef<(() => void) | null>(null);
 
    useEffect(() => {
       const el = ref.current;
       if (!el) return;
 
-      // Observe existing animated children
-      observeSubtree(el);
+      // Defer to next frame so observer fires after hydration completes
+      const raf = requestAnimationFrame(() => {
+         // Observe existing animated children
+         observeSubtree(el);
 
-      // Watch for dynamically added children (defer to avoid interfering with React reconciliation)
-      const mo = new MutationObserver((mutations) => {
-         requestAnimationFrame(() => {
-            for (const mutation of mutations) {
-               for (const node of mutation.addedNodes) {
-                  if (node instanceof HTMLElement) {
-                     observeSubtree(node);
+         // Watch for dynamically added children
+         const mo = new MutationObserver((mutations) => {
+            requestAnimationFrame(() => {
+               for (const mutation of mutations) {
+                  for (const node of mutation.addedNodes) {
+                     if (node instanceof HTMLElement) {
+                        observeSubtree(node);
+                     }
                   }
                }
-            }
+            });
          });
-      });
-      moRef.current = mo;
-      mo.observe(el, { childList: true, subtree: true });
+         moRef.current = mo;
+         mo.observe(el, { childList: true, subtree: true });
 
-      // Safety net: force all pending elements visible after 2s
-      const timeout = setTimeout(() => {
-         el.querySelectorAll(".animate-fade-up:not(.visible), .reveal-image:not(.visible)").forEach((child) => {
-            child.classList.add("visible");
-         });
-      }, 2000);
+         // Safety net: force all pending elements visible after 2s
+         const timeout = setTimeout(() => {
+            el.querySelectorAll(".animate-fade-up:not(.visible), .reveal-image:not(.visible)").forEach((child) => {
+               child.classList.add("visible");
+            });
+         }, 2000);
+
+         // Store cleanup refs
+         cleanupRef.current = () => {
+            mo.disconnect();
+            moRef.current = null;
+            clearTimeout(timeout);
+         };
+      });
 
       return () => {
-         mo.disconnect();
-         moRef.current = null;
-         clearTimeout(timeout);
+         cancelAnimationFrame(raf);
+         cleanupRef.current?.();
+         cleanupRef.current = null;
       };
    }, []);
 
