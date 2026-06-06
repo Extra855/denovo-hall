@@ -93,27 +93,20 @@
 	"Spaces": {
 		"subtitle": "The Spaces",
 		"heading": "A Canvas of Infinite Possibilities",
-		"description": "Every space within De novo is designed to be transformed. From minimalist modern to romantic vintage, our interiors become whatever you envision.",
+		"description": "From the grandeur of our enclosed hall to the tranquility of the poolside, every corner of De novo is crafted to host your perfect celebration.",
+		"capacity": "Accommodates 1,000 guests across indoor & outdoor spaces",
 		"items": [
 			{
-				"title": "The Grand Ballroom",
-				"description": "Soaring ceilings and crystalline chandeliers create an atmosphere of timeless elegance",
-				"capacity": "Up to 500 guests"
+				"title": "The Main Hall",
+				"description": "Soaring, interchangable ceilings and crystalline chandeliers create an atmosphere of timeless elegance"
 			},
 			{
 				"title": "The Garden Terrace",
-				"description": "Where nature meets sophistication in perfect harmony",
-				"capacity": "Up to 500 guests"
+				"description": "Where nature meets sophistication in perfect harmony"
 			},
 			{
-				"title": "The Intimate Lounge",
-				"description": "A cozy retreat for your most cherished moments",
-				"capacity": "Up to 50 guests"
-			},
-			{
-				"title": "The Exchange Hall",
-				"description": "A stunning ceremony space that adapts to your unique aesthetic",
-				"capacity": "Up to 200 guests"
+				"title": "The Pool Area",
+				"description": "A serene retreat with a walkway over the pool, comfortable seating, and the soothing sound of a cascading waterfall"
 			}
 		]
 	},

@@ -23,7 +23,7 @@ export function SpacesSection() {
       setLightboxOpen(true);
    }, []);
 
-   const spaceCount = 4;
+   const spaceCount = 3;
 
    // Sync active dot with scroll position
    useEffect(() => {
@@ -85,29 +85,19 @@ export function SpacesSection() {
          id: 1,
          title: t("items.0.title"),
          description: t("items.0.description"),
-         capacity: t("items.0.capacity"),
-         image: "/Grand-Ballroom.jpg",
+         image: "/main-hall.jpeg",
       },
       {
          id: 2,
          title: t("items.1.title"),
          description: t("items.1.description"),
-         capacity: t("items.1.capacity"),
          image: "/Garden-Terrace.jpg",
       },
       {
          id: 3,
          title: t("items.2.title"),
          description: t("items.2.description"),
-         capacity: t("items.2.capacity"),
          image: "/Intimate-Lounge.jpg",
-      },
-      {
-         id: 4,
-         title: t("items.3.title"),
-         description: t("items.3.description"),
-         capacity: t("items.3.capacity"),
-         image: "/Exchange-Hall.jpg",
       },
    ];
 
@@ -171,7 +161,7 @@ export function SpacesSection() {
                </div>
 
                {/* Spaces — heading floats left, description in right margin */}
-               <div className="grid md:grid-cols-12 gap-8 md:gap-12 mb-12 md:mb-16">
+               <div className="grid md:grid-cols-12 gap-8 md:gap-12 mb-4 md:mb-6">
                   <div className="md:col-span-5 animate-fade-up">
                      <div className="flex items-center gap-3 mb-3">
                         <div className="w-8 h-px bg-champagne" />
@@ -190,6 +180,14 @@ export function SpacesSection() {
                   </div>
                </div>
 
+               {/* Capacity subtext */}
+               <div className="mb-12 md:mb-16 animate-fade-up" style={{ transitionDelay: "0.15s" }}>
+                  <span className="inline-flex items-center gap-2 text-sm tracking-wide text-charcoal bg-champagne/30 px-4 py-2 rounded-full border border-champagne/50">
+                     <svg className="w-4 h-4 text-charcoal/70" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                     {t("capacity")}
+                  </span>
+               </div>
+
                {/* Mobile carousel */}
                <div className="md:hidden -mx-6 relative" role="region" aria-label="Venue spaces">
                   <div
@@ -205,22 +203,12 @@ export function SpacesSection() {
                            aria-label={`Space ${index + 1} of ${spaceCount}`}
                         >
                            <div className="relative h-[70vh] max-h-[600px] min-h-[400px]">
-                              <BlurImage
-                                 src={space.image}
-                                 alt={space.title}
-                                 sizes="100vw"
-                                 className="object-cover"
-                              />
+                              <BlurImage src={space.image} alt={space.title} sizes="100vw" className="object-cover" />
                               <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/30 to-transparent" />
                               <div className="absolute bottom-0 inset-x-0 p-6 pb-8">
-                                 <div className="flex items-center gap-3 mb-2">
-                                    <h3 className="font-serif-display text-2xl text-alabaster">
-                                       {space.title}
-                                    </h3>
-                                    <span className="text-xs tracking-wider text-alabaster/90 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
-                                       {space.capacity}
-                                    </span>
-                                 </div>
+                                 <h3 className="font-serif-display text-2xl text-alabaster mb-2">
+                                    {space.title}
+                                 </h3>
                                  <p className="text-alabaster/80 text-sm leading-relaxed">
                                     {space.description}
                                  </p>
@@ -255,8 +243,9 @@ export function SpacesSection() {
                   </div>
                </div>
 
-               {/* Desktop grid */}
+               {/* Desktop grid — asymmetric 7+5 */}
                <div className="hidden md:grid md:grid-cols-12 gap-6 md:gap-8">
+                  {/* Main Hall — 7 cols hero */}
                   <div className="md:col-span-7 animate-fade-up group" style={{ transitionDelay: "0.3s" }}>
                      <div
                         className="img-zoom rounded-sm overflow-hidden relative cursor-pointer"
@@ -272,16 +261,12 @@ export function SpacesSection() {
                         </div>
                      </div>
                      <div className="mt-6">
-                        <div className="flex items-center gap-3 mb-2">
-                           <h3 className="font-serif-display text-2xl text-charcoal">{spaces[0].title}</h3>
-                           <span className="text-xs tracking-wider text-muted-foreground bg-secondary px-3 py-1 rounded-full">
-                              {spaces[0].capacity}
-                           </span>
-                        </div>
-                        <p className="text-muted-foreground">{spaces[0].description}</p>
+                        <h3 className="font-serif-display text-2xl text-charcoal">{spaces[0].title}</h3>
+                        <p className="text-muted-foreground mt-2">{spaces[0].description}</p>
                      </div>
                   </div>
 
+                  {/* Right column — Garden Terrace + Pool Area stacked */}
                   <div className="md:col-span-5 flex flex-col gap-6 md:gap-8">
                      {spaces.slice(1, 3).map((space, index) => (
                         <div key={space.id} className="animate-fade-up group" style={{ transitionDelay: `${0.4 + index * 0.1}s` }}>
@@ -289,7 +274,7 @@ export function SpacesSection() {
                               className="img-zoom rounded-sm overflow-hidden relative cursor-pointer"
                               onClick={() => openLightbox(space.image, space.title)}
                            >
-                              <div className="w-full h-[250px] md:h-[230px] relative">
+                              <div className="w-full h-[280px] relative">
                                  <BlurImage src={space.image} alt={space.title} sizes="(max-width: 768px) 100vw, 42vw" className="object-cover" />
                               </div>
                               <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/20 transition-colors duration-500 flex items-center justify-center">
@@ -299,39 +284,11 @@ export function SpacesSection() {
                               </div>
                            </div>
                            <div className="mt-4">
-                              <div className="flex items-center gap-3 mb-1">
-                                 <h3 className="font-serif-display text-xl text-charcoal">{space.title}</h3>
-                              </div>
-                              <p className="text-muted-foreground text-sm">{space.description}</p>
-                              <span className="text-xs tracking-wider text-muted-foreground mt-1 inline-block">{space.capacity}</span>
+                              <h3 className="font-serif-display text-xl text-charcoal">{space.title}</h3>
+                              <p className="text-muted-foreground text-sm mt-1">{space.description}</p>
                            </div>
                         </div>
                      ))}
-                  </div>
-
-                  <div className="md:col-span-12 animate-fade-up group" style={{ transitionDelay: "0.6s" }}>
-                     <div
-                        className="img-zoom rounded-sm overflow-hidden relative cursor-pointer"
-                        onClick={() => openLightbox(spaces[3].image, spaces[3].title)}
-                     >
-                        <div className="w-full h-[300px] md:h-[400px] relative">
-                           <BlurImage src={spaces[3].image} alt={spaces[3].title} sizes="100vw" className="object-cover" />
-                        </div>
-                        <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/20 transition-colors duration-500 flex items-center justify-center">
-                           <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-alabaster">
-                              <Icons.expand />
-                           </span>
-                        </div>
-                     </div>
-                     <div className="mt-6 text-center">
-                        <div className="flex items-center justify-center gap-3 mb-2">
-                           <h3 className="font-serif-display text-2xl text-charcoal">{spaces[3].title}</h3>
-                           <span className="text-xs tracking-wider text-muted-foreground bg-secondary px-3 py-1 rounded-full">
-                              {spaces[3].capacity}
-                           </span>
-                        </div>
-                        <p className="text-muted-foreground">{spaces[3].description}</p>
-                     </div>
                   </div>
                </div>
             </div>
