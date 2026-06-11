@@ -94,6 +94,7 @@ export function Navigation() {
       { href: "#features", label: t("features"), isRoute: false },
       { href: "#experience", label: t("experience"), isRoute: false },
       { href: "#faq", label: t("faq"), isRoute: false },
+      { href: "/blog", label: t("blog"), isRoute: true },
       { href: "/gallery", label: t("gallery"), isRoute: true },
       { href: "/events", label: t("events"), isRoute: true },
    ];
@@ -103,6 +104,7 @@ export function Navigation() {
       { href: "#corporate-why-us", label: t("features"), isRoute: false },
       { href: "#corporate-spaces", label: t("spaces"), isRoute: false },
       { href: "#corporate-testimonials", label: t("stories"), isRoute: false },
+      { href: "/blog", label: t("blog"), isRoute: true },
       { href: "/gallery", label: t("gallery"), isRoute: true },
    ];
 

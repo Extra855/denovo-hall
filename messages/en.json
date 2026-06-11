@@ -23,6 +23,7 @@
 		"faq": "FAQ",
 		"gallery": "Gallery",
 		"events": "Events",
+		"blog": "Blog",
 		"closeMenu": "Close menu",
 		"openMenu": "Open menu",
 		"mainNav": "Main navigation"
@@ -1328,5 +1329,31 @@
 				}
 			]
 		}
+	},
+	"Blog": {
+		"metaTitle": "Blog | De Novo — Wedding Tips, Real Stories & Venue News",
+		"metaDescription": "Explore wedding planning tips, real celebration stories, and the latest news from De Novo venue in Sana'a, Yemen.",
+		"metaKeywords": "wedding blog,wedding tips,real weddings,venue news,De Novo blog,wedding planning,wedding inspiration",
+		"pageTitle": "Blog",
+		"pageSubtitle": "Stories & Insights",
+		"pageHeading1": "Our",
+		"pageHeading2": "Blog",
+		"pageDescription": "Wedding tips, real celebrations, and inspiration from the De Novo team.",
+		"readMore": "Read More",
+		"publishedOn": "Published on {date}",
+		"updatedOn": "Updated on {date}",
+		"byAuthor": "By {name}",
+		"minRead": "{count} min read",
+		"noPosts": "No posts yet. Check back soon!",
+		"temporarilyUnavailable": "Blog is temporarily unavailable. Please try again later.",
+		"backToBlog": "Back to Blog",
+		"categories": "Categories",
+		"tags": "Tags",
+		"allCategories": "All",
+		"errorTitle": "Something went wrong",
+		"errorMessage": "We couldn't load the blog content. Please try again.",
+		"retryButton": "Try Again",
+		"postNotFound": "Post not found",
+		"postNotFoundDescription": "The blog post you're looking for doesn't exist or has been removed."
 	}
 }
