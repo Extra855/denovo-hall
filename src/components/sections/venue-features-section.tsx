@@ -34,7 +34,7 @@ function PanoramicHallBlock({ t }: { t: ReturnType<typeof useTranslations> }) {
          <div className="flex items-center gap-4 mb-2">
             <div className="w-8 h-px bg-champagne" />
             <p className="text-sm tracking-widest uppercase text-sage">
-               {t("panoramicHall.heading")}
+               {t("panoramicHall.subtitle")}
             </p>
          </div>
          <h3 className="font-serif-display text-3xl md:text-4xl text-alabaster mb-4">
